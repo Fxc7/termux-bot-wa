@@ -1,6 +1,6 @@
-### I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
+### I'm FXC7BOT <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
 <p align="center">
-<a href="https://github.com/FarhanXCode7"><img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png"></a>
+<img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png" style="border-radius: 10px;">
 </p>
 <br>
 
@@ -18,7 +18,7 @@
 <a href="https://github.com/FarhanXCode7/termux-bot-wa/members"><img title="Forks" src="https://img.shields.io/github/forks/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
 <a href="https://github.com/FarhanXCode7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
 </p>
-
+<center>
 <details>
 
 <summary>🍙 Help me!</summary>
@@ -224,3 +224,4 @@ Maaf Kalo Ribet Soalnya Kalo Digithub Kebanyak Fiturnya Ga Work🙂
 Makanya Saya Saranin Di File Aja Installnya
 Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
 ---
+</center>
