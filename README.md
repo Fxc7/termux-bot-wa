@@ -1,6 +1,6 @@
 ### I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
 <p align="center">
-<a href="https://github.com/FarhanXCode7"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdT7nJwT116EhgP9pZcqoREt6tvow2n5RAQ&usqp=CAU"></a>
+<a href="https://github.com/FarhanXCode7"><img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png"></a>
 </p>
 <br>
 
