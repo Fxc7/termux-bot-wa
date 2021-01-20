@@ -39,18 +39,27 @@
 Follow The Steps Below!
 
 ```bash
+> download dahulu script botnya
+> selanjutnya ekstrak
+> dan habis itu pindahkan script di halaman default file | Jangan Didalam File |
+> dan ikutin step² dibawah
+____________________________
 > termux-setup-storage
 (after that tap on permission)
-> apt install git -y
-> git clone https://github.com/FarhanXCode7/termux-bot-wa
+> pkg update && pkg upgrade
+> cd /storage/emulated/0/
+> cp -r termux-bot-wa /$HOME
+> cd
 > cd termux-bot-wa
 > bash install.sh
+> npm start
 ```
 
 ## Usage
 
 ```bash
 > npm start
+
 ```
 
 ## Features
@@ -210,5 +219,8 @@ Follow The Steps Below!
 | imoji|✅|
 
 
+__________________________________________
+Maaf Kalo Ribet Soalnya Kalo Digithub Kebanyak Fiturnya Ga Work🙂
+Makanya Saya Saranin Di File Aja Installnya
 Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
 ---
