@@ -1,83 +1,210 @@
+### Moshi Moshi~ I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
 <p align="center">
-<img src="https://static.wikia.nocookie.net/kenja-no-mago/images/8/85/Sizilien_von_klode_1.jpg/revision/latest/top-crop/width/300/height/300?cb=20190417164406" width="128" height="128"/>
+<a href="https://github.com/NazwaS"><img src="https://raw.githubusercontent.com/NazwaS/NazwaS/main/img/Nazwa.jpg"></a>
+</p>
+<br>
+
+
+
+<p align="center">
+<a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TERMUX--BOT--WA-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="#"><img title="XPTNNBOT" src="https://img.shields.io/badge/XPTNNBOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="https://github.com/FarhanXCode7"><img title="Author" src="https://img.shields.io/badge/AUTHOR-NAZWAS-orange?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/XP-TN"><img title="Author" src="https://img.shields.io/badge/Author-XP-TN-red.svg?style=for-the-badge&logo=github"></a>
-</p>
-<p align="center">
-<a href="https://github.com/XP-TN/XP-TNNBOT/followers"><img title="Followers" src="https://img.shields.io/github/followers/XP-TN?color=blue&style=flat-square"></a>
-<a href="https://github.com/XP-TN/XP-TNNBOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/XP-TN/XP-TNNBOT?color=red&style=flat-square"></a>
-<a href="https://github.com/XP-TN/XP-TNNBOT/network/members"><img title="Forks" src="http://img.shields.io/github/forks/XP-TN/XP-TNNBOT?color=red&style=flat-square"></a>
-<a href="https://github.com/XP-TN/XP-TNNBOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/XP-TN/XP-TNNBOT?label=Watchers&color=blue&style=flat-square"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FXP-TN%2FXP-TNNBOT&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Support&edge_flat=false"/></a>
-<a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/followers"><img title="Followers" src="https://img.shields.io/github/followers/NazwaS?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
 </p>
 
-## Clone this project
+<img src="https://media4.giphy.com/media/qLFKvOpoS1N7ts7xO8/giphy.gif">
+<details>
+
+<summary>🍙 Help me!</summary>
+
+* [Ovo](08311800241)
+* [Pulsa](08311800241)
+</details>
+
+## Tools
 
 ```bash
-> git clone https://github.com/XP-TN/XPTNNBOTV
+> Termux
+> WhatsApp
+> 2 HandPhone
 ```
 
-```bash
->Command BOT $
-```
-
-## Install the dependencies:
-Before running the below command, make sure you're in the project directory that
-you've just cloned!!
+## Install
+Follow The Steps Below!
 
 ```bash
-> cd XPTNNBOT
+> termux-setup-storage
+(after that tap on permission)
+> apt install git -y
+> git clone https://github.com/FarhanXCode7/termux-bot-wa
+> cd termux-bot-wa
 > bash install.sh
 ```
 
-### Usage
+## Usage
+
 ```bash
 > npm start
 ```
 
 ## Features
 
-| Sticker Creator |                Feature           |
-| :-----------: | :--------------------------------: |
-|       ✅       | Send Photo with Caption          |
-|       ✅       | Reply A Photo                    |
-|       ✅       | Reply A Video or GIF             |
-|       ✅       | Send Video or GIF with Caption   |
-|       ✅       | Reply A Sticker ( sticker to image ) |
+| NEW USER | YES
+| :---------------------------------------------: | :-----------: |
+|  Register Name And Age|✅|
 
-| Other  |                     Feature                     |
-| :------------: | :---------------------------------------------: |
-|       ✅        |   Get a random meme             |
-|       ✅        |   Text to speech                |
-|       ✅        |   Writing feature 				|
-|       ✅        |   What Anime Is This 			|
-|       ✅        |   Url2Img ( Screeenshot Web )   |
-|       ✅        |   Simsimi		                |
+|  CREATOR  |                                           YES |
+| :---------------------------------------------: | :-----------: |
+| Sticker Maker|✅|
+| Sticker Gif Maker|✅|
+| Convert Sticker To Image|✅|
+| Convert Video To MP3|✅|
+| Black Pink Logo Maker|✅|
+| 3D Text Maker|✅|
+| Quote Maker|✅|
+| Water Maker|✅|
+| Fire Text Maker
+| Marvel Logo Maker|✅|
+| Snow Write Maker|✅|
+| Ninja Logo Maker|✅|
+| Logo Wolf Maker|✅|
+| Logo Wolf Maker2|✅|
+| Dan Masih Banyak Lagi|✅|
 
-| Group  |                     Feature               |
-| :-----------: | :--------------------------------: |
-|       ✅        |   Tagall/Mentionall member       |
-|       ✅        |   Kick Member Group	             |
-|       ✅        |   Add Member Group	             |
-|       ✅        |   Get List Admins Group          |
+| MEDIA | YES |
+| :-----------------: | :-------: |
+| Trend Twit|✅|
+| YT Search|✅|
 
-| Owner Bot  |                     Feature           |
-| :-----------: | :--------------------------------: |
-|       ✅        |   Set Prefix                     |
-|       ✅        |   Broadcast                      |
-|       ✅        |   Clear All Chats                |
+| EDUCATION | YES |
+| :-----------------: | :-------: |
+| The Meaning Of The Name|✅|
+| Text To Sticker|✅|
+| Nulis|✅|
+| Quotes|✅|
 
-## Special Thanks to
-* [`adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
-* [`Mhankbarbar`](https://github.com/MhankBarBar)
+| ASK | YES |
+| :-----------------: | :-------: |
+| Apakah|✅|
+| Kapankah|✅|
+| Bisakah|✅|
 
+| DOWNLOADER | YES |
+| :-----------------: | :-------: |
+| Pinterest Downloader|✅|
+| Ytmp3 Downloader|✅|
+| Ytmp4 Downloader|✅|
+| Joox Downloader|✅|
+| Facebook Downloader|✅|
 
-## Group
-* [`WhatsApp`](Error waiting)
-### Donate
-* [`Saweria`](https://saweria.co/donate/agung1)
+| MEME | YES |
+| :-----------------: | :-------: |
+| Meme|✅|
+| Meme Indo|✅|
+
+| GROUP | YES |
+| :-----------------: | :-------: |
+| Open Group|✅|
+| Link Group|✅|
+| info Group|✅|
+| Close Group|✅|
+| Promote Member|✅|
+| Demote Member|✅|
+| Hide Tag|✅|
+| Tag All Members|✅|
+| Add Member|✅|
+| Kick Member|✅|
+| Show List Admins|✅|
+| Leave Group|✅|
+| Show Owner Group|✅|
+| welcome New Members|✅|
+| Nsfw|✅|
+
+| SOUND | YES |
+| :-----------------: | :-------: |
+| Text To Speach|✅|
+| Play|✅|
+
+| MUSIC | YES |
+| :-----------------: | :-------: |
+| Music Lyrics|✅|
+| Chord Guitar|✅|
+
+| ISLAM | YES |
+| :-----------------: | :-------: |
+| Qur'an|✅|
+
+| STALK | YES |
+| :-----------------: | :-------: |
+| Instagram Stalk|✅|
+| Tiktok Stalk|✅|
+
+| WIBU | YES |
+| :-----------------: | :-------: |
+| Neonime|✅|
+| Pokemon|✅|
+| Nekonime|✅|
+| Naruto|✅|
+| Loli|✅|
+| Random Shota|✅|
+| Random Waifu|✅|
+| Random Anime|✅|
+| OTHERS MENU
+
+| FUN | YES |
+| :-----------------: | :-------: |
+| Kucing|✅|
+| Anjing|✅|
+| Alay|✅|
+| Glitch|✅|
+| Game|✅|
+| Cek Ganteng|✅|
+| Watak|✅|
+| Random Hobby|✅|
+
+| INFORMATION | YES |
+| :-----------------: | :-------: |
+| List Bahasa|✅|
+| Information Weather|✅|
+| KBBI|✅|
+| Fakta|✅|
+| Covid|✅|
+
+| 18+ | YES |
+| :-----------------: | :-------: |
+| Random Hentai|✅|
+| NSFW Neko|✅|
+
+| OWNER | YES |
+| :-----------------: | :-------: |
+| Set Prefix|✅|
+| Block Member|✅|
+| Broadcast|✅|
+| Group Broadcast|✅|
+| Clear All Chat|✅|
+
+ TENTANG BOT | YES |
+| :-----------------: | :-------: |
+| info|✅|
+| ChatList|✅|
+
+| OTHER | YES |
+| :-----------------: | :-------: |
+| Send|✅|
+| WaMe|✅|
+| Exe|✅|
+| QrCode|✅|
+| Semoji|✅|
+| Fml|✅|
+
+Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
+---
+
+<img src="https://raw.githubusercontent.com/NazwaS/NazwaS/main/img/tenor.gif">
