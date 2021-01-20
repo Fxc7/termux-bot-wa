@@ -510,15 +510,15 @@ async function starts() {
 					break
 				
 		case 'irii':
-			client.sendPtt(from, './lindy/iri2.mp3', id)
+			client.sendPtt(from, './music/iri2.mp3', id)
 			break
 		case 'iri':
-			client.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})
+			client.sendPtt(from, './music/iri.mp3', {quoted: mek, ptt:true})
 			break
         case 'baka':
         case 'onichan':
         case 'bodoh':
-                client.sendMessage(dari, './lindy/baka.mp3', audio/mp3, {quoted: mek, ptt:true})
+                client.sendMessage(from, './music/baka.mp3', audio/mp3, {quoted: mek, ptt:true})
                 break
 			case 'owner':
                  client.sendMessage(from, {displayname: "Fxc7", vcard: vcard}, MessageType.contact, { quoted: mek})
