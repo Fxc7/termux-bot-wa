@@ -1,5 +1,5 @@
 {
-  "name": "termux-whatsapp-bot",
+  "name": "termux-bot-wa",
   "version": "0.0.2",
   "description": "Only termux",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "NazwaS",
+  "author": "MhankBarBar",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
@@ -40,10 +40,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NazwaS/termux-whatsapp-bot.git"
+    "url": "git+https://github.com/FarhanXCode7/termux-bot-wa.git"
   },
   "bugs": {
-    "url": "https://github.com/NazwaS/termux-whatsapp-bot/issues"
+    "url": "https://github.com/FarhanXCode7/termux-bot-wa/issues"
   },
-  "homepage": "https://github.com/NazwaS/termux-whatsapp-bot#readme"
+  "homepage": "https://github.com/FarhanXCode7/termux-bot-wa#readme"
 }

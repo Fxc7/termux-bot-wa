@@ -59,74 +59,6 @@ function kyun(seconds){
   return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
 }
 
-const getLevelingXp = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].xp
-            }
-        }
-
-        const getLevelingLevel = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].level
-            }
-        }
-
-        const getLevelingId = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                return _level[position].jid
-            }
-        }
-
-        const addLevelingXp = (userId, amount) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                _level[position].xp += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-            }
-        }
-
-        const addLevelingLevel = (userId, amount) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
-            })
-            if (position !== false) {
-                _level[position].level += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-            }
-        }
-
-        const addLevelingId = (userId) => {
-            const obj = {jid: userId, xp: 1, level: 1}
-            _level.push(obj)
-            fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
-        }
-
 async function starts() {
 	const client = new WAConnection()
 	client.logger.level = 'warn'
@@ -214,13 +146,9 @@ async function starts() {
 
 			mess = {
 				wait: `*WAIT KAK ${pushname2}* Sedang di Prosess...⏳`,
-				success: `\`\`\`Sukses Gan...\`\`\``,
-				levelon: '❬ ✔ ❭ *enable leveling*',
-				leveloff: ' ❬ X ❭  *disable leveling*',
-				levelnoton: '❬ X ❭ *leveling not aktif*',
-				levelnol: '*LEVEL KAKAK MASIH* 0 °-°'
+				success: '*Sukses...*',
 				error: {
-					stick: '*Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker*',
+					stick: ' *Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker*',
 					Iv: '*Link tidak valid*'
 				},
 				only: {
@@ -273,24 +201,6 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 
-	        //function leveling
-            if (isGroup && isLevelingOn) {
-            const currentLevel = getLevelingLevel(sender)
-            const checkId = getLevelingId(sender)
-            try {
-                if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
-                const amountXp = Math.floor(Math.random() * 10) + 500
-                const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
-                const getLevel = getLevelingLevel(sender)
-                addLevelingXp(sender, amountXp)
-                if (requiredXp <= getLevelingXp(sender)) {
-                    addLevelingLevel(sender, 1)
-                    await reply(`*「 LEVEL UP 」*\n\n➸ *Name*: ${sender}\n➸ *XP*: ${getLevelingXp(sender)}\n➸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nSelamat!! 🎉🎉`)
-                }
-            } catch (err) {
-                console.error(err)
-            }
-        }
 
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
@@ -510,15 +420,15 @@ async function starts() {
 					break
 				
 		case 'irii':
-			client.sendPtt(from, './music/iri2.mp3', id)
+			client.sendPtt(from, './lindy/iri2.mp3', id)
 			break
 		case 'iri':
-			client.sendPtt(from, './music/iri.mp3', {quoted: mek, ptt:true})
+			client.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})
 			break
         case 'baka':
         case 'onichan':
         case 'bodoh':
-                client.sendMessage(from, './music/baka.mp3', audio/mp3, {quoted: mek, ptt:true})
+                client.sendMessage(dari, './lindy/baka.mp3', audio/mp3, {quoted: mek, ptt:true})
                 break
 			case 'owner':
                  client.sendMessage(from, {displayname: "Fxc7", vcard: vcard}, MessageType.contact, { quoted: mek})
