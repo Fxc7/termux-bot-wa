@@ -23,10 +23,8 @@ const fetch = require('node-fetch')
 const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
-const imgbb = require('imgbb-uploader')
 const lolis = require('lolis.life')
 const loli = new lolis()
-const speed = require('performance-now')
 
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
@@ -71,13 +69,10 @@ async function starts() {
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code'))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
 	})
-	client.on('credentials-updated', () => {
-		fs.writeFileSync('./Fxc7.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-		info('2', 'Login Info Updated')
-	})
-	fs.existsSync('./Fxc7.json') && client.loadAuthInfo('./Fxc7.json')
+
+	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./Fxc7.json')
 	client.on('connecting', () => {
 		start('2', 'Connecting...')
 	})
@@ -85,7 +80,7 @@ async function starts() {
 		success('2', 'Connected')
 	})
 	await client.connect({timeoutMs: 30*1000})
-
+        fs.writeFileSync('./Fxc7.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
 
 	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
@@ -251,7 +246,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				uptime = process.uptime()
 				user.push(sender)
-				const anu = await fetchJson(`https://api.terhambar.com/negara/World`, {method: 'get'})
+				anu = await fetchJson(`https://api.terhambar.com/negara/World`, {method: 'get'})
 				corona = `*${anu.world}*\n┃ Kasus Terbaru: *${anu.kasus_baru}*\n┃ Total: *${anu.total}*\n┃ Meninggal: *${anu.meninggal}*\n┃ Sembuh: *${anu.sembuh}*\n┃ Update: *${anu.terakhir}*\n┃Pesan: *Stay Safe*`
                 myMonths = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
                 myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jum at','Sabtu'];
