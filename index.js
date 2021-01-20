@@ -1,3 +1,12 @@
+/*
+* Tambahin nama author lah
+* Author MhankBarBar, Farhan
+* Tambahin ya Cape Gan ngefix² Yg Ga work
+* Jan numpang nama doank
+
+- What's New?
+* New Features
+*/
 const {
     WAConnection,
     MessageType,
@@ -31,8 +40,6 @@ const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
-const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
-const _level = JSON.parse(fs.readFileSync('./database/json/level.json'))
 const adminNumber = JSON.parse(fs.readFileSync('./database/json/admin.json'))
 const anime = JSON.parse(fs.readFileSync('./database/json/anime.json'))
 const blocked = JSON.parse(fs.readFileSync('./database/json/blocked.json'))
@@ -2294,8 +2301,8 @@ async function starts() {
 			if (isBanned) return reply(mess.only.benned)    
             if (!isUser) return reply(mess.only.userB)
             if (args.length === 1) return reply(from, '[❗] Kirim perintah *!jadwalShalat [daerah]*\ncontoh : *!jadwalShalat Banyuwangi*\nUntuk list daerah kirim perintah *!listDaerah*')
-            const daerah = body.slice(14)
-            const anu = await fetchJson(`https://mhankbarbar.tech/api/jadwalshalat?daerah=${daerah}&apiKey=${memek}`)
+            daerah = body.slice(14)
+            anu = await fetchJson(`https://mhankbarbar.tech/api/jadwalshalat?daerah=${daerah}&apiKey=${memek}`)
             resultJadwal = `Jadwal Sholat Di Daerah: *${daerah}* Adalah:\nSubuh: *${anu.Subuh}*\nDhuha: *${anu.Dhuha}*\nDzuhur: *${anu.Dzuhur}*\nAshar: *${anu.Ashar}*\nMagrib: *${anu.Magrib}*\nIsya: *${anu.Isya}*\nImsyak: *{anu.Imsyak}*`
             reply(from, resultJadwal, text, {quoted: mek})
             break
