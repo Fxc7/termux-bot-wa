@@ -72,7 +72,7 @@ async function starts() {
 		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
 	})
 
-	fs.existsSync('./BarBar.json') && client.loadAuthInfo('./Fxc7.json')
+	fs.existsSync('./Fxc7.json') && client.loadAuthInfo('./Fxc7.json')
 	client.on('connecting', () => {
 		start('2', 'Connecting...')
 	})
@@ -122,6 +122,8 @@ async function starts() {
 
 	client.on('message-new', async (mek) => {
 		try {
+			if (!mek.hasNewMessage) return
+              mek = JSON.parse(JSON.stringify(mek)).messages[0]
 			if (!mek.message) return
 			if (mek.key && mek.key.remoteJid == 'status@broadcast') return
 			if (mek.key.fromMe) return
@@ -130,12 +132,12 @@ async function starts() {
 			const content = JSON.stringify(mek.message)
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
+			pushname2 = client.contacts[botFebb] != undefined ? client.contacts[botFebb].vname || client.contacts[botFebb].notify : undefined
 			const memek = 'Nkwp9oR7Eg9yyKbejBpm'
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const speed = require('performance-now')
 			const insom = from.endsWith('@g.us')
 			const botFebb = insom ? mek.participant : mek.key.remoteJid
-			pushname2 = client.contacts[botFebb] != undefined ? client.contacts[botFebb].vname || client.contacts[botFebb].notify : undefined
 			const date = new Date().toLocaleDateString()
 			const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 			const jam = moment.tz('Asia/Jakarta').format('HH:mm')
@@ -145,6 +147,7 @@ async function starts() {
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefix)
 			client.chatRead (from)
+			
 
 			mess = {
 				wait: `*WAIT KAK ${pushname2}* Sedang di Prosess...⏳`,
@@ -183,7 +186,6 @@ async function starts() {
 			const isNsfw = isGroup ? nsfw.includes(from) : false
 			const isAnime = isGroup ? anime.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false 
-			const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
 			const isOwner = ownerNumber.includes(sender)
 			const isUser = user.includes(sender)
 			const isBanned = ban.includes(sender)
@@ -203,14 +205,13 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 
-
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 			const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
-			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mPESAN\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
-			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mGROUP\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
+			if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
+			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			switch(command) {
