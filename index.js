@@ -27,7 +27,7 @@ const axios = require('axios')
 const fs = require('fs')
 const crypto = require('crypto')
 const imageToBase64 = require('image-to-base64')
-const imgbb = require('imgbb-uploader')
+//const imgbb = require('imgbb-uploader')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const kagApi = require('@kagchi/kag-api')
@@ -152,10 +152,10 @@ async function starts() {
 			const insom = from.endsWith('@g.us')
 			const botFebb = insom ? mek.participant : mek.key.remoteJid
 			pushname2 = client.contacts[botFebb] != undefined ? client.contacts[botFebb].vname || client.contacts[botFebb].notify : undefined
-			const BarBarApi = 'Api MhankBarBar' 
+			const BarBarApi = 'api barbar' 
 			const ZeksApi = 'api zeks' 
-			const VhtearApi = 'api vhtear' 
-			const TobzApi = 'api Tobz' 
+			const VhtearApi = 'api vhtear'
+			const TobzApi = 'api tobz' 
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 			const speed = require('performance-now')
 			const date = new Date().toLocaleDateString()
@@ -2334,31 +2334,7 @@ async function starts() {
                 anu = await fetchJson(`https://api.zeks.xyz/api/jadwaltv?channel=${jadwaltv}&apikey=${ZeksApi}`, {method: 'get'})
                 reply(anu.result)
                 break
-         case 'brainly':
-          if (isBanned) return reply(mess.only.benned)    
-                if (!isUser) return reply(mess.only.userB)
-					if (args.length >= 2){
-                const BrainlySearch = require('./Fxc7/brainly.js')
-                let tanya = body.slice(9)
-                let jum = Number(tanya.split('.')[1]) || 2
-                if (jum > 10) return client.reply(from, 'Max 10!', id)
-                if (Number(tanya[tanya.length-1])){
-                    tanya
-                }
-                client.reply(from, `➸ *Pertanyaan* : ${tanya.split('.')[0]}\n\n➸ *Jumlah jawaban* : ${Number(jum)}`, id)
-                await BrainlySearch(tanya.split('.')[0],Number(jum), function(res){
-                    res.forEach(x=>{
-                        if (x.jawaban.fotoJawaban.length == 0) {
-                            client.reply(from, `➸ *Pertanyaan* : ${x.pertanyaan}\n\n➸ *Jawaban* : ${x.jawaban.judulJawaban}\n`, id)
-                        } else {
-                            client.reply(from, `➸ *Pertanyaan* : ${x.pertanyaan}\n\n➸ *Jawaban* 〙: ${x.jawaban.judulJawaban}\n\n➸ *Link foto jawaban* : ${x.jawaban.fotoJawaban.join('\n')}`, id)
-                        }
-                    })
-                })
-            } else {
-                client.reply(from, 'Usage :\n!brainly [pertanyaan] [.jumlah]\n\nEx : \n!brainly NKRI .2', id)
-            }
-            break
+         
          case 'joox':
 			if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
@@ -2500,7 +2476,7 @@ async function starts() {
 					break
 
 				case 'setppbot':
-					if (!isOwner) return reply(ind.ownerb())
+					if (!isOwner) return reply(mess.only.owner)
 				    client.updatePresence(from, Presence.composing) 
 					if (!isQuotedImage) return reply(`Kirim gambar dengan caption ${prefix}setbotpp atau tag gambar yang sudah dikirim`)
 					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -2509,8 +2485,9 @@ async function starts() {
 					reply('Makasih profil barunya😗')
 					break 
 					case 'brainly':
-					if (!isRegistered) return reply(ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					if (!isUser) return reply(mess.only.userB)
+					if (isBanned) return reply(mess.only.benned)
+					const brainly = require('brainly')
                     brien = body.slice(9)
 					brainly(`${brien}`).then(res => {
 					teks = '❉───────────❉\n'

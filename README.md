@@ -1,6 +1,6 @@
-### I'm FXC7BOT <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
+### Moshi Moshi~ I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
 <p align="center">
-<img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png" style="border-radius: 10px;">
+<a href="https://github.com/NazwaS"><img src="https://raw.githubusercontent.com/NazwaS/NazwaS/main/img/Nazwa.jpg"></a>
 </p>
 <br>
 
@@ -10,15 +10,16 @@
 <a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TERMUX--BOT--WA-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/FarhanXCode7"><img title="Author" src="https://img.shields.io/badge/AUTHOR-FARHAN-orange?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/FarhanXCode7"><img title="Author" src="https://img.shields.io/badge/AUTHOR-NAZWAS-orange?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/followers"><img title="Followers" src="https://img.shields.io/github/followers/FarhanXCode7?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/members"><img title="Forks" src="https://img.shields.io/github/forks/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/followers"><img title="Followers" src="https://img.shields.io/github/followers/NazwaS?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/NazwaS/termux-whatsapp-bot/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
 </p>
-<center>
+
+<img src="https://media4.giphy.com/media/qLFKvOpoS1N7ts7xO8/giphy.gif">
 <details>
 
 <summary>🍙 Help me!</summary>
@@ -39,27 +40,18 @@
 Follow The Steps Below!
 
 ```bash
-> download dahulu script botnya
-> selanjutnya ekstrak
-> dan habis itu pindahkan script di halaman default file | Jangan Didalam File |
-> dan ikutin step² dibawah
-____________________________
 > termux-setup-storage
 (after that tap on permission)
-> pkg update && pkg upgrade
-> cd /storage/emulated/0/
-> cp -r termux-bot-wa /$HOME
-> cd
+> apt install git -y
+> git clone https://github.com/FarhanXCode7/termux-bot-wa
 > cd termux-bot-wa
 > bash install.sh
-> npm start
 ```
 
 ## Usage
 
 ```bash
 > npm start
-
 ```
 
 ## Features
@@ -67,7 +59,6 @@ ____________________________
 | NEW USER | YES
 | :---------------------------------------------: | :-----------: |
 |  Register Name And Age|✅|
-|  Userlist|✅|
 
 |  CREATOR  |                                           YES |
 | :---------------------------------------------: | :-----------: |
@@ -190,18 +181,11 @@ ____________________________
 | :-----------------: | :-------: |
 | Random Hentai|✅|
 | NSFW Neko|✅|
-| NSFW blowjob|✅|
-| NSFW loli|✅|
-| Bokep|✅|
-| NSFW Trap|✅|
 
 | OWNER | YES |
 | :-----------------: | :-------: |
 | Set Prefix|✅|
-| banned|✅|
-| Unbanned|✅|
 | Block Member|✅|
-| Unblock|✅|
 | Broadcast|✅|
 | Group Broadcast|✅|
 | Clear All Chat|✅|
@@ -215,13 +199,12 @@ ____________________________
 | :-----------------: | :-------: |
 | Send|✅|
 | WaMe|✅|
-| Darkjokes⁰|✅|
-| imoji|✅|
+| Exe|✅|
+| QrCode|✅|
+| Semoji|✅|
+| Fml|✅|
 
-
-__________________________________________
-Maaf Kalo Ribet Soalnya Kalo Digithub Kebanyak Fiturnya Ga Work🙂
-Makanya Saya Saranin Di File Aja Installnya
 Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
 ---
-</center>
+
+<img src="https://raw.githubusercontent.com/NazwaS/NazwaS/main/img/tenor.gif">
