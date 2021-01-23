@@ -202,7 +202,9 @@ Follow The Steps Below!
 
 
 
+## Group
 
+* <a href="https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
 ---
