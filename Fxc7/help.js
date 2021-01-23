@@ -1,10 +1,11 @@
 
-const help = (prefix, ig, name, uptime, pushname2, user, tanggal, jam, corona) => { 
+const help = (prefix, ig, name, uptime, pushname2, user, tanggal, jam) => { 
 	return `
 	
 \`\`\`Follow My Instagram\`\`\`
 ${ig}
 
+\`\`\`GROUP OFFICIAL\`\`\`
 https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ┏━━━━━❬ *USER ${name}* ❭━━━━━━━⊱
@@ -26,49 +27,49 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┣⊱❥ \`\`\`AKTIF\`\`\`: ${kyun(uptime)}
 ┣⊱❥ \`\`\`JAM\`\`\`: *${jam} WIB*
 ┣⊱❥ \`\`\`TANGGAL\`\`\`: *${tanggal}*
-┣⊱❥ \`\`\`VERSION\`\`\`: *4.0 TERMUX*
+┣⊱❥ \`\`\`VERSION\`\`\`: *5.0 TERMUX*
 ┃
 ┣⊱❥ ❌ *SPAM*
 ┣⊱❥ ❌ *CALL & VC*
 ┃ \`\`\`Melanggar??\`\`\` *Banned*
 ┃
-┣━━━━━━━━━━━━━━━━━━━━
-┃
-┣⊱❥ ${corona}
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ┏━━━━❬ *ABOUT ${name}* ❭━━━━━━⊱
 ┃╭────────────────────────
+┃├⊱❥ *${prefix}request [Mau Req Fitur Apa?]*
+┃├⊱❥ *${prefix}kalkulator [12*12]*
+┃├⊱❥ *${prefix}report [lapor bug]*
 ┃├⊱❥ *${prefix}info*
 ┃├⊱❥ *${prefix}donasi*
 ┃├⊱❥ *${prefix}owner*
 ┃├⊱❥ *${prefix}speed*
 ┃├⊱❥ *${prefix}daftar*
 ┃├⊱❥ *${prefix}totaluser*
+┃├⊱❥ *${prefix}chatlist*
 ┃├⊱❥ *${prefix}blocklist*
 ┃├⊱❥ *${prefix}banlist*
 ┃├⊱❥ *${prefix}bahasa*
-┃├⊱❥ *${prefix}report [lapor bug]*
-┃├⊱❥ *${prefix}request [Mau Req Fitur Apa?]*
 ┃╰────────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ┏━━━━❬ *MEDIA & DOWNLOAD* ❭━━━━━━━⊱
 ┃͏͏͏͏͏͏͏͏͏͏͏͏͏͏╭────────────────────────
+┃├⊱❥ *${prefix}playmp3 [Monolog-pamungkas]*
 ┃├⊱❥ *${prefix}fb [link video]*
 ┃├⊱❥ *${prefix}ytmp3 [link yt]*
 ┃├⊱❥ *${prefix}ytmp4 [link yt]*
-┃├⊱❥ *${prefix}tiktok*
-┃├⊱❥ *${prefix}fototiktok*
 ┃├⊱❥ *${prefix}tiktokstalk [username]*
 ┃├⊱❥ *${prefix}igstalk [_farhan_xcode7]*
-┃├⊱❥ *${prefix}meme*
-┃├⊱❥ *${prefix}memeindo*
+┃├⊱❥ *${prefix}insta [Link]*
 ┃├⊱❥ *${prefix}ssweb [url]*
 ┃├⊱❥ *${prefix}url2img [Url]*
+┃├⊱❥ *${prefix}tiktok*
+┃├⊱❥ *${prefix}fototiktok*
+┃├⊱❥ *${prefix}meme*
+┃├⊱❥ *${prefix}memeindo*
 ┃├⊱❥ *${prefix}kbbi*
 ┃├⊱❥ *${prefix}wait*
-┃├⊱❥ *${prefix}insta [Link]*
 ┃├⊱❥ *${prefix}trendtwit*
 ┃╰────────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -78,14 +79,21 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃├⊱❥ *${prefix}stiker*
 ┃├⊱❥ *${prefix}gifstiker*
 ┃├⊱❥ *${prefix}toimg*
-┃├⊱❥ *${prefix}nulis*
+┃├⊱❥ *${prefix}tomp3*
 ┃├⊱❥ *${prefix}ocr*
-┃├⊱❥ *${prefix}imoji [❤️]*
-┃├⊱❥ *${prefix}tts [id Haii]*
-┃├⊱❥ *${prefix}ttp [Fxc7]*
 ┃╰─────────────────────────
 ┣━━━━━━━━━━━━━━━━━━━━━━━━❥
 ┃╭─────────────────────────
+┃├⊱❥ *${prefix}imoji [❤️]*
+┃├⊱❥ *${prefix}tts [id Haii]*
+┃├⊱❥ *${prefix}ttp [Fxc7]*
+┃├⊱❥ *${prefix}csky [FXC7]*
+┃├⊱❥ *${prefix}cwooden [FXC7]*
+┃├⊱❥ *${prefix}ccrossfire [FXC7]*
+┃├⊱❥ *${prefix}cnaruto [FXC7]*
+┃├⊱❥ *${prefix}cgbutton [FXC7]*
+┃├⊱❥ *${prefix}csbutton [FXC7]*
+┃├⊱❥ *${prefix}cflower [FXC7]*
 ┃├⊱❥ *${prefix}ctxtneon [FXC7]*
 ┃├⊱❥ *${prefix}cflame3d [FXC7]*
 ┃├⊱❥ *${prefix}caglow [FXC7]*
@@ -99,14 +107,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃├⊱❥ *${prefix}cwater [FXC7]*
 ┃├⊱❥ *${prefix}clava [FXC7]*
 ┃├⊱❥ *${prefix}cfire [FXC7]*
-┃├⊱❥ *${prefix}cmarvel [FXC7/BOT]*
-┃├⊱❥ *${prefix}cavengers [FXC7/BOT]*
 ┃├⊱❥ *${prefix}cholo [FXC7]*
 ┃├⊱❥ *${prefix}cminion [FXC7]*
 ┃├⊱❥ *${prefix}cold [FXC7]*
 ┃├⊱❥ *${prefix}cneon [FXC7]*
-┃├⊱❥ *${prefix}cstune3d [FXC7/BOT]*
-┃├⊱❥ *${prefix}cspace3d [FXC7/BOT]*
 ┃├⊱❥ *${prefix}csunmory [FXC7]*
 ┃├⊱❥ *${prefix}cbalon [FXC7]*
 ┃├⊱❥ *${prefix}cglue3d [FXC7]*
@@ -118,11 +122,20 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃├⊱❥ *${prefix}crvintage [FXC7]*
 ┃├⊱❥ *${prefix}cbpink [FXC7]*
 ┃├⊱❥ *${prefix}ctext3d [FXC7]*
+┃╰──────────────────────
+┣━━━━━━━━━━━━━━━━━━━━━━━━❥
+┃╭────────────────────
+┃├⊱❥ *${prefix}cstune3d [FXC7/BOT]*
+┃├⊱❥ *${prefix}cspace3d [FXC7/BOT]*
+┃├⊱❥ *${prefix}cmarvel [FXC7/BOT]*
+┃├⊱❥ *${prefix}cavengers [FXC7/BOT]*
+┃├⊱❥ *${prefix}cpubg [FXC7/BOT]*
 ┃├⊱❥ *${prefix}cglitch [FXC7/BOT]*
 ┃├⊱❥ *${prefix}cluxury [FXC7]*
 ┃├⊱❥ *${prefix}cmetal [FXC7/BOT]*
 ┃├⊱❥ *${prefix}cphlogo [FXC7/BOT]*
 ┃├⊱❥ *${prefix}quotemaker [tx/wtrmk/tema]*
+┃├⊱❥ *${prefix}nulis [nama/kelas/text]*
 ┃╰────────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
@@ -151,6 +164,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃╭────────────────────
 ┃├⊱❥ *${prefix}welcome [On/Off]*
 ┃├⊱❥ *${prefix}grup [buka/tutup]*
+┃├⊱❥ *${prefix}antilink*
 ┃├⊱❥ *${prefix}ownergrup*
 ┃├⊱❥ *${prefix}setpp*
 ┃├⊱❥ *${prefix}infogc*
@@ -192,43 +206,34 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃├⊱❥ *${prefix}testime*
 ┃├⊱❥ *${prefix}hilih*
 ┃├⊱❥ *${prefix}say*
-┃├⊱❥ *${prefix}tinyurl [link]*
-┃├⊱❥ *${prefix}bitly [link]*
 ┃├⊱❥ *${prefix}apakah*
 ┃├⊱❥ *${prefix}kapankah*
 ┃├⊱❥ *${prefix}bisakah*
 ┃├⊱❥ *${prefix}rate*
 ┃├⊱❥ *${prefix}watak*
 ┃├⊱❥ *${prefix}hobby*
-┃├⊱❥ *${prefix}jamdunia [Banyuwangi]*
-┃╰────────────────────
-┣━━━━━━━━━━━━━━━━━━━━━━━━❥
-┃╭────────────────────
-┃├⊱❥ *${prefix}gantengcek [Farhan]*
-┃├⊱❥ *${prefix}cantikcek [Iriene]*
-┃├⊱❥ *${prefix}artinama [Farhan]*
+┃├⊱❥ *${prefix}infogempa*
+┃├⊱❥ *${prefix}infonomor*
+┃├⊱❥ *${prefix}quotes*
 ┃├⊱❥ *${prefix}truth*
 ┃├⊱❥ *${prefix}dare*
 ┃├⊱❥ *${prefix}katabijak*
 ┃├⊱❥ *${prefix}fakta*
-┃├⊱❥ *${prefix}mimpi [Ular]*
-┃├⊱❥ *${prefix}translate [en/Apa kabar?]*
 ┃├⊱❥ *${prefix}darkjokes*
-┃├⊱❥ *${prefix}persengay [Topan]*
-┃├⊱❥ *${prefix}pbucin [Farhan]*
-┃├⊱❥ *${prefix}quotebucin*
-┃├⊱❥ *${prefix}bpfont [Farhan]*
-┃├⊱❥ *${prefix}textstyle [FXC7]*
+┃├⊱❥ *${prefix}bucin*
 ┃├⊱❥ *${prefix}pantun*
 ┃╰────────────────────
 ┣━━━━━━━━━━━━━━━━━━━━━━━━❥
 ┃╭────────────────────
-┃├⊱❥ *${prefix}quran*
-┃├⊱❥ *${prefix}jadwalsholat [Banyuwangi]*
-┃├⊱❥ *${prefix}infogempa*
-┃├⊱❥ *${prefix}infocuaca [Banyuwangi]*
-┃├⊱❥ *${prefix}infonomor*
-┃├⊱❥ *${prefix}quotes*
+┃├⊱❥ *${prefix}translate [en/Apa kabar?]*
+┃├⊱❥ *${prefix}gantengcek [Farhan]*
+┃├⊱❥ *${prefix}cantikcek [Iriene]*
+┃├⊱❥ *${prefix}artinama [Farhan]*
+┃├⊱❥ *${prefix}persengay [Topan]*
+┃├⊱❥ *${prefix}pbucin [Farhan]*
+┃├⊱❥ *${prefix}bpfont [Farhan]*
+┃├⊱❥ *${prefix}textstyle [FXC7]*
+┃├⊱❥ *${prefix}jadwaltv [antv]*
 ┃├⊱❥ *${prefix}lirik [melukis senja]*
 ┃├⊱❥ *${prefix}chord [Melukis senja]*
 ┃├⊱❥ *${prefix}wiki [Adolf Hitler]*
@@ -239,7 +244,18 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃├⊱❥ *${prefix}joox [Monolog Pamungkas]*
 ┃├⊱❥ *${prefix}smule [Link Video Smule]*
 ┃├⊱❥ *${prefix}pinterest [gambar kucing]*
-┃╰────────────────────────
+┃├⊱❥ *${prefix}infocuaca [Banyuwangi]*
+┃├⊱❥ *${prefix}jamdunia [Banyuwangi]*
+┃├⊱❥ *${prefix}mimpi [Ular]*
+┃├⊱❥ *${prefix}tinyurl [link]*
+┃├⊱❥ *${prefix}bitly [link]*
+┃╰────────────────────
+┣━━━━━━━━━━━━━━━━━━━━━━━━❥
+┃╭────────────────────
+┃├⊱❥ *${prefix}jadwalsholat [Banyuwangi]*
+┃├⊱❥ *${prefix}quran*
+┃├⊱❥ *${prefix}quransurah [1]*
+┃╰────────────────────
 ┣━━━━━━━━━━━━━━━━━━━━━━━━❥
 ┃╭────────────────────
 ┃├⊱❥ *${prefix}encode64 [string]*
@@ -247,9 +263,9 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃╰────────────────────────
 ┣━━━━━━━━━━━━━━━━━━━━━━━━❥
 ┃╭────────────────────
-┃├⊱❥ *${prefix}spamcall [nomer]*
-┃├⊱❥ *${prefix}spamsms [nomer/jumlah]*
-┃├⊱❥ *${prefix}spamgmail [gmail/jumlah]*
+┃├⊱❥ *${prefix}spamcall [083xxxxxxxxx]*
+┃├⊱❥ *${prefix}spamsms [083xxxxxxxx/jumlah]*
+┃├⊱❥ *${prefix}spamgmail [blabla@gmail.com/jumlah]*
 ┃╰────────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
