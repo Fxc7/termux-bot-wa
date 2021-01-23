@@ -8,14 +8,24 @@
 * New Features
 */
 const {
-    WAConnection,
-    MessageType,
-    Presence,
-    Mimetype,
-    GroupSettingChange
-} = require('@adiwajshing/baileys')
+   WAConnection,
+   MessageType,
+   Presence,
+   MessageOptions,
+   Mimetype,
+   WALocationMessage,
+   WA_MESSAGE_STUB_TYPES,
+   ReconnectMode,
+   ProxyAgent,
+   GroupSettingChange,
+   waChatKey,
+   mentionedJid,
+   processTime,
+} = require("@adiwajshing/baileys")
 
+const axios = require('axios')
 const fs = require('fs')
+const crypto = require('crypto')
 const imageToBase64 = require('image-to-base64')
 const imgbb = require('imgbb-uploader')
 const moment = require('moment-timezone')
@@ -28,6 +38,7 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const lolis = require('lolis.life')
 const loli = new lolis()
 const Math_js = require('mathjs')
+const cd = 4.32e+7
 
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
@@ -270,10 +281,10 @@ async function starts() {
 					if (isUser) return reply('kamu sudah terdaftar')
 					if (isBanned) return reply(mess.only.benned)
 					if (args.length < 1) return reply(`Parameter Salah\nCommand : ${prefix}daftar nama/umur\nContoh : ${prefix}daftar Farhan/17/Banyuwangi`)
-					var reg = body.slice(8)
-					var jeneng = reg.split("/")[0];
-					var umure = reg.split("/")[1];
-					var asal = reg.split("/")[2];
+					reg = body.slice(8)
+					jeneng = reg.split("/")[0];
+					umure = reg.split("/")[1];
+					asal = reg.split("/")[2];
 						user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
 						client.sendMessage(from, `\`\`\`Pendaftaran berhasil dengan SN: TM08GK8PPHBSJDH10J\`\`\`\n\n\`\`\`Pada ${date} ${time}\`\`\`\n\`\`\`[Nama]: ${jeneng}\`\`\`\n\`\`\`[Nomor]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`[Umur]: ${umure} Tahun\`\`\`\n\`\`\`[Asal]: ${asal}\`\`\`\n\`\`\`Untuk menggunakan bot\`\`\`\n\`\`\`silahkan\`\`\`\n\`\`\`kirim ${prefix}help/menu\`\`\`\n\`\`\`\nTotal Pengguna: ${user.length} Orang\`\`\``, text, {quoted: mek})
@@ -675,7 +686,7 @@ async function starts() {
 				    ts = body.slice(11)
 				    kode = ts.split("/")[0]
 				    teks = ts.split("/")[1]
-				    var anu = await fetchJson(`https://arugaz.my.id/api/edu/translate?lang=${kode}&text=${teks}`)
+				    anu = await fetchJson(`https://arugaz.my.id/api/edu/translate?lang=${kode}&text=${teks}`)
 				    reply(mess.wait)
 				    translate = `Text Asli: *${body.slice(11)}*\n\nHasil: *${anu.text}*`
 				    client.sendMessage(from, translate, text, {quoted: mek})
@@ -688,7 +699,7 @@ async function starts() {
 				    ts = body.slice(4)
 				    kode = ts.split("/")[0]
 				    teks = ts.split("/")[1]
-				    var anu = await fetchJson(`https://arugaz.my.id/api/edu/translate?lang=${kode}&text=${teks}`)
+				    anu = await fetchJson(`https://arugaz.my.id/api/edu/translate?lang=${kode}&text=${teks}`)
 				    reply(mess.wait)
 				    ts = `Text Asli: *${body.slice(7)}*\n\nHasil: *${anu.text}*`
 				    client.sendMessage(from, ts, text, {quoted: mek})
@@ -956,8 +967,8 @@ async function starts() {
                 if (!isUser) return reply(mess.only.userB)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
 					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
+					n = JSON.parse(JSON.stringify(anu));
+					nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek , caption: 'meong🐈'})
 					break
@@ -991,8 +1002,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Naruto`, {method: 'get'})
-					var naru = JSON.parse(JSON.stringify(anu));
-					var to =  naru[Math.floor(Math.random() * naru.length)];
+					naru = JSON.parse(JSON.stringify(anu));
+					to =  naru[Math.floor(Math.random() * naru.length)];
 					nye = await getBuffer(to)
 					client.sendMessage(from, nye, image, { caption: 'naruto!!', quoted: mek })
 					break
@@ -1002,8 +1013,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Minato`, {method: 'get'})
-					var min = JSON.parse(JSON.stringify(anu));
-					var ato =  min[Math.floor(Math.random() * min.length)];
+					min = JSON.parse(JSON.stringify(anu));
+					ato =  min[Math.floor(Math.random() * min.length)];
 					nye = await getBuffer(ato)
 					client.sendMessage(from, nye, image, { caption: 'minato!!', quoted: mek })
 					break
@@ -1013,8 +1024,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Boruto`, {method: 'get'})
-					var bor = JSON.parse(JSON.stringify(anu));
-					var uto =  bor[Math.floor(Math.random() * bor.length)];
+					bor = JSON.parse(JSON.stringify(anu));
+					uto =  bor[Math.floor(Math.random() * bor.length)];
 					nye = await getBuffer(uto)
 					client.sendMessage(from, nye, image, { caption: 'boruto!!', quoted: mek })
 					break
@@ -1024,8 +1035,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Hinata`, {method: 'get'})
-					var hina = JSON.parse(JSON.stringify(anu));
-					var ta =  hina[Math.floor(Math.random() * hina.length)];
+					hina = JSON.parse(JSON.stringify(anu));
+					ta =  hina[Math.floor(Math.random() * hina.length)];
 					nye = await getBuffer(ta)
 					client.sendMessage(from, nye, image, { caption: 'hinata!!', quoted: mek })
 					break
@@ -1035,8 +1046,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=sasuke`, {method: 'get'})
-					var sasu = JSON.parse(JSON.stringify(anu));
-					var ke =  sasu[Math.floor(Math.random() * sasu.length)];
+					sasu = JSON.parse(JSON.stringify(anu));
+					ke =  sasu[Math.floor(Math.random() * sasu.length)];
 					nye = await getBuffer(ke)
 					client.sendMessage(from, nye, image, { caption: 'sasuke!!', quoted: mek })
 					break
@@ -1046,8 +1057,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=sakura`, {method: 'get'})
-					var sak = JSON.parse(JSON.stringify(anu));
-					var kura =  sak[Math.floor(Math.random() * sak.length)];
+					sak = JSON.parse(JSON.stringify(anu));
+					kura =  sak[Math.floor(Math.random() * sak.length)];
 					nye = await getBuffer(kura)
 					client.sendMessage(from, nye, image, { caption: 'sakura!!', quoted: mek })
 					break
@@ -1059,8 +1070,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kaneki`, {method: 'get'})
-					var kan = JSON.parse(JSON.stringify(anu));
-					var eki =  kan[Math.floor(Math.random() * kan.length)];
+					kan = JSON.parse(JSON.stringify(anu));
+					eki =  kan[Math.floor(Math.random() * kan.length)];
 					nye = await getBuffer(eki)
 					client.sendMessage(from, nye, image, { caption: 'kaneki!!', quoted: mek })
 					break
@@ -1070,8 +1081,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+touka`, {method: 'get'})
-					var tou = JSON.parse(JSON.stringify(anu));
-					var ka =  tou[Math.floor(Math.random() * tou.length)];
+					tou = JSON.parse(JSON.stringify(anu));
+					ka =  tou[Math.floor(Math.random() * tou.length)];
 					nye = await getBuffer(ka)
 					client.sendMessage(from, nye, image, { caption: 'toukachan!!', quoted: mek })
 					break
@@ -1081,8 +1092,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+rize`, {method: 'get'})
-					var ri = JSON.parse(JSON.stringify(anu));
-					var ze =  ri[Math.floor(Math.random() * ri.length)];
+					ri = JSON.parse(JSON.stringify(anu));
+					ze =  ri[Math.floor(Math.random() * ri.length)];
 					nye = await getBuffer(ze)
 					client.sendMessage(from, nye, image, { caption: 'rize chan!!', quoted: mek })
 					break
@@ -1092,8 +1103,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+akira`, {method: 'get'})
-					var ak = JSON.parse(JSON.stringify(anu));
-					var ara =  ak[Math.floor(Math.random() * ak.length)];
+					ak = JSON.parse(JSON.stringify(anu));
+					ara =  ak[Math.floor(Math.random() * ak.length)];
 					nye = await getBuffer(ara)
 					client.sendMessage(from, nye, image, { caption: 'akira chan!!', quoted: mek })
 					break
@@ -1103,8 +1114,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+itori`, {method: 'get'})
-					var it = JSON.parse(JSON.stringify(anu));
-					var ori =  it[Math.floor(Math.random() * it.length)];
+					it = JSON.parse(JSON.stringify(anu));
+					ori =  it[Math.floor(Math.random() * it.length)];
 					nye = await getBuffer(ori)
 					client.sendMessage(from, nye, image, { caption: 'itori chan!!', quoted: mek })
 					break
@@ -1114,8 +1125,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+karumi`, {method: 'get'})
-					var kur = JSON.parse(JSON.stringify(anu));
-					var imi =  kur[Math.floor(Math.random() * kur.length)];
+					kur = JSON.parse(JSON.stringify(anu));
+					imi =  kur[Math.floor(Math.random() * kur.length)];
 					nye = await getBuffer(imi)
 					client.sendMessage(from, nye, image, { caption: 'kurumi chan!!', quoted: mek })
 					break
@@ -1125,8 +1136,8 @@ async function starts() {
 					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+miku`, {method: 'get'})
-					var mi = JSON.parse(JSON.stringify(anu));
-					var ku =  mi[Math.floor(Math.random() * mi.length)];
+					mi = JSON.parse(JSON.stringify(anu));
+					ku =  mi[Math.floor(Math.random() * mi.length)];
 					nye = await getBuffer(ku)
 					client.sendMessage(from, nye, image, { caption: 'miku chan!!', quoted: mek })
 					break
@@ -1136,8 +1147,8 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
 					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
+					n = JSON.parse(JSON.stringify(anu));
+					nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
@@ -1272,10 +1283,10 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Yang mau di tulis apaan?')
-					var tulis = body.slice(7)
-					var nama = tulis.split("/")[0];
-					var kelas = tulis.split("/")[1];
-					var isi = tulis.split("/")[2];
+					tulis = body.slice(7)
+					nama = tulis.split("/")[0];
+					kelas = tulis.split("/")[1];
+					isi = tulis.split("/")[2];
 					reply(mess.wait)
 					nulis = await getBuffer(`https://api.zeks.xyz/api/magernulis?nama=${nama}&kelas=${kelas}&text=${isi}`, {method: 'get'})
 					client.sendMessage(from, nulis, image, {quoted: mek, caption: mess.success})
@@ -1301,9 +1312,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					reply(mess.wait)
-					var pubg = body.slice(7)
-					var text1 = pubg.split("/")[0];
-					var text2 = pubg.split("/")[1];
+					pubg = body.slice(7)
+					text1 = pubg.split("/")[0];
+					text2 = pubg.split("/")[1];
 					anu = await fetchJson(`https://api.zeks.xyz/api/pubglogo?text1=${text1}&text2=${text2}&apikey=${ZeksApi}`)
 					pubg = await getBuffer(anu.result)
 					client.sendMessage(from, pubg, image, {quoted: mek})
@@ -1311,7 +1322,7 @@ async function starts() {
 				case 'csky':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var sky = body.slice(6)
+					sky = body.slice(6)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.zeks.xyz/api/skytext?text=${sky}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1321,7 +1332,7 @@ async function starts() {
 				case 'cwooden':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var wood = body.slice(9)
+					wood = body.slice(9)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.zeks.xyz/api/woodentext?text=${wood}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1331,7 +1342,7 @@ async function starts() {
 				case 'ccrossfire':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var cf = body.slice(12)
+					cf = body.slice(12)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.zeks.xyz/api/crosslogo?text=${cf}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1341,7 +1352,7 @@ async function starts() {
 				case 'cgbutton':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var gold = body.slice(10)
+					gold = body.slice(10)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-zeks.harispoppy.com/api/gplaybutton?text=${gold}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1351,7 +1362,7 @@ async function starts() {
 				case 'csbutton':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var silver = body.slice(10)
+					silver = body.slice(10)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-zeks.harispoppy.com/api/splaybutton?text=${silver}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1361,7 +1372,7 @@ async function starts() {
 				case 'cflower':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var flower = body.slice(9)
+					flower = body.slice(9)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.zeks.xyz/api/flowertext?text=${flower}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1371,7 +1382,7 @@ async function starts() {
 				case 'cnaruto':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					var naruto = body.slice(9)
+					naruto = body.slice(9)
 					if (args.length < 1) return reply('Teksnya mana um')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.zeks.xyz/api/naruto?text=${naruto}&apikey=${ZeksApi}`, {method: 'get'})
@@ -1497,9 +1508,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    var hm = body.slice(11)
-                    var text1 = hm.split("/")[0];
-                    var text2 = hm.split("/")[1];
+                    hm = body.slice(11)
+                    text1 = hm.split("/")[0];
+                    text2 = hm.split("/")[1];
                     reply(mess.wait)
                     avengers = await getBuffer(`https://arugaz.my.id/api/textpro/avengers?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, avengers, image, {quoted: mek, caption: 'nih gan'})
@@ -1508,9 +1519,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    var hm = body.slice(9)
-                    var text1 = hm.split("/")[0];
-                    var text2 = hm.split("/")[1];
+                    hm = body.slice(9)
+                    text1 = hm.split("/")[0];
+                    text2 = hm.split("/")[1];
                     reply(mess.wait)
                     marvel = await getBuffer(`https://arugaz.my.id/api/textpro/marvelstudio?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, marvel, image, {quoted: mek, caption: 'nih gan'})
@@ -1689,10 +1700,10 @@ async function starts() {
 			    case 'quotemaker':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-					var gh = body.slice(12)
-					var quote = gh.split("/")[0];
-					var wm = gh.split("/")[1];
-					var bg = gh.split("/")[2];
+					gh = body.slice(12)
+					quote = gh.split("/")[0];
+					wm = gh.split("/")[1];
+					bg = gh.split("/")[2];
 					const pref = `Usage: \n${prefix}quotemaker teks/watermark/theme\n\nEx :\n${prefix}quotemaker ini contoh/bicit/random`
 					if (args.length < 1) return reply(pref)
 					reply(mess.wait)
@@ -1704,9 +1715,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    var hm = body.slice(8)
-                    var text1 = hm.split("/")[0];
-                    var text2 = hm.split("/")[1];
+                    hm = body.slice(8)
+                    text1 = hm.split("/")[0];
+                    text2 = hm.split("/")[1];
                     reply(mess.wait)
                     glitch = await getBuffer(`https://arugaz.my.id/api/textpro/glitchtext?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, glitch, image, {quoted: mek, caption: 'nih gan'})
@@ -1715,9 +1726,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    var hm = body.slice(10)
-                    var text1 = hm.split("/")[0];
-                    var text2 = hm.split("/")[1];
+                    hm = body.slice(10)
+                    text1 = hm.split("/")[0];
+                    text2 = hm.split("/")[1];
                     reply(mess.wait)
                     space3d = await getBuffer(`https://arugaz.my.id/api/textpro/space3d?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, space3d, image, {quoted: mek, caption: 'nih gan'})
@@ -1726,9 +1737,9 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    var hm = body.slice(10)
-                    var text1 = hm.split("/")[0];
-                    var text2 = hm.split("/")[1];
+                    hm = body.slice(10)
+                    text1 = hm.split("/")[0];
+                    text2 = hm.split("/")[1];
                     reply(mess.wait)
                     stune3d = await getBuffer(`https://arugaz.my.id/api/textpro/stonetext?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, stune3d, image, {quoted: mek, caption: 'nih gan'})
@@ -1736,9 +1747,9 @@ async function starts() {
                 case 'cphlogo':
                 if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
-					var gh = body.slice(9)
-					var gbl1 = gh.split("/")[0];
-					var gbl2 = gh.split("/")[1];
+					gh = body.slice(9)
+					gbl1 = gh.split("/")[0];
+					gbl2 = gh.split("/")[1];
 					if (args.length < 1) return reply('Teksnya mana gan?')
 					reply(mess.wait)
 					buffer = await getBuffer(`https://arugaz.my.id/api/textpro/pornhub?text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
@@ -1805,7 +1816,7 @@ async function starts() {
 				case 'encode64':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				var encode64 = body.slice(10)
+				encode64 = body.slice(10)
 				reply(mess.wait)
 				anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/base64?encode=${encode64}`, {method: 'get'})
 				reply(anu.result.encode)
@@ -1813,7 +1824,7 @@ async function starts() {
 				case 'decode64':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				var decode64 = body.slice(10)
+				decode64 = body.slice(10)
 				reply(mess.wait)
 					anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/base64?decode=${decode64}`, {method: 'get'})
 					reply(anu.result.encode)
@@ -2308,7 +2319,7 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Masukan nama daerah!!')
-					var sholat = body.slice(9)
+					sholat = body.slice(9)
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jadwalshalat?q=${sholat}&apikey=${TobzApi}`, {method: 'get'})
 					reply(mess.wait)
 					if (anu.result) return reply(anu.result)
@@ -2375,7 +2386,7 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
                     if (args.length < 1) return reply('teks nya mana om?')
-                   var wiki = body.slice(5)
+                   wiki = body.slice(5)
                     reply(mess.wait)
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/wiki?q=${wiki}`, {method: 'get'})
                     if (anu.error) return reply(anu.error)
@@ -2416,16 +2427,16 @@ async function starts() {
 		case 'spamcall':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			var call = body.slice(10)
+			call = body.slice(10)
 			anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/spamcall?no=${call}`, {method: 'get'})
 			reply(anu.logs)
 			break 
 		case 'spamgmail':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			var spam = body.slice(10)
-			var gmail = spam.split("/")[0];
-			var jum =spam.split("/")[1];
+			spam = body.slice(10)
+			gmail = spam.split("/")[0];
+			jum =spam.split("/")[1];
 			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/spamgmail?target=${gmail}&jum=${jum}&apikey=${TobzApi}`, {method: 'get'})
 			reply(anu.logs)
 			break 
@@ -2465,7 +2476,7 @@ async function starts() {
 		case 'jamdunia':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			var jam = body.slice(10)
+		 jam = body.slice(10)
 			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jamdunia?lokasi=${jam}&apikey=${TobzApi}`)
 			reply(anu.result.time)
 			break 
@@ -2488,17 +2499,28 @@ async function starts() {
 					})
 					break
 
-				case 'kalkulator':
-					if (isBanned) return reply(mess.only.benned)    
-				   if (!isUser) return reply(mess.only.userB)
-				     if (args.length < 1) return reply(`Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
-				   var mtk = body.slice(6)
-				    if (typeof Math_js.evaluate(mtk) !== "number") {
-					reply(`"${mtk}", bukan angka!\nKirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
-				} else {
-					reply(`*「 MATH 」*\n\n*Kalkulator*\n${mtk} = ${Math_js.evaluate(mtk)}`)
-				}
-				    break 
+				case 'setppbot':
+					if (!isOwner) return reply(ind.ownerb())
+				    client.updatePresence(from, Presence.composing) 
+					if (!isQuotedImage) return reply(`Kirim gambar dengan caption ${prefix}setbotpp atau tag gambar yang sudah dikirim`)
+					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+					media = await client.downloadAndSaveMediaMessage(enmedia)
+					await client.updateProfilePicture(botNumber, media)
+					reply('Makasih profil barunya😗')
+					break 
+					case 'brainly':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+                    brien = body.slice(9)
+					brainly(`${brien}`).then(res => {
+					teks = '❉───────────❉\n'
+					for (let Y of res.data) {
+						teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n❉───────────❉\n`
+					}
+					client.sendMessage(from, teks, text, {quoted: mek, detectLinks: false})
+                        console.log(res)
+                    })
+					break 
 
 				default:
 					if (body.startsWith(`${prefix}${command}`)) {
