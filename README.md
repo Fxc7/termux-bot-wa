@@ -1,6 +1,6 @@
-### Moshi Moshi~ I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
+### I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
 <p align="center">
-<a href="https://github.com/NazwaS"><img src="https://raw.githubusercontent.com/NazwaS/NazwaS/main/img/Nazwa.jpg"></a>
+<a href="https://github.com/FarhanXCode7"><img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/"></a>
 </p>
 <br>
 
