@@ -14,9 +14,9 @@
 </p>
 <p align="center">
 <a href="https://github.com/FarhanXCode7/termux-bot-wa/followers"><img title="Followers" src="https://img.shields.io/github/followers/FarhanXCode7?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/network/members"><img title="Forks" src="https://img.shields.io/github/forks/?FarhanXCode7/termux-bot-wa?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
+<a href="https://github.com/FarhanXCode7/termux-bot-wa/network/members"><img title="Forks" src="https://img.shields.io/github/forks/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
+<a href="https://github.com/FarhanXCode7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
+
 </p>
 
 
