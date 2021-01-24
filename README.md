@@ -200,7 +200,7 @@ Follow The Steps Below!
 
 ## Special Thanks
 
-* Created Bot (https://github.com/MhankBarBar)[MhankBarBar]
+* Created Bot [MhankBarBar](https://github.com/MhankBarBar)
 
 
 
