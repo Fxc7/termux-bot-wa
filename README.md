@@ -1,4 +1,4 @@
-### I'm FXC7BOT<img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="27px">
+### I'm FXC7BOT <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="25px">
 <p align="center">
 <a href="https://github.com/FarhanXCode7"><img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png"></a>
 </p>
@@ -22,7 +22,7 @@
 
 <details>
 
-<summary>🍙 Help me!</summary>
+
 
 * [Ovo](08311800241)
 * [Pulsa](08311800241)
@@ -135,6 +135,7 @@ Follow The Steps Below!
 | ISLAM | YES |
 | :-----------------: | :-------: |
 | Qur'an|✅|
+| Qur'an Surah 1,2,3 dll |✅|
 
 | STALK | YES |
 | :-----------------: | :-------: |
@@ -159,10 +160,11 @@ Follow The Steps Below!
 | Anjing|✅|
 | Alay|✅|
 | Glitch|✅|
-| Game|✅|
+| hilih|✅|
 | Cek Ganteng|✅|
 | Watak|✅|
 | Random Hobby|✅|
+| Pinterest [Optional] |✅|
 
 | INFORMATION | YES |
 | :-----------------: | :-------: |
@@ -191,6 +193,7 @@ Follow The Steps Below!
 | info|✅|
 | ChatList|❌|
 
+
 ## Note
 
 * Dont Forget Stars
@@ -198,9 +201,10 @@ Follow The Steps Below!
 * |En| And You can add your own quotes
 * |Ind| Dan Kalian Bisa tambahkan Quotes Kalian
 
+
 ## Special Thanks
 
-* Created Bot [MhankBarBar](https://github.com/MhankBarBar)
+* Created Bot => [MhankBarBar](https://github.com/MhankBarBar)
 
 
 
