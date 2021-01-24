@@ -42,23 +42,19 @@ Follow The Steps Below!
 ```bash
 > termux-setup-storage
 (after that tap on permission)
-> apt install git -y
+> pkg install git -y
 > git clone https://github.com/FarhanXCode7/termux-bot-wa
 > cd termux-bot-wa
 > bash install.sh
-```
-
-## Usage
-
-```bash
-> npm start
+> npm audit fix
+> npm start / node index.js
 ```
 
 ## Features
 
 | NEW USER | YES
 | :---------------------------------------------: | :-----------: |
-|  Register Name And Age|✅|
+|  Register Name And Age origin|✅|
 
 |  CREATOR  |                                           YES |
 | :---------------------------------------------: | :-----------: |
@@ -75,8 +71,7 @@ Follow The Steps Below!
 | Snow Write Maker|✅|
 | Ninja Logo Maker|✅|
 | Logo Wolf Maker|✅|
-| Logo Wolf Maker2|✅|
-| Dan Masih Banyak Lagi|✅|
+| And much more |✅|
 
 | MEDIA | YES |
 | :-----------------: | :-------: |
@@ -87,7 +82,7 @@ Follow The Steps Below!
 | :-----------------: | :-------: |
 | The Meaning Of The Name|✅|
 | Text To Sticker|✅|
-| Nulis|✅|
+| Nulis Name/class/text|✅|
 | Quotes|✅|
 
 | ASK | YES |
@@ -106,7 +101,7 @@ Follow The Steps Below!
 
 | MEME | YES |
 | :-----------------: | :-------: |
-| Meme|✅|
+| Meme|❌|
 | Meme Indo|✅|
 
 | GROUP | YES |
@@ -156,7 +151,7 @@ Follow The Steps Below!
 | Random Shota|✅|
 | Random Waifu|✅|
 | Random Anime|✅|
-| OTHERS MENU
+| And much more|✅|
 
 | FUN | YES |
 | :-----------------: | :-------: |
@@ -184,6 +179,7 @@ Follow The Steps Below!
 
 | OWNER | YES |
 | :-----------------: | :-------: |
+| Set pp bot|✅|
 | Set Prefix|✅|
 | Block Member|✅|
 | Broadcast|✅|
@@ -195,10 +191,16 @@ Follow The Steps Below!
 | info|✅|
 | ChatList|❌|
 
+## Note
 
+* Dont Forget Stars
 
+* |En| And You can add your own quotes
+* |Ind| Dan Kalian Bisa tambahkan Quotes Kalian
 
+## Special Thanks
 
+* Created Bot (https://github.com/MhankBarBar)[MhankBarBar]
 
 
 
@@ -206,7 +208,6 @@ Follow The Steps Below!
 
 * <a href="https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
-Dan Kalo Minat Kalian Bisa Tambahkan Quotes Hasil Kalian Di Bot
 ---
 
 
