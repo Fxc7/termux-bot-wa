@@ -654,7 +654,7 @@ async function starts() {
 					reply(`berhasil Menambahkan ${premium} Untuk User Premium`)
 					break
 				case 'removeprem':
-					if (!isOwner)return reply(mess.only.ownerB)
+					if (!isOwner) return reply(mess.only.ownerB)
 					rprem = body.slice(13)
 					premium.splice(`${rprem}@s.whatsapp.net`, 1)
 					fs.writeFileSync('./database/json/premium.json', JSON.stringify(premium))
@@ -1260,36 +1260,7 @@ async function starts() {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', quoted: mek, caption: 'Nih Gan'})
 					break
-				case 'ytmp4':
-				  client.updatePresence(from, Presence.composing)
-				if (isBanned) return reply(mess.only.benned)    
-				if (!isPrem) return reply(mess.only.premium)
-				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
-					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					reply(mess.wait)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/ytv?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					ytt = `*Title* : ${anu.title}\nSize: *${anu.filesize}\nDescription: ${anu.desc}\n\n Tunggu Sebentar 1 menit Mungkun Agak Lama Karna Mendownload Video`
-					yt4 = await getBuffer(anu.thumb)
-					client.sendMessage(from, yt4, image, {quoted: mek, caption: ytt})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
-					break
-				case 'ytmp3':
-				if (isBanned) return reply(mess.only.benned)   
-				if (!isPrem) return reply(mess.only.premium) 
-				if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
-					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
-					ytdesc = `Title: *${anu.title}\nSize: *${anu.filesize}*\nDescription: ${anu.desc}`
-					yta = await getBuffer(anu.thumb)
-					client.sendMessage(from, yta, image, {quoted: mek, caption: ytdesc})
-					ytaudio = await getBuffer(anu.result)
-					client.sendMessage(from, ytaudio, audio, {mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
-				break
-
+			
 case 'insta':
 				if (isBanned) return reply(mess.only.benned)
 				if (!isUser) return reply(mess.only.userB)
@@ -2424,34 +2395,73 @@ case 'insta':
                 jtv = `${anu.result}`
                 client.sendMessage(from, jtv, text, {quoted: mek})
                 break
-         
+
+
+// premium user
          case 'joox':
-client.updatePresence(from, Presence.composing)
+         client.updatePresence(from, Presence.composing)
 			if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPrem) return reply(mess.only.premium)
                 data = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(6)}&apikey=${TobzApi}`, {method: 'get'})
                if (data.error) return reply(data.error)
-                 infomp3 = `「 *JOOX* 」\nJudul : ${data.result.judul}\nAlbum : ${data.result.album}\nDipublikasi : ${data.result.dipublikasi}\n*Filesize* : ${data.filesize}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM*`
+                 infomp3 = `「 *JOOX* 」\n\n*• Judul* : ${data.result.judul}\n*• Album* : ${data.result.album}\n*• Dipublikasi* : ${data.result.dipublikasi}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM*`
                 bufferddd = await getBuffer(data.result.thumb)
                  reply(mess.wait)
                 lagu = await getBuffer(data.result.mp3)
                 client.sendMessage(from, bufferddd, image, {quoted: mek, caption: infomp3})
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${data.result.title}.mp3`, quoted: mek})
                 break 
+                
+             case 'ytmp4':
+				  client.updatePresence(from, Presence.composing)
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isPrem) return reply(mess.only.premium)
+				if (!isUser) return reply(mess.only.userB)
+					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
+					mp4 = await fetchJson(`https://tobz-api.herokuapp.com/api/ytv?url=${args[0]}&apikey=${TobzApi}`, {method: 'get'})
+					if (mp4.error) return reply(mp4.error)
+					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${mp4.title}*\n• Size: *${mp4.filesize}*\n• Extensi: *${mp4.ext}*\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					yt4 = await getBuffer(mp4.thumb)
+					reply(mess.wait)
+					buffer = await getBuffer(mp4.result)
+					client.sendMessage(from, yt4, image, {quoted: mek, caption: ytt})
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${mp4.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
+					break
+
+				case 'ytmp3':
+				if (isBanned) return reply(mess.only.benned)   
+				if (!isPrem) return reply(mess.only.premium) 
+				if (!isUser) return reply(mess.only.userB)
+					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
+					mp3 = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${args[0]}&apikey=${TobzApi}`, {method: 'get'})
+					ytdesc = `「 *YOUTUBE MP3 DOWNLOADER* 」\n\n• Title: *${mp3.title}*\n• Size: *${mp3.filesize}*\n• Extensi: *${mp3.ext}*\n\nTunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Audio`
+					yta = await getBuffer(mp3.thumb)
+					reply(mess.wait)
+					ytaudio = await getBuffer(mp3.result)
+					client.sendMessage(from, yta, image, {quoted: mek, caption: ytdesc})
+					client.sendMessage(from, ytaudio, audio, {mimetype: 'audio/mp3', filename: `${mp3.title}.mp3`, quoted: mek})
+				break
+
            case 'playmp3':
-client.updatePresence(from, Presence.composing)
+           client.updatePresence(from, Presence.composing)
                 if (isBanned) return reply(mess.only.benned)
                 if (!isUser) return reply(mess.only.userB)
                 if (!isPrem) return reply(mess.only.premium)
                 ytplay = body.slice(9)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${ytplay}&apikey=${ZeksApi}`, {method: 'get'})
-                playimg = await getBuffer(anu.result.thumbnail)
-               playmp3 = `Judul: *${anu.result.title}*\nSize: *${anu.result.size}*\n\n\nTunggu Sebentar Lagi Ngirim Audio *TOLONG JANGAN SPAM*`
+                ytplaymp3 = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${ytplay}&apikey=${ZeksApi}`, {method: 'get'})
+                playimg = await getBuffer(ytplaymp3.result.thumbnail)
+                playmp3 = `Judul: *${ytplaymp3.result.title}*\nSize: *${ytplaymp3.result.size}*\n\n\nTunggu Sebentar Lagi Ngirim Audio *TOLONG JANGAN SPAM*`
+                reply(mess.wait)
+                buffer = await getBuffer(ytplaymp3.result.url_audio)
                 client.sendMessage(from, playimg, image, {quoted: mek, caption: playmp3})
-                buffer = await getBuffer(anu.result.url_audio)
-                client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
+                client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${ytplaymp3.result.title}.mp3`, quoted: mek})
                 break
+
+// Akhir Fitur Premium
+
 				case 'wiki':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
