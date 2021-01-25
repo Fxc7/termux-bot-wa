@@ -653,7 +653,7 @@ async function starts() {
 					premium = mentioned
 					reply(`berhasil Menambahkan ${premium} Untuk User Premium`)
 					break
-				case 'removeprem'
+				case 'removeprem':
 					if (!isOwner)return reply(mess.only.ownerB)
 					rprem = body.slice(13)
 					premium.splice(`${rprem}@s.whatsapp.net`, 1)
