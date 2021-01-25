@@ -8,8 +8,8 @@ apt-get install ffmpeg
 apt-get install wget
 apt-get install tesseract
 wget -O ~/../usr/share/tessdata/ind.traineddata "https://github.com/tesseract-ocr/tessdata/blob/master/ind.traineddata?raw=true"
+
 npm install
-npm i cache clean -f
-npm audit fix
+
 echo "[*] All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
-echo "Update Features Dont Forget Stars:)
+echo "Updates : fix Bugs"
