@@ -182,6 +182,8 @@ Follow The Steps Below!
 | OWNER | YES |
 | :-----------------: | :-------: |
 | Set pp bot|✅|
+| add premium |✅|
+| remove premium |✅|
 | Set Prefix|✅|
 | Block Member|✅|
 | Broadcast|✅|
