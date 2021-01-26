@@ -57,7 +57,9 @@ let {
   memberLimit,
 } = require('./database/json/setting.json')
 
+
 ban = []
+premium = ["628311800241@s.whatsapp.net"]
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
             + 'FN:Farhan\n'
@@ -154,10 +156,11 @@ async function starts() {
 			const nameReq = insom ? mek.participant : mek.key.remoteJid
 			pushname2 = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
-			const BarBarApi = 'barbar api' 
-			const ZeksApi = 'zeks api' 
-			const TechApi = 'tech api'
-			const TobzApi = 'BotWeA' 
+const BarBarApi = 'Nkwp9oR7Eg9yyKbejBpm' 
+const ZeksApi = 'apivinz' 
+const TechApi = '5BNIDH-1T0kPj-gWqG6q-sHtuHA-AWBSgZ'
+const TobzApi = 'BotWeA' 
+
 			const totalchat = await client.chats.all()
 			
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
@@ -196,7 +199,6 @@ async function starts() {
 
 			const botNumber = client.user.jid
 			const ownerNumber = ["628311800241@s.whatsapp.net"]
-			const premium = ["628311800241@s.whatsapp.net"]
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -701,8 +703,8 @@ async function starts() {
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					premium = mentioned
-					reply(`*berhasil Menambahkan ${premium} Untuk User Premium*\nSilahkan Untuk Menggunakan Fitur Premium`)
+					addpremiun = mentioned
+					reply(`*berhasil Menambahkan ${addpremium} Untuk User Premium*\nSilahkan Untuk Menggunakan Fitur Premium`)
 					break
 				case 'removeprem':
 					if (!isOwner) return reply(mess.only.ownerB)
@@ -1493,9 +1495,8 @@ async function starts() {
                 if (isBanned) return reply(mess.only.benned)
                 tahta = `${body.slice(8)}`
                      reply(mess.wait)
-                     anu = await fetchJson(`https://api.i-tech.id/tools/harta?key=${TechApi}&kata=${tahta}`, {method: 'get'})
-                     butf = `${anu.result}`
-                     client.sendMessage(from, butf, image, {quoted: mek})
+                     buff = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${tahta}&apikey=${ZeksApi}`, {method: 'get'})
+                     client.sendMessage(from, buff, image, {quoted: mek})
                   break
 			    case 'ccloud':
 			    if (isBanned) return reply(mess.only.benned)    
@@ -1878,12 +1879,12 @@ async function starts() {
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
 			    if (args.length < 1) return reply('Username?')
-			    ig = body.slice(9)
-			    reply(mess.wait)
-			    anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/igs?u=${body.slice(9)}`)
-           buffer = await getBuffer(anu.data.profile)
-           igstalk = `Hasil Pencarian Dari: *${ig}*\n\n│❘➧ Username: *${anu.data.fullname}*\n│❘➧ Pengikut : *${anu.data.follower}*\n│❘➧ Mengikuti : *${anu.data.following}*\n│❘➧ Private : *${anu.data.private}*\n│❘➧ Verified : *${anu.data.verified}*\n│❘➧ bio : *${anu.data.bio}*`
-                    client.sendMessage(from, buffer, image, {quoted: mek, caption: igstalk})
+			    ig = `${body.slice(9)}`
+			    igstlk = await fetchJson(`https://mhankbarbar.tech/api/stalk?username=${ig}&apiKey=${BarBarApi}`)
+           buffer = await getBuffer(igstlk.Profile_pic)
+           reply(mess.wait)
+           hasilig = `「 *INSTAGRAM STALKER* 」\n\nHasil Pencarian Dari: *${igstlk.Username}*\n\n• Username: *${igstlk.Name}*\n• Pengikut : *${igstlk.Jumlah_Following}*\n• Mengikuti : *${igstlk.Jumlah_Followers}*\n• Jumlah Post : *${igstlk.Jumlah_Post}*\n• Jumlah Story : *${igstlk.Jumlah_Story}*\n• bio : *${igstlk.Biodata}*`
+       client.sendMessage(from, buffer, image, {quoted: mek, caption: hasilig})
                     break
 			    case 'mimpi':
 			    if (isBanned) return reply(mess.only.benned)    
