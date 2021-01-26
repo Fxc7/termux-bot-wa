@@ -61,6 +61,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ├⊱❥ *${prefix}tiktokstalk [username]*
 ├⊱❥ *${prefix}igstalk [_farhan_xcode7]*
 ├⊱❥ *${prefix}insta [Link]*
+├⊱❥ *${prefix}instastory [username]*
 ├⊱❥ *${prefix}ssweb [url]*
 ├⊱❥ *${prefix}url2img [Url]*
 ├⊱❥ *${prefix}tiktok*
@@ -78,6 +79,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ├⊱❥ *${prefix}stiker*
 ├⊱❥ *${prefix}gifstiker*
 ├⊱❥ *${prefix}toimg*
+├⊱❥ *${prefix}img2url*
+├⊱❥ *${prefix}nobg*
 ├⊱❥ *${prefix}tomp3*
 ├⊱❥ *${prefix}ocr*
 ╰────────────────────────
@@ -163,7 +166,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╭────────────────────────
 ├⊱❥ *${prefix}welcome [On/Off]*
 ├⊱❥ *${prefix}grup [buka/tutup]*
-├⊱❥ *${prefix}antilink*
+├⊱❥ *${prefix}antilink [on/off*
 ├⊱❥ *${prefix}ownergrup*
 ├⊱❥ *${prefix}setpp*
 ├⊱❥ *${prefix}infogc*
@@ -257,6 +260,14 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╭────────────────────────
 ├⊱❥ *${prefix}encode64 [string]*
 ├⊱❥ *${prefix}decode64 [encrypt]*
+├⊱❥ *${prefix}encode32 [string]*
+├⊱❥ *${prefix}decode32 [encrypt]*
+├⊱❥ *${prefix}encbinary [string]*
+├⊱❥ *${prefix}decbinary [encrypt]*
+├⊱❥ *${prefix}encoctal [string]*
+├⊱❥ *${prefix}decoctal [encrypt]*
+├⊱❥ *${prefix}hashidentifier [Encrypt Hash]*
+├⊱❥ *${prefix}dorking [dork]*
 ╰────────────────────────
 
 ╭────────────────────────
