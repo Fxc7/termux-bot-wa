@@ -8,33 +8,12 @@
 * New Features
 */
 const {
-   WAConnection,
+    WAConnection,
     MessageType,
     Presence,
     Mimetype,
-    GroupSettingChange,
-    MessageOptions,
-    WALocationMessage,
-    WA_MESSAGE_STUB_TYPES,
-    ReconnectMode,
-    ProxyAgent,
-    waChatKey,
-    mentionedJid,
-    processTime
-} = require("@adiwajshing/baileys")
-
-const fs = require('fs')
-const imgbb = require('imgbb-uploader')
-const moment = require('moment-timezone')
-const { exec } = require('child_process')
-const kagApi = require('@kagchi/kag-api')
-const fetch = require('node-fetch')
-const tiktod = require('tiktok-scraper')
-const ffmpeg = require('fluent-ffmpeg')
-const imageToBase64 = require('image-to-base64')
-const { removeBackgroundFromImageFile } = require('remove.bg')
-const lolis = require('lolis.life')
-const loli = new lolis()
+    GroupSettingChange
+} = require('@adiwajshing/baileys')
 
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
@@ -44,6 +23,20 @@ const { help } = require('./Fxc7/help')
 const { bahasa } = require('./Fxc7/bahasa')
 const { donasi } = require('./Fxc7/donasi')
 
+const fs = require('fs')
+const moment = require('moment-timezone')
+const { exec } = require('child_process')
+const kagApi = require('@kagchi/kag-api')
+const fetch = require('node-fetch')
+const tiktod = require('tiktok-scraper')
+const ffmpeg = require('fluent-ffmpeg')
+const imgbb = require('imgbb-uploader')
+const imageToBase64 = require('image-to-base64')
+const speed = require('performance-now')
+const { removeBackgroundFromImageFile } = require('remove.bg')
+const lolis = require('lolis.life')
+const loli = new lolis()
+
 const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
@@ -52,11 +45,11 @@ const adminNumber = JSON.parse(fs.readFileSync('./database/json/admin.json'))
 const anime = JSON.parse(fs.readFileSync('./database/json/anime.json'))
 const blocked = JSON.parse(fs.readFileSync('./database/json/blocked.json'))
 const anlink = JSON.parse(fs.readFileSync('./database/json/antilink.json'))
-let {
+/*let {
   groupLimit,
   memberLimit,
 } = require('./database/json/setting.json')
-
+*/
 
 ban = []
 premium = ["628311800241@s.whatsapp.net"]
@@ -156,16 +149,14 @@ async function starts() {
 			const nameReq = insom ? mek.participant : mek.key.remoteJid
 			pushname2 = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
-const BarBarApi = 'Nkwp9oR7Eg9yyKbejBpm' 
-const ZeksApi = 'apivinz' 
-const TechApi = '5BNIDH-1T0kPj-gWqG6q-sHtuHA-AWBSgZ'
-const TobzApi = 'BotWeA' 
-
+            const BarBarApi = 'barbar api' 
+            const ZeksApi = 'apivinz' 
+            const TechApi = 'check Rest'
+            const TobzApi = 'BotWeA' 
+            
 			const totalchat = await client.chats.all()
-			
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
-			const speed = require('performance-now')
 			const date = new Date().toLocaleDateString()
 			const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 			const jam = moment.tz('Asia/Jakarta').format('HH:mm')
@@ -246,7 +237,7 @@ const TobzApi = 'BotWeA'
 			
 		case 'join':
 					if (args.length == 0) return client.reply(from, `maaf ,bot ini hanya bisa dimasukkan ke grup `, id)
-					let linkgrup = body.slice(6)
+					let linkgrup = `${body.slice(6)}`
 					let islink = linkgrup.match(/(https:\/\/chat.whatsapp.com)/gi)
 					let chekgrup = await client.inviteInfo(linkgrup)
 					if (!islink) return client.reply(from, 'Maaf link group-nya salah! ', id)
@@ -317,7 +308,7 @@ const TobzApi = 'BotWeA'
 					if (isUser) return reply('kamu sudah terdaftar')
 					if (isBanned) return reply(mess.only.benned)
 					if (args.length < 1) return reply(`Parameter Salah\nCommand : ${prefix}daftar nama/umur\nContoh : ${prefix}daftar Farhan/17/Banyuwangi`)
-					reg = body.slice(8)
+					reg = `${body.slice(8)}`
 					jeneng = reg.split("/")[0];
 					umure = reg.split("/")[1];
 					asal = reg.split("/")[2];
@@ -521,7 +512,7 @@ const TobzApi = 'BotWeA'
 				   if (!isUser) return reply(mess.only.userB)
 				     if (args.length < 1) return reply(`[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
 				    const Math_js = require('mathjs')
-				    mtk = body.slice(6)
+				    mtk = `${body.slice(6)}`
 				    if (typeof Math_js.evaluate(mtk) !== "number") {
 					reply(`"${mtk}", bukan angka!\n[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
 				} else {
@@ -611,7 +602,7 @@ const TobzApi = 'BotWeA'
                     if (isBanned) return reply(mess.only.benned)
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
-					teks = body.slice(7)
+					teks = `${body.slice(7)}`
 					anu = await fetchJson(`https://api.zeks.xyz/api/emoji-image?apikey=${ZeksApi}&emoji=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
@@ -976,7 +967,7 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
-					teks = body.slice(7)
+					teks = `${body.slice(7)}`
 					reply(mess.wait)
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
 					ssweb = await getBuffer(anu.gambar)
@@ -1068,11 +1059,11 @@ const TobzApi = 'BotWeA'
                case 'infogempa':
                if (isBanned) return reply(mess.only.benned)    
                if (!isUser) return reply(mess.only.userB)
-               reply(mess.wait)
-                   anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/gempa`, {method: 'get'})
+                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infogempa`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   gempa = `Wilayah: *${anu.Wilayah}*\nWaktu: *${anu.Waktu}*\nMagnitudo: *${anu.Magnitudo}*\nKedalaman: *${anu.Kedalaman}*\nLintang Bujur: *${anu.Lintang} ${anu.Bujur}*`
-                   client.sendMessage(from, gempa, text, {quoted: mek})
+                   buff = await getBuffer(anu.map)
+                   gempa = `•Lokasi *${anu.lokasi}*\n• Saran: *${anu.waktu}* \n• Potensi: *${anu.potensi}*\n• Magnitude: *${anu.magnitude}*\n• Kedalaman: *${anu.kedalaman}*\n• Koordinat: *${anu.koordinat}*`
+                   client.sendMessage(from, buff, image, {quoted: mek, caption: gempa})
                    break
                 case 'kucing':
                 if (isBanned) return reply(mess.only.benned)    
@@ -1322,9 +1313,9 @@ const TobzApi = 'BotWeA'
 				if (!isUser) return reply(mess.only.userB)
 				if (!isUrl(args[0]) && !args[0].includes('www.instagram.com')) return reply(mess.error.lv)
 				    anu = await fetchJson(`https://api.zeks.xyz/api/ig?url=${args,[0]}&apikey=${ZeksApi}`, {method: 'get'})
-				    reply(mess.wait)
 				    insta = getBuffer(anu.result.url)
-				    instagram = `Type: *${anu.result.type}*\nDeskripsi: ${anu.result.desc}`
+				    reply(mess.wait)
+				    instagram = `Type: *${anu.result.type}*\nDeskripsi: ${anu.result.caption}`
 				    client.sendMessage(from, insta, {quoted: mek, caption: instagram})
 				    break 
 				    
@@ -1388,6 +1379,13 @@ const TobzApi = 'BotWeA'
 						console.log(`Error :`, color(e,'red'))
 						reply('Kemungkinan username tidak valid')
 					}
+					break 
+				case 'randomwp':
+					if (isBanned) return reply(mess.only.benned)    
+					if (!isUser) return reply(mess.only.userB)
+					anu = await fetchJson(`https://api.zeks.xyz/api/estetikpic?apikey=${ZeksApi}`, {method: 'get'})
+					buff = await getBuffer(anu.result)
+					client.sendMessage(from, buff, image, {quoted: mek})
 					break
 //creator
 				case 'nulis':
@@ -1424,7 +1422,7 @@ const TobzApi = 'BotWeA'
 				case 'cmwolf':
 					  if (!isUser) return reply(mess.only.userB)
 					  if (isBanned) return reply(mess.only.benned)
-					 mwolf = body.slice(8)
+					 mwolf = `${body.slice(8)}`
 					 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=wolf_metal&text=${mwolf}&apikey=${TobzApi}`, {method: 'get'})
 					 cmwolf = await getBuffer(anu.result)
 					 client.sendMessage(from, cmwolf, image, {quoted: mek})
@@ -1432,8 +1430,8 @@ const TobzApi = 'BotWeA'
 				case 'cpubg':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					reply(mess.wait)
-					cpubg = body.slice(7)
+					
+					cpubg = `${body.slice(7)}`
 					cpubg1 = cpubg.split("/")[0];
 					cpubg2 = cpubg.split("/")[1];
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${cpubg1}&text2=${cpubg2}&apikey=${TobzApi}`)
@@ -1443,9 +1441,9 @@ const TobzApi = 'BotWeA'
 				case 'csky':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					sky = body.slice(6)
+					sky = `${body.slice(6)}`
 					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					
 					anu = await fetchJson(`https://api.zeks.xyz/api/skytext?text=${sky}&apikey=${ZeksApi}`, {method: 'get'})
 					gools7 = await getBuffer(anu.result)
 					client.sendMessage(from, gools7, image, {quoted: mek})
@@ -1453,9 +1451,9 @@ const TobzApi = 'BotWeA'
 				case 'cwooden':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					wood = body.slice(9)
+					wood = `${body.slice(9)}`
 					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					
 					anu = await fetchJson(`https://api.zeks.xyz/api/woodentext?text=${wood}&apikey=${ZeksApi}`, {method: 'get'})
 					gools6 = await getBuffer(anu.result)
 					client.sendMessage(from, gools6, image, {quoted: mek})
@@ -1463,9 +1461,9 @@ const TobzApi = 'BotWeA'
 				case 'ccrossfire':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					cf = body.slice(12)
+					cf = `${body.slice(12)}`
 					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					
 					anu = await fetchJson(`https://api.zeks.xyz/api/crosslogo?text=${cf}&apikey=${ZeksApi}`, {method: 'get'})
 					gools5 = await getBuffer(anu.result)
 					client.sendMessage(from, gools5, image, {quoted: mek})
@@ -1473,9 +1471,9 @@ const TobzApi = 'BotWeA'
 				case 'cflower':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					flower = body.slice(9)
+					flower = `${body.slice(9)}`
 					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					
 					anu = await fetchJson(`https://api.zeks.xyz/api/flowertext?text=${flower}&apikey=${ZeksApi}`, {method: 'get'})
 					gools3 = await getBuffer(anu.result)
 					client.sendMessage(from, gools3, image, {quoted: mek})
@@ -1483,9 +1481,9 @@ const TobzApi = 'BotWeA'
 				case 'cnaruto':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-					naruto = body.slice(9)
-					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					naruto = `${body.slice(9)}`
+					if (args.length < 1) return reply('Teksnya mana gan??')
+					
 					anu = await fetchJson(`https://api.zeks.xyz/api/naruto?text=${naruto}&apikey=${ZeksApi}`, {method: 'get'})
 					gools4 = await getBuffer(anu.result)
 					client.sendMessage(from, gools4, image, {quoted: mek})
@@ -1494,7 +1492,8 @@ const TobzApi = 'BotWeA'
                 if (!isUser) return reply(mess.only.userB)
                 if (isBanned) return reply(mess.only.benned)
                 tahta = `${body.slice(8)}`
-                     reply(mess.wait)
+                     if (args.length < 1) return reply('teks nya Mana??')
+                     if (arga.length > 10) return reply('karakter minimal 10')
                      buff = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${tahta}&apikey=${ZeksApi}`, {method: 'get'})
                      client.sendMessage(from, buff, image, {quoted: mek})
                   break
@@ -1502,8 +1501,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     cloud = await getBuffer(`https://arugaz.my.id/api/textpro/realcloud?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, cloud, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1511,8 +1510,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     shadow = await getBuffer(`https://tobz-api.herokuapp.com/api/photooxy?theme=shadow&text=${teks}?apikey=${TobzApi}`, {method: 'get'})
                     client.sendMessage(from, shadow, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1520,8 +1519,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(7)
-                    reply(mess.wait)
+                    teks = `${body.slice(7)}`
+                    
                     sky = await getBuffer(`https://arugaz.my.id/api/textpro/cloudsky?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, sky, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1529,8 +1528,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(10)
-                    reply(mess.wait)
+                    teks = `${body.slice(10)}`
+                    
                     summer = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummer?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, summer, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1538,8 +1537,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     write = await getBuffer(`https://arugaz.my.id/api/textpro/sandwrite?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, write, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1547,8 +1546,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     raved = await getBuffer(`https://arugaz.my.id/api/textpro/sandengraved?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, raved, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1556,8 +1555,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(10)
-                    reply(mess.wait)
+                    teks = `${body.slice(10)}`
+                    
                     sunmory = await getBuffer(`https://arugaz.my.id/api/textpro/sandsummery?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, sunmory, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1565,8 +1564,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     balon = await getBuffer(`https://arugaz.my.id/api/textpro/foilballoon?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, balon, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1574,8 +1573,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(6)
-                    reply(mess.wait)
+                    teks = `${body.slice(6)}`
+                    
                     old = await getBuffer(`https://arugaz.my.id/api/textpro/old1917?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, old, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1583,8 +1582,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     minion = await getBuffer(`https://arugaz.my.id/api/textpro/miniontext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, minion, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1592,8 +1591,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     glue3d = await getBuffer(`https://arugaz.my.id/api/textpro/glue3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, glue3d, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1601,8 +1600,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     holo = await getBuffer(`https://arugaz.my.id/api/textpro/holographic?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, holo, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1610,10 +1609,10 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    hm = body.slice(11)
+                    hm = `${body.slice(11)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
-                    reply(mess.wait)
+                    
                     avengers = await getBuffer(`https://arugaz.my.id/api/textpro/avengers?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, avengers, image, {quoted: mek, caption: 'nih gan'})
 			     	break
@@ -1621,10 +1620,10 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    hm = body.slice(9)
+                    hm = `${body.slice(9)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
-                    reply(mess.wait)
+                    
                     marvel = await getBuffer(`https://arugaz.my.id/api/textpro/marvelstudio?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, marvel, image, {quoted: mek, caption: 'nih gan'})
 			     	break
@@ -1632,8 +1631,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     text3d = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, text3d, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1641,8 +1640,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     blood = await getBuffer(`https://arugaz.my.id/api/textpro/bloodtext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, blood, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1650,8 +1649,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     music = await getBuffer(`https://arugaz.my.id/api/textpro/equalizer?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, music, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1659,8 +1658,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     water = await getBuffer(`https://arugaz.my.id/api/textpro/dropwater?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, water, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1668,8 +1667,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(10)
-                    reply(mess.wait)
+                    teks = `${body.slice(10)}`
+                    
                     flame = await getBuffer(`https://arugaz.my.id/api/flamingtext/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, flame, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1677,8 +1676,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     toxic = await getBuffer(`https://arugaz.my.id/api/textpro/toxictext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, toxic, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1686,8 +1685,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     neon = await getBuffer(`https://arugaz.my.id/api/textpro/greenneon?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, neon, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1695,8 +1694,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     glow = await getBuffer(`https://arugaz.my.id/api/textpro/advancedglow?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, glow, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1704,8 +1703,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(10)
-                    reply(mess.wait)
+                    teks = `${body.slice(10)}`
+                    
                     thunder = await getBuffer(`https://arugaz.my.id/api/textpro/thundertext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, thunder, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1713,8 +1712,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     matrix = await getBuffer(`https://arugaz.my.id/api/textpro/matrixtext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, matrix, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1722,8 +1721,8 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     bokeh = await getBuffer(`https://arugaz.my.id/api/textpro/bokehtext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, bokeh, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1731,8 +1730,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(7)
-                    reply(mess.wait)
+                    teks = `${body.slice(7)}`
+                    
                     fire = await getBuffer(`https://arugaz.my.id/api/textpro/firework?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, fire, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1740,8 +1739,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     cmetal = await getBuffer(`https://arugaz.my.id/api/textpro/metaldark?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, cmetal, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1749,8 +1748,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(7)
-                    reply(mess.wait)
+                    teks = `${body.slice(7)}`
+                    
                     lava = await getBuffer(`https://arugaz.my.id/api/textpro/lavatext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, lava, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1758,8 +1757,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(9)
-                    reply(mess.wait)
+                    teks = `${body.slice(9)}`
+                    
                     luxury = await getBuffer(`https://arugaz.my.id/api/textpro/luxury?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, luxury, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1767,8 +1766,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(8)
-                    reply(mess.wait)
+                    teks = `${body.slice(8)}`
+                    
                     bpink = await getBuffer(`https://arugaz.my.id/api/textpro/blackpink?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, bpink, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1776,8 +1775,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(7)
-                    reply(mess.wait)
+                    teks = `${body.slice(7)}`
+                    
                     neon = await getBuffer(`https://arugaz.my.id/api/textpro/neonlight?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, neon, image, {quoted: mek, caption: `${teks}`})
 			     	break 
@@ -1785,8 +1784,8 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(10)
-                    reply(mess.wait)
+                    teks = `${body.slice(10)}`
+                    
                     txtneon = await getBuffer(`https://arugaz.my.id/api/textpro/neontext?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, txtneon, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -1794,21 +1793,21 @@ const TobzApi = 'BotWeA'
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(11)
-                    reply(mess.wait)
+                    teks = `${body.slice(11)}`
+                    
                     vintage = await getBuffer(`https://arugaz.my.id/api/textpro/realvintage?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, vintage, image, {quoted: mek, caption: `${teks}`})
 			     	break
 			    case 'quotemaker':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
-					gh = body.slice(12)
+					gh = `${body.slice(12)}`
 					quote = gh.split("/")[0];
 					wm = gh.split("/")[1];
 					bg = gh.split("/")[2];
 					const pref = `Usage: \n${prefix}quotemaker teks/watermark/theme\n\nEx :\n${prefix}quotemaker ini contoh/bicit/random`
 					if (args.length < 1) return reply(pref)
-					reply(mess.wait)
+					
 					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=${bg}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -1817,10 +1816,10 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    hm = body.slice(8)
+                    hm = `${body.slice(8)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
-                    reply(mess.wait)
+                    
                     glitch = await getBuffer(`https://arugaz.my.id/api/textpro/glitchtext?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, glitch, image, {quoted: mek, caption: 'nih gan'})
 			     	break
@@ -1828,10 +1827,10 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    hm = body.slice(10)
+                    hm = `${body.slice(10)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
-                    reply(mess.wait)
+                    
                     space3d = await getBuffer(`https://arugaz.my.id/api/textpro/space3d?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, space3d, image, {quoted: mek, caption: 'nih gan'})
 			     	break
@@ -1839,21 +1838,21 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    hm = body.slice(10)
+                    hm = `${body.slice(10)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];
-                    reply(mess.wait)
+                    
                     stune3d = await getBuffer(`https://arugaz.my.id/api/textpro/stonetext?text1=${text1}&text2=${text2}`, {method: 'get'})
                     client.sendMessage(from, stune3d, image, {quoted: mek, caption: 'nih gan'})
 			     	break
                 case 'cphlogo':
                 if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
-					gh = body.slice(9)
+					gh = `${body.slice(9)}`
 					gbl1 = gh.split("/")[0];
 					gbl2 = gh.split("/")[1];
 					if (args.length < 1) return reply('Teksnya mana gan?')
-					reply(mess.wait)
+					
 					buffer = await getBuffer(`https://arugaz.my.id/api/textpro/pornhub?text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
@@ -1933,9 +1932,28 @@ const TobzApi = 'BotWeA'
                  jsonData = JSON.parse(data);
                  randIndex = Math.floor(Math.random() * jsonData.length);
                  randKey = jsonData[randIndex];
-          darkjokes = await getBuffer(randKey.result)
-                client.sendMessage(from, darkjokes, image, {quoted: mek, caption: '\`\`\`DARK JOKES\`\`\`'})
+                 darkjokes = await getBuffer(randKey.result)
+                 client.sendMessage(from, darkjokes, image, {quoted: mek, caption: '\`\`\`DARK JOKES\`\`\`'})
 				break 
+				
+			case 'katacinta':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/katacinta`, {method: 'get'})
+				katacin = `*${anu.result}*`
+				client.sendMessage(from, katacin, text, {quoted: mek})
+				break 
+				
+			case 'pasangan':
+				pa = `${body.slice(10)}`
+				sa = pa.split("/")[0];
+				ngan = pa.split("/")[1];
+				anu = await fetchJson(`https://scrap.terhambar.com/jodoh?n1=${sa}&n2=${ngan}`, {method: 'get'})
+				buff = await getBuffer(anu.result.gambar)
+				pasang = `Hasil Pasangan Dari *${anu.result.nama_anda}* Dan *${anu.result.nama_pasangan}*\n\nHal Positif: *${anu.result.positif}*\n\nHal Negatif: *${anu.result.negatif}*`
+				client.sendMessage(from, buff, image, {quoted: mek, caption: pasang})
+			break
+
 			case 'persengay':
 			case 'gaypersen':
 				if (!isUser) return reply(mess.only.userB)
@@ -2246,7 +2264,7 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Textnya mana kak?')
-					teks = body.slice(6)
+					teks = `{$body.slice(6)}`
 					anu = await simih(teks) 
 					fetchJson(`https://api.i-tech.id/tools/simi?key=${TechApi}&lang=id&kata=${teks}`, {method: 'get'})
 					if (anu.error) return reply('Simi ga tau kak')
@@ -2381,8 +2399,8 @@ const TobzApi = 'BotWeA'
 	 if (isBanned) return reply(mess.only.benned)    
      if (!isUser) return reply(mess.only.userB)
      if (args.length < 1) return reply(from, 'Kirim perintah *!cuaca [tempat]*\nContoh : *!cuaca tangerang', id)
-            const tempat = body.slice(7)
-            const weather = await fetchJson('https://mhankbarbar.herokuapp.com/api/cuaca?q='+ tempat, {method: 'get'})
+            tempat = `${body.slice(7)}`
+            weather = await fetchJson('https://mhankbarbar.herokuapp.com/api/cuaca?q='+ tempat, {method: 'get'})
             if (weather.error) {
              reply(from, weather.error, text)
             } else {
@@ -2394,7 +2412,7 @@ const TobzApi = 'BotWeA'
 					client.updatePresence(from, Presence.composing) 
 					 if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
-                pin = body.slice(11)
+                pin = `${body.slice(11)}`
 					data = await fetchJson(`https://api.zeks.xyz/api/pin?q=${body.slice(11)}&apikey=${ZeksApi}`, {method: 'get'})
 					reply(mess.wait)
 					pinterest = await getBuffer(data.result)
@@ -2405,7 +2423,7 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Masukan nama daerah!!')
-					sholat = body.slice(14)
+					sholat = `${body.slice(14)}`
 					anu = await fetchJson(`https://mhankbarbar.tech/api/jadwalshalat?daerah=${sholat}&apiKey=${BarBarApi}`, {method: 'get'})
 					reply(mess.wait)
 					if (anu.result) return reply(anu.result)
@@ -2416,12 +2434,19 @@ const TobzApi = 'BotWeA'
                 if (isBanned) return reply(mess.wait.benned)
                 if (!isUser) return reply(mess.only.userB)
                 if (args.length < 1)return reply('Nama Channelnya??')
-                jadwaltv = body.slice(10)
-                anu = await fetchJson(`https://api.zeks.xyz/api/jadwaltv?channel=${jadwaltv}&apikey=${ZeksApi}`, {method: 'get'})
+                jadwaltv = `${body.slice(10)}`
+                anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/jadwaltv?ch=${jadwaltv}`, {method: 'get'})
                 jtv = `${anu.result}`
                 client.sendMessage(from, jtv, text, {quoted: mek})
+                break 
+                
+           case 'jadwaltvnow':
+                if (isBanned) return reply(mess.wait.benned)
+                if (!isUser) return reply(mess.only.userB)
+                anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/jadwaltvnow`, {method: 'get'})
+                tvnow = `Jadwal Tv Sekarang Pada Jam : *${anu.result.jam}* Adalah: \n *${anu.result.jadwalTV}`
+                client.sendMessage(from, tvnow, text, {quoted: mek})
                 break
-
 
 // premium user
          case 'joox':
@@ -2473,7 +2498,7 @@ const TobzApi = 'BotWeA'
                 if (isBanned) return reply(mess.only.benned)
                 if (!isUser) return reply(mess.only.userB)
                 if (!isPrem) return reply(mess.only.premium)
-                ytplay = body.slice(9)
+                ytplay = `${body.slice(9)}`
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${ytplay}&apikey=${ZeksApi}`, {method: 'get'})
                 buff = await getBuffer(anu.result.thumbnail)
                 playmp3 = `Judul: *${anu.result.title}*\nSize: *${anu.result.size}*\n\n\nTunggu Sebentar Lagi Ngirim Audio *TOLONG JANGAN SPAM*`
@@ -2489,7 +2514,7 @@ const TobzApi = 'BotWeA'
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
                     if (args.length < 1) return reply('teks nya mana om?')
-                   wiki = body.slice(5)
+                   wiki = `${body.slice(5)}`
                     reply(mess.wait)
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/wiki?q=${wiki}`, {method: 'get'})
                     if (anu.error) return reply(anu.error)
@@ -2515,14 +2540,14 @@ const TobzApi = 'BotWeA'
 		case 'bpfont':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			bp = body.slice(8)
+			bp = `${body.slice(8)}`
 			anu = await fetchJson(`https://api.terhambar.com/bpk?kata=${bp}`, {method: 'get'})
 			reply (anu.text)
 			break 
 		case 'spamsms':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			sms = body.slice(9)
+			sms = `${body.slice(9)}`
 			nomer = sms.split("/")[0];
 			jumlah = sms.split("/")[1];
 			anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/spamsms?no=${nomer}&jum=${jumlah}`, {method: 'get'})
@@ -2531,14 +2556,14 @@ const TobzApi = 'BotWeA'
 		case 'spamcall':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			call = body.slice(10)
+			call = `${body.slice(10)}`
 			anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/spamcall?no=${call}`, {method: 'get'})
 			client.sendMessage(from, `${anu.logs}`, text, {quoted: mek})
 			break 
 		case 'spamgmail':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			spam = body.slice(10)
+			spam = `${body.slice(10)}`
 			gmail = spam.split("/")[0];
 			jum =spam.split("/")[1];
 			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/spamgmail?target=${gmail}&jum=${jum}&apikey=${TobzApi}`, {method: 'get'})
@@ -2548,7 +2573,7 @@ const TobzApi = 'BotWeA'
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
 			reply(mess.wait)
-			surah = body.slice(12)
+			surah = `${body.slice(12)}`
 			anu = await fetchJson(`https://api.zeks.xyz/api/quran?no=${surah}&apikey=${ZeksApi}`)
 			quran = `Surah Al-Qur\`an Nomer: *${surah}*\nSurah: *${anu.surah}*\nDiturunkan Dikota: *${anu.type}*\nJumlah Ayat: *${anu.jumlah_ayat}*\n\n*${anu.ket}\n=============================\n`
 			for (let surah of anu.ayat) {
@@ -2559,7 +2584,7 @@ const TobzApi = 'BotWeA'
 		case 'bitly':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			link = body.slice(7)
+			link = `${body.slice(7)}`
 			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/bitly?url=${link}&apikey=${TobzApi}`, {method: 'get'})
 			bitly = `${bitlyy.result}`
 			client.sendMessage(from, anu, text, {quoted: mek})
@@ -2567,7 +2592,7 @@ const TobzApi = 'BotWeA'
 			case 'textstyle':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-			style = body.slice(11)
+			style = `${body.slice(11)}`
 			anu = await fetchJson(`https://arugaz.my.id/api/random/text/fancytext?text=${style}`, {method: 'get'})
 			client.sendMessage(from, anu.result, text, {quoted: mek})
 			break 
@@ -2581,7 +2606,7 @@ const TobzApi = 'BotWeA'
 		case 'jamdunia':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
-		 jamdunia = body.slice(10)
+		 jamdunia = `${body.slice(10)}`
 			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jamdunia?lokasi=${jamdunia}&apikey=${TobzApi}`, {method: 'get'})
 			wtime = `*${anu.result.title}\n*${anu.result.time}*\n*${anu.result.date}*`
 			client.sendMessage(from, wtime, text, {quoted: mek})
@@ -2620,7 +2645,7 @@ const TobzApi = 'BotWeA'
 				case 'dorking':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				dork = body.slice(9)
+				dork = `${body.slice(9)}`
 					anu = await fetchJson(`https://api-anoncybfakeplayer.herokuapp.com/dorking?dork=${dork}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2629,7 +2654,7 @@ const TobzApi = 'BotWeA'
 				client.updatePresence(from, Presence.composing)
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				encode64 = body.slice(10)
+				encode64 = `${body.slice(10)}`
 				anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?encode=${encode64}`, {method: 'get'})
 				enc64 = `${anu.result}`
 				client.sendMessage(from, enc64, text, {quoted: mek})
@@ -2637,7 +2662,7 @@ const TobzApi = 'BotWeA'
 				case 'decode64':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				decode64 = body.slice(10)
+				decode64 = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?decode=${decode64}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2645,7 +2670,7 @@ const TobzApi = 'BotWeA'
 				case 'decode32':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				decode32 = body.slice(10)
+				decode32 = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base32/?encode=${decode32}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2653,7 +2678,7 @@ const TobzApi = 'BotWeA'
 				case 'encode32':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				encode32 = body.slice(10)
+				encode32 = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base32/?decode=${encode32}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2661,7 +2686,7 @@ const TobzApi = 'BotWeA'
 				case 'encbinary':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				encbinary = body.slice(11)
+				encbinary = `${body.slice(11)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/binary/?encode=${encbinary}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2669,7 +2694,7 @@ const TobzApi = 'BotWeA'
 				case 'decbinary':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				decbin = body.slice(11)
+				decbin = `${body.slice(11)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/binary/?decode=${decbin}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2677,7 +2702,7 @@ const TobzApi = 'BotWeA'
 				case 'encoctal':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				encoc = body.slice(10)
+				encoc = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?decode=${encoc}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
@@ -2685,13 +2710,13 @@ const TobzApi = 'BotWeA'
 				case 'decoctal':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
-				decoc = body.slice(10)
+				decoc = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?encode=${decoc}`, {method: 'get'})
 					hasil = `${anu.result}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
 					break 
 					case 'hashidentifier':
-					  hash = body.slice(16)
+					  hash = `${body.slice(16)}`
 					  anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/hash-identifier?hash=${hash}`)
 					  hasilhash = `Tipe: *${anu.hash_type}*\nChar Tipe: *${anu.char_type}*`
 					  client.sendMessage(from, hasilhash, text, {quoted: mek})

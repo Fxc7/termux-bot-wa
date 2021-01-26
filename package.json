@@ -1,5 +1,5 @@
 {
-  "name": "termux-wabot",
+  "name": "termux-bot-wa",
   "version": "0.0.2",
   "description": "No comment",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "MhankBarBar",
+  "author": "FarhanXCo",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
@@ -48,10 +48,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhankbarbar/termux-wabot.git"
+    "url": "git+https://github.com/FarhanXCode7/termux-bot-wa.git"
   },
   "bugs": {
-    "url": "https://github.com/mhankbarbar/termux-wabot/issues"
+    "url": "https://github.com/FarhanXCode7/termux-bot-wa/issues"
   },
-  "homepage": "https://github.com/mhankbarbar/termux-wabot#readme"
+  "homepage": "https://github.com/FarhanXCode7/termux-bot-wa#readme"
 }
