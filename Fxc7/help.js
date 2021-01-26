@@ -37,7 +37,16 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┣⊱❥ ❌ *CALL & VC*
 ┃ \`\`\`Melanggar??\`\`\` *Banned*
 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┣⊱❥ \`\`\`What's New??\`\`\`
+┃ 1. *harta tahta*
+┃ 2. *Pasangan*
+┃ 3. *kata cinta*
+┃ 4. *quran surah |Nomer|*
+┃
+┣⊱❥ \`\`\`Bugs??\`\`\`
+┃ 1. *creator*
+┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ⟣━━━━━❬ *ABOUT ${name}* ❭━━━━━━⟢
 ╭────────────────────────
@@ -124,6 +133,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ├⊱❥ *${prefix}crvintage [FXC7]*
 ├⊱❥ *${prefix}cbpink [FXC7]*
 ├⊱❥ *${prefix}ctext3d [FXC7]*
+├⊱❥ *${prefix}ctahta [FXC7]*
 ╰─────────────────────────
 
 ╭──────────────────────────────
@@ -195,7 +205,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ├⊱❥ *${prefix}nsfwneko*
 ├⊱❥ *${prefix}nsfwtrap*
 ├⊱❥ *${prefix}hentai*
-├⊱❥ *${prefix}indohot [MAINTENANCE]
+├⊱❥ *${prefix}indohot [MAINTENANCE]*
 ├⊱❥ *${prefix}bokep [stepMoms]*
 ├⊱❥ *${prefix}simih [On/Off]*
 ╰────────────────────────
@@ -224,10 +234,14 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ├⊱❥ *${prefix}darkjokes*
 ├⊱❥ *${prefix}bucin*
 ├⊱❥ *${prefix}pantun*
+├⊱❥ *${prefix}randomwp*
+├⊱❥ *${prefix}katacinta*
+├⊱❥ *${prefix}jadwaltvnow*
 ╰────────────────────────
 
 ╭──────────────────────────
 ├⊱❥ *${prefix}translate [en/Apa kabar?]*
+├⊱❥ *${prefix}pasangan [Farhan/Iriene]*
 ├⊱❥ *${prefix}gantengcek [Farhan]*
 ├⊱❥ *${prefix}cantikcek [Iriene]*
 ├⊱❥ *${prefix}artinama [Farhan]*
