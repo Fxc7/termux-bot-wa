@@ -297,6 +297,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭────────────────────────
 ┴
+➻ *${prefix}becrypt [string]*
 ➻ *${prefix}encode64 [string]*
 ➻ *${prefix}decode64 [encrypt]*
 ➻ *${prefix}encode32 [string]*
