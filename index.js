@@ -13,7 +13,7 @@ const {
     Presence,
     Mimetype,
     GroupSettingChange
-} = require('@adiwajshing/baileys')
+} = require("@adiwajshing/baileys")
 
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
@@ -154,8 +154,8 @@ async function starts() {
 			pushname2 = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
             const BarBarApi = 'api barbar' 
-            const ZeksApi = 'zeks api' 
-            const TechApi = 'tech api'
+            const ZeksApi = 'apivinz' 
+            const TechApi = '5BNIDH-1T0kPj-gWqG6q-sHtuHA-AWBSgZ'
             const TobzApi = 'BotWeA' 
             
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
@@ -185,7 +185,7 @@ async function starts() {
 					ownerG: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ɢʀᴏᴜᴩ!*',
 					ownerB: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ʙᴏᴛ!* ',
 					premium: '*ᴍᴀᴀꜰ ꜰɪᴛᴜʀ ɪɴɪ ᴋʜᴜꜱᴜꜱ ᴜꜱᴇʀ ᴩʀᴇᴍɪᴜᴍ!!*',
-					userB: `ʜᴀɪ *${pushname2}* ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴀɴ *${name}* \nꜱɪʟᴀʜᴋᴀɴ ᴅᴀꜰᴛᴀʀ ᴜɴᴛᴜᴋ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴇɴ *${name} ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ\n ᴋᴇᴛɪᴋ ${prefix}ᴅᴀꜰᴛᴀʀ ꜰᴀʀʜᴀɴ/17/ʙᴀɴyᴜᴡᴀɴɢɪ`,
+					userB: `ʜᴀɪ *${pushname2}* ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴀɴ *${name}* \nꜱɪʟᴀʜᴋᴀɴ ᴅᴜʟᴜ yᴀᴀ ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ\n\n ᴋᴇᴛɪᴋ ${prefix}ᴅᴀꜰᴛᴀʀ ꜰᴀʀʜᴀɴ/17/ʙᴀɴyᴜᴡᴀɴɢɪ`,
 					admin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴀᴅᴍɪɴ ɢʀᴏᴜᴩ!*',
 					Badmin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴋᴇᴛɪᴋᴀ ʙᴏᴛ ᴍᴇɴᴊᴀᴅɪ ᴀᴅᴍɪɴ!*'
 				}
@@ -1089,7 +1089,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				reply(mess.wait)
 					if (args.length < 1) return reply('Teksnya mana gan?')
-					anu = await fetchJson(`https://api.zeks.xyz/api/hilihmaker?text=${body.slice(7)}&apikey=${ZeksApi}`, {method: 'get'})
+					anu = await fetchJson(`https://api.i-tech.id/tools/hilih?key=${TechApi}&kata=${body.slice(7)}`, {method: 'get'})
 					reply(anu.result)
 					break
 				case 'chord':
@@ -1098,9 +1098,8 @@ async function starts() {
 				reply(mess.wait)
 					if (args.length < 1) return reply('Mau Nyari Chord Lagu Apa??')
 					tels = body.slice(7)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/chord?q=${tels}&apiKey=${BarBarApi}`, {method: 'get'})
-					chord = `${anu.result}`
-					client.sendMessage(from, chord, text, {quoted: mek})
+					anu = await fetchJson(`https://api.i-tech.id/tools/chord?key=${TechApi}&query=${tels}`, {method: 'get'})
+					reply(anu.result)
 					break
                case 'infogempa':
                if (isBanned) return reply(mess.only.benned)    
@@ -1358,18 +1357,17 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)
 				if (!isUser) return reply(mess.only.userB)
 				if (!isUrl(args[0]) && !args[0].includes('www.instagram.com')) return reply(mess.error.lv)
-				    anu = await fetchJson(`https://api.zeks.xyz/api/ig?url=${args,[0]}&apikey=${ZeksApi}`, {method: 'get'})
+				    anu = await fetchJson(`https://api.i-tech.id/dl/igdl?key=${TechApi}&link=${args[0]}`, {method: 'get'})
 				    insta = getBuffer(anu.result.url)
 				    reply(mess.wait)
-				    instagram = `Type: *${anu.result.type}*\nDeskripsi: ${anu.result.caption}`
-				    client.sendMessage(from, insta, {quoted: mek, caption: instagram})
+				    client.sendMessage(from, insta, {quoted: mek})
 				    break 
 				    
 				case 'instastory':
 				if (isBanned) return reply(mess.only.benned)
 				if (!isUser) return reply(mess.only.userB) 
 				instor = `${body.slice(12)}`
-				anu = await fetchJson(`https://api.i-tech.id/dl/story?key=5BNIDH-1T0kPj-gWqG6q-sHtuHA-AWBSgZ&username=${instor}`, {method: 'get'})
+				anu = await fetchJson(`https://api.i-tech.id/dl/story?key=${TechApi}&username=${instor}`, {method: 'get'})
 				buff = await getBuffer(anu.result.url)
 				client.sendMessage(from, buff, image, {quoted: mek})
 
@@ -1919,18 +1917,18 @@ async function starts() {
                     anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=${body.slice(10)}`)
 			        infonomor = `*nomor* \n${anu.nomor} *international* \n${anu.international}`
 			        reply(infonomor)
-			        break/*
+			        break
 			    case 'igstalk':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
 			    if (args.length < 1) return reply('Username?')
 			    ig = `${body.slice(9)}`
-			    igstlk = await fetchJson(`http://arugaz.my.id/api/media/stalkig?user=${ig}`)
-           buffer = await getBuffer(igstlk.result.profile_picture)
+			    igstlk = await fetchJson(`https://api.i-tech.id/dl/stalk?key=${TechApi}&username=${ig}`, {method: 'get'})
+           buffer = await getBuffer(igstlk.pic)
            reply(mess.wait)
-           hasilig = `「 *INSTAGRAM STALKER* 」\n\nHasil Pencarian Dari: *${igstlk.result.username}*\n\n• Username: *${igstlk.result.fullname}*\n• Pengikut : *${igstlk.result.followers}*\n• Mengikuti : *${igstlk.result.followings}*\n• Jumlah Post : *${igstlk.Jumlah_Post}*\n• Jumlah Story : *${igstlk.Jumlah_Story}*\n• bio : *${igstlk.Biodata}*`
+           hasilig = `「 *INSTAGRAM STALKER* 」\n\nHasil Pencarian Dari: *${igstlk.username}*\n\n• Username: *${igstlk.name}*\n• Pengikut : *${igstlk.followers}*\n• Mengikuti : *${igstlk.followings}*\n• Jumlah Post : *${igstlk.post}*\n• bio : *${igstlk.bio}*`
        client.sendMessage(from, buffer, image, {quoted: mek, caption: hasilig})
-                    break*/
+                    break
 			    case 'mimpi':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
@@ -2513,12 +2511,12 @@ async function starts() {
     				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`http://arugaz.my.id/api/media/ytvid?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://api.i-tech.id/dl/yt?key=${TechApi}&link=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.titleInfo}*\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
-					buff = await getBuffer(anu.getImages)
+					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.title}*\n• *Duration:* ${anu.duration}\n*Size:* ${anu.size}\n• *Deskripsi:* ${anu.desc}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buff = await getBuffer(anu.thumbnail)
 					reply(mess.wait)
-					buffer = await getBuffer(anu.getVideo)
+					buffer = await getBuffer(anu.url_video)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
 					break
@@ -2529,12 +2527,13 @@ async function starts() {
 					if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp3?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}\n*Filesize* : ${anu.filesize}`
-					thumb = await getBuffer(anu.thumb)
+					teks = `「 *YOUTUBE MP3 DOWNLOADER* 」\n\n• Title : *${anu.title}*\n• *Duration:* ${anu.duration}\n*Size:* ${anu.size}\n• *Deskripsi:* ${anu.desc}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buff = await getBuffer(anu.thumbnail)
+					reply(mess.wait)
+					buffer = await getBuffer(anu.url_audio)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
 
@@ -2544,10 +2543,10 @@ async function starts() {
                 if (!isPrem) return reply(mess.only.premium)
                 ytplay = `${body.slice(9)}`
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${ytplay}&apikey=${ZeksApi}`, {method: 'get'})
-                buff = await getBuffer(anu.result.thumbnail)
-                playmp3 = `Judul: *${anu.result.title}*\nSize: *${anu.result.size}*\n\n\nTunggu Sebentar Lagi Ngirim Audio *TOLONG JANGAN SPAM*`
+                buff = await getBuffer(anu.thumb)
+                playmp3 = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\nJudul: *${anu.title}*\nSize: *${anu.filesize}*\n\n\nTunggu Sebentar Lagi Ngirim Audio *TOLONG JANGAN SPAM*`
                 reply(mess.wait)
-                buffer = await getBuffer(anu.result.url_audio)
+                buffer = await getBuffer(anu.result)
                 client.sendMessage(from, buff, image, {quoted: mek, caption: playmp3})
                 client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
                 break
@@ -2559,12 +2558,9 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
                     if (args.length < 1) return reply('teks nya mana om?')
                    wiki = `${body.slice(5)}`
-                    reply(mess.wait)
-                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/wiki?q=${wiki}`, {method: 'get'})
+                    anu = await fetchJson(`https://api.i-tech.id/tools/wiki?key=${TechApi}&query=${wiki}`, {method: 'get'})
                     if (anu.error) return reply(anu.error)
-                    bufferfff = await getBuffer(anu.wiki)
-                    wikipedia = `${anu.result}`
-                    client.sendMessage(from, bufferfff, image, {quoted: mek, caption: wikipedia})
+                    reply(anu.result)
                    break 
                    
                case 'pastebin':
@@ -2659,8 +2655,8 @@ async function starts() {
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
 		 jamdunia = `${body.slice(10)}`
-			anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jamdunia?lokasi=${jamdunia}&apikey=${TobzApi}`, {method: 'get'})
-			wtime = `*${anu.result.title}\n*${anu.result.time}*\n*${anu.result.date}*`
+			anu = await fetchJson(`https://api.i-tech.id/tools/jam?key=${TechApi}&kota=${jamdunia}`, {method: 'get'})
+			wtime = `*${anu.timezone}*\n*${anu.date}*\n*${anu.time}*`
 			client.sendMessage(from, wtime, text, {quoted: mek})
 			break 
 			
@@ -2706,66 +2702,65 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				encode64 = `${body.slice(10)}`
-				anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?encode=${encode64}`, {method: 'get'})
-				enc64 = `${anu.result}`
-				client.sendMessage(from, enc64, text, {quoted: mek})
+				anu = await fetchJson(`https://api.i-tech.id/hash/bs64?key=${TechApi}&type=encode&string=${encode64}`, {method: 'get'})
+				reply(anu.result)
 					break
 				case 'decode64':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				decode64 = `${body.slice(10)}`
-					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?decode=${decode64}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					anu = await fetchJson(`https://api.i-tech.id/hash/bs64?key=${TechApi}&type=decode&string=${decode64}`, {method: 'get'})
+					reply(anu.result)
 					break 
 				case 'decode32':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				decode32 = `${body.slice(10)}`
-					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base32/?encode=${decode32}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					anu = await fetchJson(`https://api.i-tech.id/hash/bs32?key=${TechApi}&type=decode&string=${decode32}`, {method: 'get'})
+					reply(anu.result)
 					break 
 				case 'encode32':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				encode32 = `${body.slice(10)}`
-					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base32/?decode=${encode32}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					anu = await fetchJson(`https://api.i-tech.id/hash/bs32?key=${TechApi}&type=decode&string=${encode32}`, {method: 'get'})
+					reply(anu.result)
 					break 
 				case 'encbinary':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				encbinary = `${body.slice(11)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/binary/?encode=${encbinary}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					reply(anu.result)
 					break 
 				case 'decbinary':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				decbin = `${body.slice(11)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/binary/?decode=${decbin}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					reply(anu.result)
 					break 
 				case 'encoctal':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				encoc = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?decode=${encoc}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					reply(anu.result)
 					break 
 				case 'decoctal':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				decoc = `${body.slice(10)}`
 					anu = await fetchJson(`https://api.anoncybfakeplayer.com/api/base64/?encode=${decoc}`, {method: 'get'})
-					hasil = `${anu.result}`
-					client.sendMessage(from, hasil, text, {quoted: mek})
+					reply(anu.result)
 					break 
+				case 'becrypt':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				becry = `${body.slice(10)}`
+				anu = await fetchJson(`https://api.i-tech.id/hash/bcrypt?key=${TechApi}&string=${becry}`, {method: 'get'})
+				reply(anu.result)
+				break
 					case 'hashidentifier':
 					  hash = `${body.slice(16)}`
 					  anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/hash-identifier?hash=${hash}`)
