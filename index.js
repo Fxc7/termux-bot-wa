@@ -34,6 +34,8 @@ const imgbb = require('imgbb-uploader')
 const imageToBase64 = require('image-to-base64')
 const speed = require('performance-now')
 const { removeBackgroundFromImageFile } = require('remove.bg')
+const brainly = require('brainly-scraper')
+const cd = 4.32e+7
 const lolis = require('lolis.life')
 const loli = new lolis()
 
@@ -60,9 +62,10 @@ const vcard = 'BEGIN:VCARD\n'
             + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
             + 'END:VCARD'
 
-prefix = '.'
+prefix = '/'
 ig = 'https://www.instagram.com/_farhan_xcode7'
 name = '~ F X C 7 B O T'
+sr = `*HAI SOBAT ${name}`
 
 function kyun(seconds){
   function pad(s){
@@ -144,17 +147,17 @@ async function starts() {
 			const content = JSON.stringify(mek.message)
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
+			const FarhanGans = ["0@s.whatsapp.net"]
 			
 			const insom = from.endsWith('@g.us')
 			const nameReq = insom ? mek.participant : mek.key.remoteJid
 			pushname2 = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
-            const BarBarApi = 'barbar api' 
-            const ZeksApi = 'apivinz' 
-            const TechApi = 'check Rest'
+            const BarBarApi = 'api barbar' 
+            const ZeksApi = 'zeks api' 
+            const TechApi = 'tech api'
             const TobzApi = 'BotWeA' 
             
-			const totalchat = await client.chats.all()
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
 			const date = new Date().toLocaleDateString()
@@ -170,23 +173,25 @@ async function starts() {
 			
 
 			mess = {
-				wait: `*WAIT KAK ${pushname2}* Sedang di Prosess...⏳`,
+				wait: '*⏳ ᴡᴀɪᴛ ꜱᴇᴅᴀɴɢ ᴅɪ ᴩʀᴏꜱᴇꜱꜱ...*',
 				success: '*Sukses...*',
 				error: {
-					stick: ' *Gagal, terjadi kesalahan saat mengkonversi gambar ke sticker*',
-					Iv: '*Link tidak valid*'
+					stick: ' *ɢᴀɢᴀʟ, ᴛᴇʀᴊᴀᴅɪ ᴋᴇꜱᴀʟᴀʜᴀɴ ꜱᴀᴀᴛ ᴍᴇɴɢᴋᴏɴᴠᴇʀꜱɪ ɢᴀᴍʙᴀʀ ᴋᴇ ꜱᴛɪᴄᴋᴇʀ*',
+					Iv: '*ᴍᴀᴀꜰ ʟɪɴᴋ ᴛɪᴅᴀᴋ ᴠᴀʟɪᴅ!!*'
 				},
 				only: {
-					group: '*Maaf Perintah ini hanya bisa di gunakan dalam group!*',
-					benned: '*Anda Ke Banned Silahkan Hubungi Owner Agar Membuka Banned Anda*',
-					ownerG: '*Maaf Perintah ini hanya bisa di gunakan oleh owner group!*',
-					ownerB: '*Maaf Perintah ini hanya bisa di gunakan oleh owner bot!* ',
-					premium: '*Fitur Ini Khusus User Premium*',
-					userB: `-= | DAFTAR USER | =-\nMaaf *${pushname2}*\nKamu belum Terdaftar didalam database,\n\nUntuk Daftarnya \nContoh : ${prefix}daftar Farhan/17/Banyuwangi\n\n-=⎿ *${name}* ⏋=-`,
-					admin: '*Maaf Perintah ini hanya bisa di gunakan oleh admin group!*',
-					Badmin: '*Maaf Perintah ini hanya bisa di gunakan ketika bot menjadi admin!*'
+					group: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴅᴀʟᴀᴍ ɢʀᴏᴜᴩ!*',
+					benned: '*ᴍᴀᴀꜰ ɴᴏᴍᴇʀ ᴋᴀᴍᴜ ᴋᴇ ʙᴀɴɴᴇᴅ ꜱɪʟᴀʜᴋᴀɴ ʜᴜʙᴜɴɢɪ ᴏᴡɴᴇʀ ᴀɢᴀʀ ᴍᴇᴍʙᴜᴋᴀ ʙᴀɴɴᴇᴅ ᴀɴᴅᴀ*',
+					ownerG: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ɢʀᴏᴜᴩ!*',
+					ownerB: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ʙᴏᴛ!* ',
+					premium: '*ᴍᴀᴀꜰ ꜰɪᴛᴜʀ ɪɴɪ ᴋʜᴜꜱᴜꜱ ᴜꜱᴇʀ ᴩʀᴇᴍɪᴜᴍ!!*',
+					userB: `ʜᴀɪ *${pushname2}* ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴀɴ *${name}* \nꜱɪʟᴀʜᴋᴀɴ ᴅᴀꜰᴛᴀʀ ᴜɴᴛᴜᴋ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴇɴ *${name} ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ\n ᴋᴇᴛɪᴋ ${prefix}ᴅᴀꜰᴛᴀʀ ꜰᴀʀʜᴀɴ/17/ʙᴀɴyᴜᴡᴀɴɢɪ`,
+					admin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴀᴅᴍɪɴ ɢʀᴏᴜᴩ!*',
+					Badmin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴋᴇᴛɪᴋᴀ ʙᴏᴛ ᴍᴇɴᴊᴀᴅɪ ᴀᴅᴍɪɴ!*'
 				}
 			}
+			
+			
 
 			const botNumber = client.user.jid
 			const ownerNumber = ["628311800241@s.whatsapp.net"]
@@ -198,6 +203,7 @@ async function starts() {
 			const groupMembers = isGroup ? groupMetadata.participants : ''
 			const groupDesc = isGroup ? groupMetadata.desc : ''
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
+			const totalchat = await client.chats.all()
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
@@ -217,6 +223,9 @@ async function starts() {
 			}
 			const sendMess = (hehe, teks) => {
 				client.sendMessage(hehe, teks, text)
+			}
+			const costum = (pesan, tipe, target, target2) => {
+			client.sendMessage(from, pesan, tipe, {quoted: { key: { fromMe: false, participant: `${target}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target2}` }}})
 			}
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
@@ -259,7 +268,44 @@ async function starts() {
 					      client.reply(from, 'Gagal!', id)
 					    })
 					}
-					break
+					break 
+					
+					case 'setreply':
+					if (!isOwner) return reply(mess.only.ownerV)
+                    client.updatePresence(from, Presence.composing) 
+					if (args.length < 1) return
+					sr = body.slice(10)
+					reply(`reply berhasil di ubah menjadi : ${sr}`)
+				break 
+				
+				case 'grouplist':
+				case 'gruplist':
+					if (!isUser) return reply(mess.only.userB)
+					if (isBanned) return reply(mess.only.benned)
+					client.updatePresence(from, Presence.composing) 
+					teks = `\`\`\`Ini adalah list group ${name} :\n\n\`\`\``
+					no = 0
+					for (let hehehe of groupId) {
+						no += 1
+						teks += `\`\`\`[${no.toString()}]\`\`\` @${hehehe.split('@')[0]}\n`
+					}
+					teks += `\n\`\`\`Total grup : ${groupId.length}\`\`\``
+					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek})
+				break 
+				
+			case 'brainly':
+					if (!isUser) return reply(mess.only.userB)
+					if (isBanned) return reply(mess.only.benned)
+                    brien = body.slice(9)
+					brainly(`${brien}`).then(res => {
+					teks = '❉───────────❉\n'
+					for (let Y of res.data) {
+						teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n❉───────────❉\n`
+					}
+					client.sendMessage(from, teks, text, {quoted: mek, detectLinks: false})
+                        console.log(res)
+                    })
+				break 
 			
 		case 'antilink':
 					client.updatePresence(from, Presence.composing) 
@@ -332,7 +378,7 @@ async function starts() {
                 var yy = tgl.getYear()
                 var year = (yy < 1000) ? yy + 1900 : yy;
                 const tanggal = `${thisDay}, ${day} - ${myMonths[bulan]} - ${year}`
-                client.sendMessage(from, help(prefix, ig, name, uptime, pushname2, user, tanggal, jam), text, {quoted: mek})
+                await costum(help(prefix, ig, name, uptime, pushname2, user, tanggal, jam), text, FarhanGans, sr)
     				break
 
 				case 'bahasa':
@@ -693,9 +739,9 @@ async function starts() {
 					client.updatePresence(from, Presence.composing)
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					addpremiun = mentioned
-					reply(`*berhasil Menambahkan ${addpremium} Untuk User Premium*\nSilahkan Untuk Menggunakan Fitur Premium`)
+					addpremi = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					addpremium = mentioned
+					reply(`*berhasil Menambahkan ${addpremium} Untuk User Premium*\n\nSilahkan Untuk Menggunakan Fitur Premium`)
 					break
 				case 'removeprem':
 					if (!isOwner) return reply(mess.only.ownerB)
@@ -1493,7 +1539,7 @@ async function starts() {
                 if (isBanned) return reply(mess.only.benned)
                 tahta = `${body.slice(8)}`
                      if (args.length < 1) return reply('teks nya Mana??')
-                     if (arga.length > 10) return reply('karakter minimal 10')
+                     if (args.length > 10) return reply('karakter minimal 10')
                      buff = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${tahta}&apikey=${ZeksApi}`, {method: 'get'})
                      client.sendMessage(from, buff, image, {quoted: mek})
                   break
@@ -1873,18 +1919,18 @@ async function starts() {
                     anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=${body.slice(10)}`)
 			        infonomor = `*nomor* \n${anu.nomor} *international* \n${anu.international}`
 			        reply(infonomor)
-			        break
+			        break/*
 			    case 'igstalk':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
 			    if (args.length < 1) return reply('Username?')
 			    ig = `${body.slice(9)}`
-			    igstlk = await fetchJson(`https://mhankbarbar.tech/api/stalk?username=${ig}&apiKey=${BarBarApi}`)
-           buffer = await getBuffer(igstlk.Profile_pic)
+			    igstlk = await fetchJson(`http://arugaz.my.id/api/media/stalkig?user=${ig}`)
+           buffer = await getBuffer(igstlk.result.profile_picture)
            reply(mess.wait)
-           hasilig = `「 *INSTAGRAM STALKER* 」\n\nHasil Pencarian Dari: *${igstlk.Username}*\n\n• Username: *${igstlk.Name}*\n• Pengikut : *${igstlk.Jumlah_Following}*\n• Mengikuti : *${igstlk.Jumlah_Followers}*\n• Jumlah Post : *${igstlk.Jumlah_Post}*\n• Jumlah Story : *${igstlk.Jumlah_Story}*\n• bio : *${igstlk.Biodata}*`
+           hasilig = `「 *INSTAGRAM STALKER* 」\n\nHasil Pencarian Dari: *${igstlk.result.username}*\n\n• Username: *${igstlk.result.fullname}*\n• Pengikut : *${igstlk.result.followers}*\n• Mengikuti : *${igstlk.result.followings}*\n• Jumlah Post : *${igstlk.Jumlah_Post}*\n• Jumlah Story : *${igstlk.Jumlah_Story}*\n• bio : *${igstlk.Biodata}*`
        client.sendMessage(from, buffer, image, {quoted: mek, caption: hasilig})
-                    break
+                    break*/
 			    case 'mimpi':
 			    if (isBanned) return reply(mess.only.benned)    
 			    if (!isUser) return reply(mess.only.userB)
@@ -1950,7 +1996,7 @@ async function starts() {
 				ngan = pa.split("/")[1];
 				anu = await fetchJson(`https://scrap.terhambar.com/jodoh?n1=${sa}&n2=${ngan}`, {method: 'get'})
 				buff = await getBuffer(anu.result.gambar)
-				pasang = `Hasil Pasangan Dari *${anu.result.nama_anda}* Dan *${anu.result.nama_pasangan}*\n\nHal Positif: *${anu.result.positif}*\n\nHal Negatif: *${anu.result.negatif}*`
+				pasang = `Hasil Pasangan Dari *${anu.result.nama_anda}* Dan *${anu.result.nama_pasangan}*\n\nHal Positif: *${anu.positif}*\n\nHal Negatif: *${anu.negatif}*`
 				client.sendMessage(from, buff, image, {quoted: mek, caption: pasang})
 			break
 
@@ -2206,10 +2252,8 @@ async function starts() {
 				case 'delete':
 					case 'del':
 					case 'd':
-					if (!isUser) return reply(mess.only.userB)
-					if (isBanned) return reply(mess.only.benned)    
 					if (!isGroup)return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.owner)
+					if (!isGroupAdmins) return reply(mess.only.admin)
 					client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
 			    case 'demote':
@@ -2469,12 +2513,12 @@ async function starts() {
     				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ytv?url=${args[0]}&apikey=${TobzApi}`, {method: 'get'})
+					anu = await fetchJson(`http://arugaz.my.id/api/media/ytvid?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.title}*\n• Size: *${anu.filesize}*\n• Extensi: *${anu.ext}*\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
-					buff = await getBuffer(anu.thumb)
+					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.titleInfo}*\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buff = await getBuffer(anu.getImages)
 					reply(mess.wait)
-					buffer = await getBuffer(anu.result)
+					buffer = await getBuffer(anu.getVideo)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
 					break
@@ -2508,7 +2552,7 @@ async function starts() {
                 client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
                 break
 
-// Akhir Fitur Premium
+// Akhir Fitur Premium 
 
 				case 'wiki':
 				if (isBanned) return reply(mess.only.benned)    
@@ -2521,6 +2565,14 @@ async function starts() {
                     bufferfff = await getBuffer(anu.wiki)
                     wikipedia = `${anu.result}`
                     client.sendMessage(from, bufferfff, image, {quoted: mek, caption: wikipedia})
+                   break 
+                   
+               case 'pastebin':
+                   if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				paste = `${body.slice(10)}`
+                   anu = await fetchJson(`https://api-anoncybfakeplayer.herokuapp.com/pastebin?text=${paste}`, {method: 'get'})
+                   reply(anu.result)
                    break
 	       case 'smule':
 	       if (isBanned) return reply(mess.only.benned)
@@ -2651,7 +2703,6 @@ async function starts() {
 					client.sendMessage(from, hasil, text, {quoted: mek})
 					break 
 				case 'encode64':
-				client.updatePresence(from, Presence.composing)
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				encode64 = `${body.slice(10)}`
