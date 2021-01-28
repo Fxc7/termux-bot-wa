@@ -62,7 +62,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
             + 'END:VCARD'
 
-prefix = '/'
+prefix = '!'
 ig = 'https://www.instagram.com/_farhan_xcode7'
 name = '~ F X C 7 B O T'
 sr = `*HAI SOBAT ${name}`
@@ -173,7 +173,7 @@ async function starts() {
 			
 
 			mess = {
-				wait: '*⏳ ᴡᴀɪᴛ ꜱᴇᴅᴀɴɢ ᴅɪ ᴩʀᴏꜱᴇꜱꜱ...*',
+				wait: '*⏳ ᴡᴀɪᴛ ꜱᴇᴅᴀɴɢ ᴅɪ ᴩʀᴏꜱᴇꜱ...*',
 				success: '*Sukses...*',
 				error: {
 					stick: ' *ɢᴀɢᴀʟ, ᴛᴇʀᴊᴀᴅɪ ᴋᴇꜱᴀʟᴀʜᴀɴ ꜱᴀᴀᴛ ᴍᴇɴɢᴋᴏɴᴠᴇʀꜱɪ ɢᴀᴍʙᴀʀ ᴋᴇ ꜱᴛɪᴄᴋᴇʀ*',
@@ -185,7 +185,7 @@ async function starts() {
 					ownerG: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ɢʀᴏᴜᴩ!*',
 					ownerB: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ʙᴏᴛ!* ',
 					premium: '*ᴍᴀᴀꜰ ꜰɪᴛᴜʀ ɪɴɪ ᴋʜᴜꜱᴜꜱ ᴜꜱᴇʀ ᴩʀᴇᴍɪᴜᴍ!!*',
-					userB: `ʜᴀɪ *${pushname2}* ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴀɴ *${name}* \nꜱɪʟᴀʜᴋᴀɴ ᴅᴜʟᴜ yᴀᴀ ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ\n\n ᴋᴇᴛɪᴋ ${prefix}ᴅᴀꜰᴛᴀʀ ꜰᴀʀʜᴀɴ/17/ʙᴀɴyᴜᴡᴀɴɢɪ`,
+					userB: `ʜᴀɪ *${pushname2}* ᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇɴᴊᴀᴅɪ ᴛᴇᴍᴀɴ *${name}* \nꜱɪʟᴀʜᴋᴀɴ ᴅᴀꜰᴛᴀʀ ᴅᴜʟᴜ yᴀᴀ ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ\n\n ᴋᴇᴛɪᴋ ${prefix}ᴅᴀꜰᴛᴀʀ ${pushname2}/17/ʙᴀɴyᴜᴡᴀɴɢɪ`,
 					admin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴀᴅᴍɪɴ ɢʀᴏᴜᴩ!*',
 					Badmin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴋᴇᴛɪᴋᴀ ʙᴏᴛ ᴍᴇɴᴊᴀᴅɪ ᴀᴅᴍɪɴ!*'
 				}
@@ -340,7 +340,7 @@ async function starts() {
 					client.updatePresence(from, Presence.composing) 
 					if (!isUser) return reply(mess.only.userB)
 					if (!isOwner) return reply(mess.only.ownerB)    
-					teks = `╭────*「 *TOTAL USER ${name}* 」\n`
+					teks = `╭────「 *TOTAL USER ${name}* 」\n`
 					no = 0
 					for (let hehehe of user) {
 						no += 1
@@ -529,29 +529,30 @@ async function starts() {
                     throw err
                 })
             break
-					case 'nobg':
-                                         
-                        if (!isUser) return reply(mess.only.userB)
-                        var imgbb = require('imgbb-uploader')
-                         if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-                         ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-                         owgi = await client.downloadAndSaveMediaMessage(ger)
-                         anu = await imgbb("727e7e43f6cda1dfb85d888522fd4ce1", owgi)
-                        teks = `${anu.display_url}`
-                        ranpp = getRandom('.png')
-                        ranop = getRandom('.webp')
-                        anu1 = await fetchJson(`https://api.vhtear.com/removebgwithurl?link=${teks}&apikey=bli api biar work`, {method: 'get'})
-                         exec(`wget ${anu1.result.image} -O ${ranpp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranop}`, (err) => {
-                                fs.unlinkSync(ranp)
-                                if (err) return reply(mess.error.stick)
-                                nobg = fs.readFileSync(ranop)
-                                client.sendMessage(from, nobg, sticker, {quoted: mek})
-                                fs.unlinkSync(ranop)
-                                })
-                          } else {
-                                 reply('Gunakan foto!')
-                          }
-                        break 
+					case 'trigger':
+                                        if (!isUser) return reply(mess.only.userB)
+                                        var imgbb = require('imgbb-uploader')
+                                         if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+                                         ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+                                         reply(mess.wait)
+                                         owgi = await  client.downloadAndSaveMediaMessage(ger)
+                                         anu = await imgbb("727e7e43f6cda1dfb85d888522fd4ce1", owgi)
+                                        teks = `${anu.display_url}`
+                                        ranp = getRandom('.gif')
+                                        rano = getRandom('.webp')
+                                        anu1 = `https://some-random-api.ml/canvas/triggered?avatar=${teks}`
+                                         exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+                                                fs.unlinkSync(ranp)
+                                                if (err) return reply(mess.error.stick)
+                                                nobg = fs.readFileSync(rano)
+                                                 client.sendMessage(from, nobg, sticker, {quoted: mek})
+                                                fs.unlinkSync(rano)
+                                        })
+                                    
+                                             } else {
+                                                 reply('Gunakan foto!')
+                                          }
+                                          break
                         
                  case 'kalkulator':
 					if (isBanned) return reply(mess.only.benned)    
@@ -2762,6 +2763,8 @@ async function starts() {
 				reply(anu.result)
 				break
 					case 'hashidentifier':
+					if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
 					  hash = `${body.slice(16)}`
 					  anu = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/hash-identifier?hash=${hash}`)
 					  hasilhash = `Tipe: *${anu.hash_type}*\nChar Tipe: *${anu.char_type}*`
