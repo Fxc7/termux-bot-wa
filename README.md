@@ -1,4 +1,4 @@
-### I'm FXC7BOT <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="25px">
+### I'm FXC7BOT Gift Me Stars 🌟 <br><img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="20px">
 <p align="center">
 <a href="https://github.com/Fxc7"><img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/glitchtext.png"></a>
 </p>
@@ -42,13 +42,22 @@ Follow The Steps Below!
 ```bash
 > termux-setup-storage
 (after that tap on permission)
+> pkg update -y
+> pkg upgrade -y
 > pkg install git -y
 > git clone https://github.com/Fxc7/termux-bot-wa
 > cd termux-bot-wa
+> npm cache clear
 > bash install.sh
 > npm audit fix
 > npm start / node index.js
 ```
+
+<p align="center">
+<a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TAMPILAN--MENU-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+</p>
+
+<img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/Screenshot_2021-01-29-18-18-32-18.jpg" width="100px" height="150px">
 
 ## Features
 
@@ -77,6 +86,7 @@ Follow The Steps Below!
 | :-----------------: | :-------: |
 | Trend Twit|✅|
 | YT Search|✅|
+| Wattpad Search|✅|
 
 | EDUCATION | YES |
 | :-----------------: | :-------: |
@@ -94,14 +104,10 @@ Follow The Steps Below!
 | DOWNLOADER | YES |
 | :-----------------: | :-------: |
 | Pinterest Downloader|✅|
-| Ytmp3 Downloader|✅|
-| Ytmp4 Downloader|✅|
-| Joox Downloader|✅|
-| Facebook Downloader|✅|
 
 | MEME | YES |
 | :-----------------: | :-------: |
-| Meme|❌|
+| Meme|✅|
 | Meme Indo|✅|
 
 | GROUP | YES |
@@ -125,7 +131,6 @@ Follow The Steps Below!
 | SOUND | YES |
 | :-----------------: | :-------: |
 | Text To Speach|✅|
-| Play|✅|
 
 | MUSIC | YES |
 | :-----------------: | :-------: |
@@ -173,6 +178,7 @@ Follow The Steps Below!
 | KBBI|✅|
 | Fakta|✅|
 | Covid|✅|
+| Gempa Terkini|✅|
 
 | 18+ | YES |
 | :-----------------: | :-------: |
@@ -182,6 +188,7 @@ Follow The Steps Below!
 | OWNER | YES |
 | :-----------------: | :-------: |
 | Set pp bot|✅|
+| Set Reply Chat|✅|
 | add premium |✅|
 | remove premium |✅|
 | Set Prefix|✅|
@@ -189,6 +196,15 @@ Follow The Steps Below!
 | Broadcast|✅|
 | Group Broadcast|✅|
 | Clear All Chat|✅|
+
+| PREMIUM MENU | YES |
+| :-----------------: | :-------: |
+| Youtube mp3 Download|✅|
+| Youtube mp4 Download|✅|
+| Joox|✅|
+| Facebook Video Download|✅|
+| Snack Video Download|✅|
+| Play Mp3|✅|
 
  TENTANG BOT | YES |
 | :-----------------: | :-------: |
@@ -206,6 +222,7 @@ Follow The Steps Below!
 
 ## Special Thanks
 
+* [Baileys](https://github.com/baileys)
 * Created Bot => [MhankBarBar](https://github.com/MhankBarBar)
 
 
@@ -215,5 +232,3 @@ Follow The Steps Below!
 * <a href="https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 ---
-
-
