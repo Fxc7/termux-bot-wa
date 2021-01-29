@@ -153,7 +153,7 @@ async function starts() {
 			const nameReq = insom ? mek.participant : mek.key.remoteJid
 			pushname2 = client.contacts[nameReq] != undefined ? client.contacts[nameReq].vname || client.contacts[nameReq].notify : undefined
 
-            const BarBarApi = 'Nkwp9oR7Eg9yyKbejBpm' 
+            const BarBarApi = 'BarBar Api' 
             const ZeksApi = 'apivinz' 
             const TechApi = '5BNIDH-1T0kPj-gWqG6q-sHtuHA-AWBSgZ'
             const TobzApi = 'BotWeA' 
