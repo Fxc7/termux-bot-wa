@@ -91,6 +91,9 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ⟣━━━━━━❬ *CREATOR MENU* ❭━━━━━━⟢
 ╭────────────────────────
 ┴
+➻ *${prefix}trigger [reply image]*
+➻ *${prefix}rip [reply image]*
+➻ *${prefix}wasted [reply image]*
 ➻ *${prefix}stiker*
 ➻ *${prefix}gifstiker*
 ➻ *${prefix}toimg*
@@ -103,13 +106,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭─────────────────────────
 ┴
+|*ERROR*|
 ➻ *${prefix}imoji [❤️]*
-➻ *${prefix}tts [id Haii]*
-➻ *${prefix}ttp [Fxc7]*
-➻ *${prefix}csky [FXC7]*
-➻ *${prefix}cwooden [FXC7]*
-➻ *${prefix}ccrossfire [FXC7]*
-➻ *${prefix}cnaruto [FXC7]*
 ➻ *${prefix}cgbutton [FXC7]*
 ➻ *${prefix}csbutton [FXC7]*
 ➻ *${prefix}cflower [FXC7]*
@@ -141,7 +139,15 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}crvintage [FXC7]*
 ➻ *${prefix}cbpink [FXC7]*
 ➻ *${prefix}ctext3d [FXC7]*
-➻ *${prefix}ctahta [FXC7]*
+➻ *${prefix}cluxury [FXC7]*
+_______________________________
+➻ *${prefix}tahta [FXC7]*
+➻ *${prefix}tts [id Haii]*
+➻ *${prefix}ttp [Fxc7]*
+➻ *${prefix}csky [FXC7]*
+➻ *${prefix}cwooden [FXC7]*
+➻ *${prefix}ccrossfire [FXC7]*
+➻ *${prefix}cnaruto [FXC7]*
 ┬
 ╰─────────────────────────
 
@@ -153,7 +159,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}cavengers [FXC7/BOT]*
 ➻ *${prefix}cpubg [FXC7/BOT]*
 ➻ *${prefix}cglitch [FXC7/BOT]*
-➻ *${prefix}cluxury [FXC7]*
 ➻ *${prefix}cmetal [FXC7/BOT]*
 ➻ *${prefix}cphlogo [FXC7/BOT]*
 ➻ *${prefix}quotemaker [tx/wtrmk/tema]*
@@ -183,6 +188,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}animecry*
 ➻ *${prefix}neonime*
 ➻ *${prefix}animekiss*
+➻ *${prefix}wink*
 ┬
 ╰───────────────────────
 
@@ -347,6 +353,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 ➻ *${prefix}playmp3 [MAINTENANCE]*
 ➻ *${prefix}fb [link video]*
+➻ *${prefix}snack [link snack video]*
 ➻ *${prefix}ytmp3 [link yt]*
 ➻ *${prefix}ytmp4 [link yt]*
 ➻ *${prefix}joox [Monolog Pamungkas]*
@@ -392,10 +399,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃ \`\`\`Quotesnya:)\`\`\`
 ┃
 ┣⊱❥ \`\`\`Kenapa Saya Tambahkan Fitur Premium\`\`\`
-┃ \`\`\`You Know Lah Karna Fitur Tersebut Membutuhkan\`\`\`
-┃ \`\`\` Kuota Banyak Untuk Mendownload Dan Mengirimkan\`\`\`
-┃ \`\`\` Audio/ Video Yang Anda Minta\`\`\`
-┃ \`\`\` Mohon Pengertiannya🙂\`\`\`
+┃ \`\`\`You Know Lah Karna Fitur Tersebut\`\`\`
+┃ \`\`\`Membutuhkan Kuota Banyak Untuk Mendownload\`\`\`
+┃ \`\`\`Dan Mengirimkan Audio/ Video Yang\`\`\`
+┃ \`\`\`Anda Minta Mohon Pengertiannya🙂\`\`\`
 ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`
 }
