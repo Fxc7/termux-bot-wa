@@ -1,6 +1,6 @@
 ### I'm FXC7BOT <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="25px">
 <p align="center">
-<a href="https://github.com/FarhanXCode7"><img src="https://raw.githubusercontent.com/FarhanXCode7/termux-bot-wa/main/src/glitchtext.png"></a>
+<a href="https://github.com/Fxc7"><img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/glitchtext.png"></a>
 </p>
 <br>
 
@@ -10,12 +10,12 @@
 <a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TERMUX--BOT--WA-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/FarhanXCode7"><img title="Author" src="https://img.shields.io/badge/AUTHOR-FARHAN-orange?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Fxc7"><img title="Author" src="https://img.shields.io/badge/AUTHOR-FARHAN-orange?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/followers"><img title="Followers" src="https://img.shields.io/github/followers/FarhanXCode7?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/network/members"><img title="Forks" src="https://img.shields.io/github/forks/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
-<a href="https://github.com/FarhanXCode7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
+<a href="https://github.com/Fxc7/termux-bot-wa/followers"><img title="Followers" src="https://img.shields.io/github/followers/Fxc7?style=flat-square"></a>
+<a href="https://github.com/Fxc7/termux-bot-wa/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Fxc7/termux-bot-wa?style=flat-square"></a>
+<a href="https://github.com/Fxc7/termux-bot-wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/FarhanXCode7/termux-bot-wa?style=flat-square"></a>
 
 </p>
 
@@ -43,7 +43,7 @@ Follow The Steps Below!
 > termux-setup-storage
 (after that tap on permission)
 > pkg install git -y
-> git clone https://github.com/FarhanXCode7/termux-bot-wa
+> git clone https://github.com/Fxc7/termux-bot-wa
 > cd termux-bot-wa
 > bash install.sh
 > npm audit fix
