@@ -1703,7 +1703,7 @@ async function starts() {
 				case 'tahta':
                 if (!isUser) return reply(mess.only.userB)
                 if (isBanned) return reply(mess.only.benned)
-                tahta = `${body.slice(8)}`
+                tahta = `${body.slice(7)}`
                      if (args.length < 1) return reply('teks nya Mana??')
                      if (args.length > 10) return reply('karakter minimal 10')
                      buff = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${tahta}&apikey=${ZeksApi}`, {method: 'get'})
