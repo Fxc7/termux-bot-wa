@@ -1,9 +1,9 @@
 
-const help = (prefix, ig, name, uptime, pushname2, user, tanggal, jam) => { 
+const help = (prefix, instagram, name, uptime, pushname2, user, tanggal, jam) => { 
 	return `
 	
 \`\`\`Follow My Instagram\`\`\`
-${ig}
+${instagram}
 
 \`\`\`GROUP OFFICIAL\`\`\`
 https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
@@ -22,7 +22,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃╭───────────────────────
 ┃├➲ \`\`\`Total Pengguna:\`\`\` *${user.length} User*
 ┣━━━━━━━━━━━━━━━━━
-┃├➲ \`\`\`Total Donasi:\`\`\` *0%* 🙂
+┃├➲ \`\`\`Total Donasi:\`\`\` *1%* 🙂
 ┃╰───────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
@@ -31,17 +31,11 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┣⊱❥ \`\`\`AKTIF\`\`\`: ${kyun(uptime)}
 ┣⊱❥ \`\`\`JAM\`\`\`: *${jam} WIB*
 ┣⊱❥ \`\`\`TANGGAL\`\`\`: *${tanggal}*
-┣⊱❥ \`\`\`VERSION\`\`\`: *6.0 TERMUX*
+┣⊱❥ \`\`\`VERSION\`\`\`: *6.5.0 TERMUX*
 ┃
 ┣⊱❥ ❌ *SPAM*
 ┣⊱❥ ❌ *CALL & VC*
 ┃ \`\`\`Melanggar??\`\`\` *Banned*
-┃
-┣⊱❥ \`\`\`What's New??\`\`\`
-┃ 1. *harta tahta*
-┃ 2. *Pasangan*
-┃ 3. *kata cinta*
-┃ 4. *quran surah |Nomer|*
 ┃
 ┣⊱❥ \`\`\`Bugs??\`\`\`
 ┃ 1. *creator*
@@ -84,6 +78,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}kbbi*
 ➻ *${prefix}wait*
 ➻ *${prefix}trendtwit*
+➻ *${prefix}google [berita terkini]*
+➻ *${prefix}tebakgambar*
 ┬
 ╰────────────────────────
 
@@ -91,9 +87,18 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ⟣━━━━━━❬ *CREATOR MENU* ❭━━━━━━⟢
 ╭────────────────────────
 ┴
+
 ➻ *${prefix}trigger [reply image]*
 ➻ *${prefix}rip [reply image]*
 ➻ *${prefix}wasted [reply image]*
+➻ *${prefix}tahta [FXC7]*
+➻ *${prefix}tts [id Haii]*
+➻ *${prefix}ttp [Fxc7]*
+➻ *${prefix}attp [Fxc7]*
+➻ *${prefix}csky [FXC7]*
+➻ *${prefix}cwooden [FXC7]*
+➻ *${prefix}ccrossfire [FXC7]*
+➻ *${prefix}cnaruto [FXC7]*
 ➻ *${prefix}stiker*
 ➻ *${prefix}gifstiker*
 ➻ *${prefix}toimg*
@@ -106,7 +111,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭─────────────────────────
 ┴
-|*ERROR*|
+*ERROR*
 ➻ *${prefix}imoji [❤️]*
 ➻ *${prefix}cgbutton [FXC7]*
 ➻ *${prefix}csbutton [FXC7]*
@@ -140,14 +145,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}cbpink [FXC7]*
 ➻ *${prefix}ctext3d [FXC7]*
 ➻ *${prefix}cluxury [FXC7]*
-_______________________________
-➻ *${prefix}tahta [FXC7]*
-➻ *${prefix}tts [id Haii]*
-➻ *${prefix}ttp [Fxc7]*
-➻ *${prefix}csky [FXC7]*
-➻ *${prefix}cwooden [FXC7]*
-➻ *${prefix}ccrossfire [FXC7]*
-➻ *${prefix}cnaruto [FXC7]*
+*ERROR*
 ┬
 ╰─────────────────────────
 
@@ -261,6 +259,8 @@ _______________________________
 ➻ *${prefix}randomwp*
 ➻ *${prefix}katacinta*
 ➻ *${prefix}jadwaltvnow*
+➻ *${prefix}hekerbucin*
+➻ *${prefix}katailham*
 ┬
 ╰────────────────────────
 
@@ -298,6 +298,7 @@ _______________________________
 ➻ *${prefix}jadwalsholat [Banyuwangi]*
 ➻ *${prefix}quran*
 ➻ *${prefix}quransurah [1]*
+➻ *${prefix}tafsir [1/5]*
 ┬
 ╰────────────────────────
 
@@ -321,7 +322,7 @@ _______________________________
 ┴
 ➻ *${prefix}spamcall [083xxxxxxxxx]*
 ➻ *${prefix}spamsms [083xxxxxxxx/jumlah]*
-➻ *${prefix}spamgmail [blabla@gmail.com/jumlah]*
+➻ *${prefix}spamgmail [farhanxcode7@gmail.com]*
 ┬
 ╰────────────────────────
 
@@ -351,7 +352,8 @@ _______________________________
 ⟣━━━━━━❬ *PREMIUM ONLY* ❭━━━━━━━⟢
 ╭────────────────────────
 ┴
-➻ *${prefix}playmp3 [MAINTENANCE]*
+➻ *${prefix}asupan*
+➻ *${prefix}playmp3 [menepi]*
 ➻ *${prefix}fb [link video]*
 ➻ *${prefix}snack [link snack video]*
 ➻ *${prefix}ytmp3 [link yt]*
