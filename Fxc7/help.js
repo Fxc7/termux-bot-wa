@@ -1,9 +1,12 @@
 
-const help = (prefix, instagram, name, uptime, pushname2, user, tanggal, jam) => { 
+const help = (prefix, instagram, yt, name, pushname2, user, limitt) => { 
 	return `
 	
 \`\`\`Follow My Instagram\`\`\`
 ${instagram}
+
+\`\`\`SUBSCRIBE😁\`\`\`
+${yt}
 
 \`\`\`GROUP OFFICIAL\`\`\`
 https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
@@ -18,7 +21,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┣━━━━━━━━━━━━━━━━━
 ┃├➲ \`\`\`I am\`\`\` *${name}*
 ┃╰───────────────────────
-┃
+┃• *Limit Kamu : ${limitt}*
 ┃╭───────────────────────
 ┃├➲ \`\`\`Total Pengguna:\`\`\` *${user.length} User*
 ┣━━━━━━━━━━━━━━━━━
@@ -26,24 +29,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┃╰───────────────────────
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-┏━━━━━❬ *REGULATION ${name}* ❭━━━━━━━⊱
-┃
-┣⊱❥ \`\`\`AKTIF\`\`\`: ${kyun(uptime)}
-┣⊱❥ \`\`\`JAM\`\`\`: *${jam} WIB*
-┣⊱❥ \`\`\`TANGGAL\`\`\`: *${tanggal}*
-┣⊱❥ \`\`\`VERSION\`\`\`: *6.5.0 TERMUX*
-┃
-┣⊱❥ ❌ *SPAM*
-┣⊱❥ ❌ *CALL & VC*
-┃ \`\`\`Melanggar??\`\`\` *Banned*
-┃
-┣⊱❥ \`\`\`Bugs??\`\`\`
-┃ 1. *creator*
-┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-⟣━━━━━❬ *ABOUT ${name}* ❭━━━━━━⟢
-╭────────────────────────
+╭──────「 *ABOUT ${name}* 」
 ┴
 ➻ *${prefix}request [Mau Req Fitur Apa?]*
 ➻ *${prefix}report [lapor bug]*
@@ -62,8 +49,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *MEDIA & DOWNLOADER* ❭━━━━━━━⟢
-͏͏͏͏͏͏͏͏͏͏͏͏͏͏╭────────────────────────
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏╭──────「 *MEDIA DOWNLOADER* 」
 ┴
 ➻ *${prefix}tiktokstalk [username]*
 ➻ *${prefix}igstalk [_farhan_xcode7]*
@@ -79,26 +65,45 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}wait*
 ➻ *${prefix}trendtwit*
 ➻ *${prefix}google [berita terkini]*
-➻ *${prefix}tebakgambar*
 ┬
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *CREATOR MENU* ❭━━━━━━⟢
-╭────────────────────────
+╭──────「 *CREATOR MENU* 」
 ┴
-
+➻ *${prefix}quotemaker [tx/wtrmk/tema]*
+➻ *${prefix}nulis [nama/kelas/text]*
 ➻ *${prefix}trigger [reply image]*
 ➻ *${prefix}rip [reply image]*
 ➻ *${prefix}wasted [reply image]*
+➻ *${prefix}cphlogo [FXC7/BOT]*
+➻ *${prefix}cglitch [FXC7/BOT]*
+➻ *${prefix}cpubg [FXC7/BOT]*
+➻ *${prefix}cml [miya/FXC7]*
+
 ➻ *${prefix}tahta [FXC7]*
-➻ *${prefix}tts [id Haii]*
-➻ *${prefix}ttp [Fxc7]*
-➻ *${prefix}attp [Fxc7]*
+➻ *${prefix}croman [FXC7 dan BOT]*
+➻ *${prefix}cthunder [FXC7]*
+➻ *${prefix}cbpink [FXC7]*
+➻ *${prefix}cmwolf [FXC7]*
 ➻ *${prefix}csky [FXC7]*
 ➻ *${prefix}cwooden [FXC7]*
+➻ *${prefix}cflower [FXC7]*
+➻ *${prefix}clove [FXC7]*
 ➻ *${prefix}ccrossfire [FXC7]*
 ➻ *${prefix}cnaruto [FXC7]*
+➻ *${prefix}cparty [FXC7]*
+➻ *${prefix}cshadow [FXC7]*
+➻ *${prefix}cminion [FXC7]*
+➻ *${prefix}cneon [FXC7]*
+➻ *${prefix}cneon2 [FXC7]*
+➻ *${prefix}cneongreen [FXC7]*
+➻ *${prefix}c3d [FXC7]*
+➻ *${prefix}csky [FXC7]*
+
+➻ *${prefix}tts [id Haii]*
+➻ *${prefix}ttp [Fxc7]*
+➻ *${prefix}slide [Fxc7]*
 ➻ *${prefix}stiker*
 ➻ *${prefix}gifstiker*
 ➻ *${prefix}toimg*
@@ -107,66 +112,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}tomp3*
 ➻ *${prefix}ocr*
 ┬
-╰────────────────────────
-
-╭─────────────────────────
-┴
-*ERROR*
-➻ *${prefix}imoji [❤️]*
-➻ *${prefix}cgbutton [FXC7]*
-➻ *${prefix}csbutton [FXC7]*
-➻ *${prefix}cflower [FXC7]*
-➻ *${prefix}ctxtneon [FXC7]*
-➻ *${prefix}cflame3d [FXC7]*
-➻ *${prefix}caglow [FXC7]*
-➻ *${prefix}cgneon [FXC7]*
-➻ *${prefix}cthunder [FXC7]*
-➻ *${prefix}cbokeh [FXC7]*
-➻ *${prefix}ctoxic [FXC7]*
-➻ *${prefix}cmatrix [FXC7]*
-➻ *${prefix}cmusic [FXC7]*
-➻ *${prefix}cblood [FXC7]*
-➻ *${prefix}cwater [FXC7]*
-➻ *${prefix}clava [FXC7]*
-➻ *${prefix}cfire [FXC7]*
-➻ *${prefix}cholo [FXC7]*
-➻ *${prefix}cminion [FXC7]*
-➻ *${prefix}cold [FXC7]*
-➻ *${prefix}cneon [FXC7]*
-➻ *${prefix}csunmory [FXC7]*
-➻ *${prefix}cbalon [FXC7]*
-➻ *${prefix}cglue3d [FXC7]*
-➻ *${prefix}csraved [FXC7]*
-➻ *${prefix}cswrite [FXC7]*
-➻ *${prefix}cssummer [FXC7]*
-➻ *${prefix}ccsky [FXC7]*
-➻ *${prefix}ccloud [FXC7]*
-➻ *${prefix}crvintage [FXC7]*
-➻ *${prefix}cbpink [FXC7]*
-➻ *${prefix}ctext3d [FXC7]*
-➻ *${prefix}cluxury [FXC7]*
-*ERROR*
-┬
-╰─────────────────────────
-
-╭──────────────────────────────
-┴
-➻ *${prefix}cstune3d [FXC7/BOT]*
-➻ *${prefix}cspace3d [FXC7/BOT]*
-➻ *${prefix}cmarvel [FXC7/BOT]*
-➻ *${prefix}cavengers [FXC7/BOT]*
-➻ *${prefix}cpubg [FXC7/BOT]*
-➻ *${prefix}cglitch [FXC7/BOT]*
-➻ *${prefix}cmetal [FXC7/BOT]*
-➻ *${prefix}cphlogo [FXC7/BOT]*
-➻ *${prefix}quotemaker [tx/wtrmk/tema]*
-➻ *${prefix}nulis [nama/kelas/text]*
-┬
-╰──────────────────────────────
+╰──────────────────────────
 
 
-⟣━━━━━━━❬ *GRUP ONLY* ❭━━━━━━━━⟢
-╭─────────────────────────
+╭───────「 *GROUP ONLY* 」
 ┴
 ➻ *${prefix}modeanime [On/Off]*
 ➻ *${prefix}naruto*
@@ -213,7 +162,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}listadmin*
 ➻ *${prefix}openanime*
 ➻ *${prefix}edotense*
-➻ *${prefix}kudeta*
 ┬
 ╰────────────────────────
 
@@ -225,15 +173,12 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}nsfwneko*
 ➻ *${prefix}nsfwtrap*
 ➻ *${prefix}hentai*
-➻ *${prefix}indohot [MAINTENANCE]*
-➻ *${prefix}bokep [stepMoms]*
 ➻ *${prefix}simih [On/Off]*
 ┬
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *OTHER FUN & GAME* ❭━━━━━⟢
-╭────────────────────────
+╭──────「 *OTHERS FUN & GAME* 」
 ┴
 ➻ *${prefix}anjing*
 ➻ *${prefix}kucing*
@@ -256,7 +201,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}darkjokes*
 ➻ *${prefix}bucin*
 ➻ *${prefix}pantun*
-➻ *${prefix}randomwp*
 ➻ *${prefix}katacinta*
 ➻ *${prefix}jadwaltvnow*
 ➻ *${prefix}hekerbucin*
@@ -266,6 +210,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭──────────────────────────
 ┴
+➻ *${prefix}jarak [Banyuwangi/Surabaya]*
 ➻ *${prefix}translate [en/Apa kabar?]*
 ➻ *${prefix}pasangan [Farhan/Iriene]*
 ➻ *${prefix}gantengcek [Farhan]*
@@ -280,18 +225,36 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}chord [Melukis senja]*
 ➻ *${prefix}wiki [Adolf Hitler]*
 ➻ *${prefix}brainly [pertanyaan]*
-➻ *${prefix}resepmasakan [Tempe]*
+➻ *${prefix}resepmasakan [rawon]*
 ➻ *${prefix}map [Banyuwangi]*
 ➻ *${prefix}film [Fast and Farious]*
 ➻ *${prefix}pinterest [gambar kucing]*
 ➻ *${prefix}infocuaca [Banyuwangi]*
 ➻ *${prefix}jamdunia [Banyuwangi]*
 ➻ *${prefix}mimpi [Ular]*
-➻ *${prefix}tinyurl [link]*
-➻ *${prefix}bitly [link]*
-➻ *${prefix}pastebin [teks]*
+➻ *${prefix}infoalamat [jalan Banyuwangi]*
 ┬
 ╰───────────────────────────
+
+
+╭────────────────────────
+┴
+➻ *${prefix}asupan*
+➻ *${prefix}tebakgambar*
+➻ *${prefix}caklontong*
+➻ *${prefix}family100*
+➻ *${prefix}kalkulator [13*12]*
+➻ *${prefix}wp [gunung]*
+┬
+╰────────────────────────
+
+╭────────────────────────
+┴
+➻ *${prefix}cersex*
+➻ *${prefix}xxx [japan]*
+➻ *${prefix}pornhub [stepMoms]*
+┬
+╰────────────────────────
 
 ╭────────────────────────
 ┴
@@ -315,6 +278,9 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ➻ *${prefix}decoctal [encrypt]*
 ➻ *${prefix}hashidentifier [Encrypt Hash]*
 ➻ *${prefix}dorking [dork]*
+➻ *${prefix}pastebin [teks]*
+➻ *${prefix}tinyurl [link]*
+➻ *${prefix}bitly [link]*
 ┬
 ╰────────────────────────
 
@@ -327,8 +293,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *OWNER ONLY* ❭━━━━━━━⟢
-╭────────────────────────
+╭─────────「 *OWNER ONLY* 」
 ┴
 ➻ *${prefix}addprem [mentioned]*
 ➻ *${prefix}removeprem [mention]*
@@ -349,10 +314,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *PREMIUM ONLY* ❭━━━━━━━⟢
-╭────────────────────────
+╭────────「 *PREMIUM ONLY* 」
 ┴
-➻ *${prefix}asupan*
 ➻ *${prefix}playmp3 [menepi]*
 ➻ *${prefix}fb [link video]*
 ➻ *${prefix}snack [link snack video]*
@@ -364,57 +327,12 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-⟣━━━━━━❬ *SUPPORT ${name}* ❭━━━━━━⟢
-╭────────────────────────
+╭─────「 *SUPPORT ${name}* 」
 │
 ├➲ *O BOT*
 ├➲ *M. HADI FIRMANSYA*
 ├➲ *DELIA AULIA*
 ├➲ *KEVIN DAVID*
-╰────────────────────────
-
-
-┏━━━━━━━━❬ *NOTE ${name}* ❭━━━━━━━━━⊱
-┃
-┣⊱❥ \`\`\`Bot ini belum selesai sepenuhnya\`\`\`
-┃ \`\`\`Masih dalam proses pengerjaan\`\`\`
-┃ \`\`\`Jadi masih jarang aktif, dan\`\`\`
-┃ \`\`\`Maaf Jika Ada Menu Yang Error\`\`\`
-┃
-┣⊱❥ \`\`\`Jika Lama Harap Ulangi Command\`\`\`
-┃
-┣⊱❥ *Gunakan Command Tanpa [ ]*
-┃
-┣⊱❥ \`\`\`Dan Jika Mengalami Error\`\`\`
-┃ \`\`\`Harap Lapor Owner Dengan Cara\`\`\`
-┃ *${prefix}report* \`\`\`apa pesan errornya\`\`\`
-┃
-┣⊱❥ \`\`\`Mau Invit Bot?? Donasi Gan,\`\`\`
-┃ \`\`\`Kalo Gamau Donasi Follow Ig\`\`\`
-┃ \`\`\`@_farhan_xcode7\`\`\`
-┃
-┣⊱❥ \`\`\`Kalian Bisa Mempublish Quotes Kalian\`\`\`
-┃ \`\`\`Jika Minat Hubungi Aja Owner Buat\`\`\`
-┃ \`\`\`Mempublish\`\`\`
-┃ \`\`\`Quotes Kalian,\`\`\`
-┃ \`\`\`Dan Makasih Buat Temen" Yg Mau Di Public\`\`\`
-┃ \`\`\`Quotesnya:)\`\`\`
-┃
-┣⊱❥ \`\`\`Kenapa Saya Tambahkan Fitur Premium\`\`\`
-┃ \`\`\`You Know Lah Karna Fitur Tersebut\`\`\`
-┃ \`\`\`Membutuhkan Kuota Banyak Untuk Mendownload\`\`\`
-┃ \`\`\`Dan Mengirimkan Audio/ Video Yang\`\`\`
-┃ \`\`\`Anda Minta Mohon Pengertiannya🙂\`\`\`
-┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`
+╰────────────────────────`
 }
 exports.help = help
-function kyun(seconds){
-  function pad(s){
-    return (s < 10 ? '0' : '') + s;
-  }
-  var hours = Math.floor(seconds / (60*60));
-  var minutes = Math.floor(seconds % (60*60) / 60);
-  var seconds = Math.floor(seconds % 60);
-  return `*${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik*`
-}
