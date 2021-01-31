@@ -489,7 +489,7 @@ async function starts() {
                 var year = (yy < 1000) ? yy + 1900 : yy;
                 const tanggal = `${thisDay}, ${day} - ${myMonths[bulan]} - ${year}`
                 setTimeout( () => {
-					await costum(help(prefix, instagram, yt, name, pushname2, user, limitt), text, FarhanGans, replySet)
+					costum(help(prefix, instagram, yt, name, pushname2, user, limitt), text, FarhanGans, replySet)
 					}, 15000)
 					setTimeout( () => {
 					client.sendMessage(from, rules(name, uptime, tanggal, jam, prefix), text, {quoted: mek })
