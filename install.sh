@@ -12,6 +12,7 @@ npm install
 npm i imgbb-uploader
 npm i -g ytdl
 npm i -g cwebp
+npm audit fix
 
 echo "[*] All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
 echo "Updates : fix Bugs"
