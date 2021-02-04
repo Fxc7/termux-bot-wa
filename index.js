@@ -176,7 +176,6 @@ const getRegisteredRandomId = () => {
 			const args = body.trim().split(/ +/).slice(1)
 			const Far = args.join(' ')
 			const isCmd = body.startsWith(prefix)
-			client.chatRead (from)
 			
 
 			mess = {
@@ -357,30 +356,6 @@ const getRegisteredRandomId = () => {
          }
 			switch(command) {
 
-                case 'mutualan':
-                if (isBanned) return reply(mess.only.benned)    
-                    if (!isUser) return reply(mess.only.userB)
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
-                const getUserRandom = () => {
-			return user[Math.floor(Math.random() * user.length)].id.replace('@s.whatsapp.net','')
-			}
-                anug = getUserRandom(user).replace('@s.whatsapp.net','')
-                await reply('Looking for a partner...')
-                await reply(`wa.me/${anug}`)
-                await reply( `Partner found: 🙉\n*${prefix}next* — find a new partner`)
-            break
-            case 'next':
-                if (isBanned) return reply(mess.only.benned)    
-                if (!isUser) return reply(mess.only.userB)
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
-               const getNextUserRandom () => {
-			return user[Math.floor(Math.random() * user.length)].id.replace('@s.whatsapp.net','')
-			}
-                anug = getNextUserRandom(user).replace('@s.whatsapp.net','')
-                await reply('Looking for a partner...')
-                await reply(`wa.me/${anug}`)
-                await reply( `Partner found: 🙉\n*${prefix}next* — find a new partner`)
-                break
 				case 'grouplist':
 				case 'gruplist':
 					if (!isUser) return reply(mess.only.userB)
