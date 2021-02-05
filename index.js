@@ -851,7 +851,7 @@ async function starts() {
                 if (!isUser) return reply(mess.only.userB)
 					apakah = body.slice(1)
 					const apakahh = ["Ya","Tidak","Ga tau"]
-					const kah = apa[Math.floor(Math.random() * apa.length)]
+					const kah = apakahh[Math.floor(Math.random() * apakahh.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+apakah+'*\n\nJawaban : '+ kah, text, { quoted: mek })
 					break 
 				case 'rate':
@@ -883,7 +883,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 					bisakah = body.slice(1)
 					const bisakahh = ["Bisa","Tidak Bisa","Ga tau"]
-					const keh = bisa[Math.floor(Math.random() * bisa.length)]
+					const keh = bisakahh[Math.floor(Math.random() * bisakahh.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+bisakah+'*\n\nJawaban : '+ keh, text, { quoted: mek })
 					break 
 				case 'kapankah':
@@ -891,7 +891,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 					kapankah = body.slice(1)
 					const kapankahh = ["1 Minggu lagi","1 Bulan lagi","1 Tahun lagi","100 tahun lagi","gatau","2030","1 Jam lagi","1 Menit lagi"]
-					const koh = kapan[Math.floor(Math.random() * kapan.length)]
+					const koh = kapankahh[Math.floor(Math.random() * kapankahh.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+kapankah+'*\n\nJawaban : '+ koh, text, { quoted: mek })
 					break 
 				case 'truth':
