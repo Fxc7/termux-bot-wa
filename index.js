@@ -36,7 +36,7 @@ const get = require('got')
 const emojiUnicode = require('emoji-unicode')
 const imageToBase64 = require('image-to-base64')
 const speed = require('performance-now')
-const imgbb = require('imgbb-uploader')
+const { imgbb } = require('imgbb-uploader')
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const brainly = require('brainly-scraper')
 const cd = 4.32e+7
@@ -54,7 +54,6 @@ const bucinrandom = JSON.parse(fs.readFileSync('./database/json/bucin.json'))
 const adminNumber = JSON.parse(fs.readFileSync('./database/json/admin.json'))
 const anime = JSON.parse(fs.readFileSync('./database/json/anime.json'))
 const blocked = JSON.parse(fs.readFileSync('./database/json/blocked.json'))
-let anlink = JSON.parse(fs.readFileSync('./database/json/antilink.json'))
 
 let {
 instagram, yt, groupLink, memberLimit
@@ -67,11 +66,11 @@ const vcard = 'BEGIN:VCARD\n'
             + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
             + 'END:VCARD'
 
-prefix = "_"
+prefix = "!"
 name = "~ F X C 7 | B O T"
-rdaftar = "TERIMA KASIH TELAH DAFTAR😁"
+rdaftar = "TERIMA KASIH TELAH DAFTAR MENJADI TEMEN FXC7BOT😁"
 rmenu = "HAI TEMEN FXC7BOT👋"
-limitt = 50
+limitt = 10
 ban = []
 userpremium = ["628311800241@s.whatsapp.net"] //ubah nomer kalian
 
@@ -158,7 +157,7 @@ const getRegisteredRandomId = () => {
 			const content = JSON.stringify(mek.message)
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
-			const FarhanGans = ["628311800241@s.whatsapp.net"] // ubah aja gapapa
+			const FarhanGans = ["0@s.whatsapp.net"] // ubah aja gapapa
 			const farhan = mek.message.conversation
 			const insom = from.endsWith('@g.us')
 			const nameReq = insom ? mek.participant : mek.key.remoteJid
@@ -242,7 +241,6 @@ const getRegisteredRandomId = () => {
 			const isAnime = isGroup ? anime.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false 
 			const isOwner = ownerNumber.includes(sender)
-			const antilink = isGroup ? anlink.includes(from) : false
 			const isUser = user.includes(sender)
 			const isBanned = ban.includes(sender)
 			const isPrem = userpremium.includes(sender)
@@ -342,18 +340,6 @@ const getRegisteredRandomId = () => {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			
-			if (antilink && isGroup && isBotGroupAdmins){
-            if (args.match(/(https:\/\/chat.whatsapp.com)/gi)) {
-                const check = await mek.inviteInfo(args);
-                if (!check) {
-                    return
-                } else {
-                    reply('*[GROUP LINK DETECTOR!]*\nKamu mengirimkan link grup chat, maaf kamu segera di kick dari grup.').then(() => {
-                        client.groupRemove(from, groupId, args.id)
-                    })
-                }
-            }
-         }
 			switch(command) {
 
 				case 'grouplist':
@@ -386,34 +372,6 @@ const getRegisteredRandomId = () => {
                     })
                 await limitAdd(sender)
 				break 
-			
-		case 'antilink':
-					client.updatePresence(from, Presence.composing) 
-					if (!isUser) return reply(mess.only.userB)
-					if (isBanned) return reply(mess.only.benned)   
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('pilih on atau off!!')
-					if (args[0] == 'on') {
-						if (antilink) {
-						return reply('Mode antilink sudah aktif')
-						} else {
-						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply(`Sukses mengaktifkan mode antilink`)
-					   }
-					} else if (args[0] == 'off') {
-						if(!antilink) {
-						reply('Anti link Dinonaktifkan')
-						} else {
-						antilink.splice(sender, 1)
-						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply('Sukes menonaktifkan mode antilink️')
-    					}
-					} else {
-						reply('pilih on atau off kak?')
-					}
-					
-					break 
 					
 			case 'chatlist':
 					client.updatePresence(from, Presence.composing)
@@ -472,7 +430,7 @@ const getRegisteredRandomId = () => {
                 var yy = tgl.getYear()
                 var year = (yy < 1000) ? yy + 1900 : yy;
                 const tanggal = `${thisDay}, ${day} - ${myMonths[bulan]} - ${year}`
-					client.sendMessage(from, help(prefix, instagram, yt, name, pushname2, user, limitt, uptime, jam, tanggal), text, {quoted: mek})
+					await costum(help(prefix, instagram, yt, name, pushname2, user, limitt, uptime, jam, tanggal), text, FarhanGans, rmenu)
     				break
 
 				case 'bahasa':
@@ -482,7 +440,7 @@ const getRegisteredRandomId = () => {
 				break
 				case 'donasi':
 				case 'donate':
-					client.sendMessage(from, donasi(instagram, name), text, {quoted: mek})
+					client.sendMessage(from, donasi(name), text, {quoted: mek})
 					break
 				case 'info':
 					me = client.user
@@ -624,7 +582,7 @@ const getRegisteredRandomId = () => {
 					reply(mess.wait)
             var encmedia  = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
             var media = await  client.downloadAndSaveMediaMessage(encmedia)
-           const imgbb = require('imgbb-uploader')
+            var imgbb = require('imgbb-uploader')
             imgbb('727e7e43f6cda1dfb85d888522fd4ce1', media)
                 .then(data => {
                     var caps = `「 *IMAGE TO URL* 」\n\n*╠➥  ID :* ${data.id}\n*╠➥  MimeType :* ${data.image.mime}\n*╠➥  Extension :* ${data.image.extension}\n\n*╠➥  URL :* ${data.display_url}`
@@ -645,7 +603,7 @@ const getRegisteredRandomId = () => {
                          ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
                          reply(mess.wait)
                          owgi = await  client.downloadAndSaveMediaMessage(ger)
-                         imgbb = require('imgbb-uploader')
+                         var imgbb = require('imgbb-uploader')
                          anu = await imgbb("727e7e43f6cda1dfb85d888522fd4ce1", owgi)
                         teks = `${anu.display_url}`
                         ranp = getRandom('.gif')
@@ -672,7 +630,7 @@ const getRegisteredRandomId = () => {
                                          ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
                                          reply(mess.wait)
                                          owgi = await  client.downloadAndSaveMediaMessage(ger)
-                                         imgbb = require('imgbb-uploader')
+                                         var imgbb = require('imgbb-uploader')
                                          anu = await imgbb("727e7e43f6cda1dfb85d888522fd4ce1", owgi)
                                         teks = `${anu.display_url}`
                                         ranp = getRandom('.png')
@@ -2723,8 +2681,8 @@ const getRegisteredRandomId = () => {
 					if (!isOwner) return reply(mess.only.ownerB)
                     client.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
-					rdaftar = body.slice(10)
-					reply(`reply berhasil di ubah menjadi : ${rdaftar}`)
+					rmenu = body.slice(10)
+					reply(`reply berhasil di ubah menjadi : ${rmenu}`)
 				break 
 				case 'wait':
 				if (isBanned) return reply(mess.only.benned)    
