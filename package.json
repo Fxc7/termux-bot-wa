@@ -30,16 +30,14 @@
     "fluent-ffmpeg": "^2.1.2",
     "fs-extra": "^9.0.1",
     "brainly-scraper": "^1.0.3",
-    "mathjs": "^8.1.1",
-    "emoji-unicode": "^2.0.1",
     "google-it": "^1.6.0",
-    "got": "^11.8.1",
     "imgbb-uploader": "^1.2.0",
     "image-to-base64": "^2.1.1",
     "moment-timezone": "^0.5.32",
     "multistream": "^2.1.0",
     "needle": "^2.5.2",
     "node-fetch": "^2.6.1",
+    "node-gtts": "^2.0.2",
     "node-tesseract-ocr": "^2.0.0",
     "performance-now": "^2.1.0",
     "lolis.life": "^4.0.0",
@@ -51,10 +49,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FarhanXCode7/termux-bot-wa.git"
+    "url": "git+https://github.com/Fxc7/termux-bot-wa.git"
   },
   "bugs": {
-    "url": "https://github.com/FarhanXCode7/termux-bot-wa/issues"
+    "url": "https://github.com/Fxc7/termux-bot-wa/issues"
   },
-  "homepage": "https://github.com/FarhanXCode7/termux-bot-wa#readme"
+  "homepage": "https://github.com/Fxc7/termux-bot-wa#readme"
 }
