@@ -52,7 +52,7 @@ const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
 const bucinrandom = JSON.parse(fs.readFileSync('./database/json/bucin.json'))
 const adminNumber = JSON.parse(fs.readFileSync('./database/json/admin.json'))
 const anime = JSON.parse(fs.readFileSync('./database/json/anime.json'))
-
+const blocked = JSON.parse(fs.readFileSync('./database/json/blocked.json'))
 let {
 instagram, yt, groupLink, memberLimit
 } = setting
