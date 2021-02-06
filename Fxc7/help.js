@@ -76,15 +76,11 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}nulis nama/kelas/text*
 │➻ *${prefix}croman FXC7 dan BOT*
 │➻ *${prefix}slide Fxc7 BOT WA*
-│➻ *${prefix}cawolf FXC7/BOT*
 │
 │➻ *${prefix}tahta FXC7*
-│➻ *${prefix}cbpink FXC7*
-│➻ *${prefix}cthunder FXC7*
 │➻ *${prefix}cglass FXC7*
 │➻ *${prefix}cstyle FXC7*
 │➻ *${prefix}cgame FXC7*
-│➻ *${prefix}cbwall FXC7*
 │➻ *${prefix}clove FXC7*
 │➻ *${prefix}cparty FXC7*
 │➻ *${prefix}csky FXC7*
@@ -354,6 +350,7 @@ const donasi = (name) => {
 ┬
 ╰──────「 *BY ${name}* 」
 
+Untuk Kelangsungan Hidup Bot Karna Kuota Mahal:'
 `
 }
 exports.donasi = donasi
