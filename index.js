@@ -49,10 +49,12 @@ const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const _limit = JSON.parse(fs.readFileSync('./database/json/limit.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
+const userpremium = JSON.parse(fs.readFileSync('./database/json/premium.json'))
 const bucinrandom = JSON.parse(fs.readFileSync('./database/json/bucin.json'))
 const adminNumber = JSON.parse(fs.readFileSync('./database/json/admin.json'))
 const anime = JSON.parse(fs.readFileSync('./database/json/anime.json'))
 const blocked = JSON.parse(fs.readFileSync('./database/json/blocked.json'))
+const banned = JSON.parse(fs.readFileSync('./database/json/banned.json'))
 let {
 instagram, yt, groupLink, memberLimit
 } = setting
@@ -76,7 +78,6 @@ rdaftar = "TERIMA KASIH TELAH DAFTAR MENJADI TEMEN FXC7BOT😁"
 rmenu = "HAI TEMEN FXC7BOT👋 JANGAN LUPA DONASI YAA:)"
 limitt = 10
 ban = []
-userpremium = ["628311800241@s.whatsapp.net"] //ubah nomer kalian
 
 function kyun(seconds){
   function pad(s){
@@ -217,7 +218,7 @@ async function starts() {
 			const isSimi = isGroup ? samih.includes(from) : false 
 			const isOwner = ownerNumber.includes(sender)
 			const isUser = user.includes(sender)
-			const isBanned = ban.includes(sender)
+			const isBanned = banned.includes(sender)
 			const isPrem = userpremium.includes(sender)
 			
 			const isUrl = (url) => {
@@ -247,8 +248,6 @@ async function starts() {
                     for (let lmt of _limit) {
                         if (lmt.id === sender) {
                             limitCounts = limitt - lmt.limit
-                            if (limitCounts <= 0) return client.sendMessage(from,`Limit request anda sudah habis\n\n_Note : Limit akan direset setiap jam 21:00!_`, text,{ quoted: mek})
-                            client.sendMessage(from, limitcount(limitCounts), text, { quoted : mek})
                             found = true
                         }
                     }
@@ -318,19 +317,6 @@ async function starts() {
                     })
                 await limitAdd(sender)
 				break 
-				case 'totaluser':
-					client.updatePresence(from, Presence.composing) 
-					if (!isUser) return reply(mess.only.userB)
-					if (!isOwner) return reply(mess.only.ownerB)    
-					teks = `╭────「 *TOTAL USER ${name}* 」\n`
-					no = 0
-					for (let hehehe of user) {
-						no += 1
-						teks += `[${no.toString()}] @${hehehe.split('@')[0]}\n`
-					}
-					teks += `│+ Total Pengguna : ${user.length}\n╰──────*⎿ *${name}* ⏋*────`
-					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": user}})
-					break
 		case 'daftar':
 					client.updatePresence(from, Presence.composing)
 					if (isUser) return reply('kamu sudah Menjadi Temen FXC7BOT:D')
@@ -369,7 +355,11 @@ async function starts() {
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				client.sendMessage(from, bahasa(prefix), text, {quoted: mek})
-				break
+				break 
+				case 'limit':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				client.sendMessage(from, limitcount(limitCounts), text, {quoted: mek})
 				case 'donasi':
 				case 'donate':
 					client.sendMessage(from, donasi(name), text, {quoted: mek})
@@ -381,6 +371,19 @@ async function starts() {
 					teks = `⟩➢ *Nama Bot* : ${me.name}\n⟩➢ *Nomer Bot* : @${me.jid.split('@')[0]}\n⟩➢ *prefix* : | ${prefix} |\n⟩➢ *Total Block* : ${blocked.length}\n⟩➢ *Aktif Sejak* : ${kyun(uptime)}\n\n⟩➢ Total Pengguna: *${user.length}* User\n⟩➢ *Instagram* : https://www.instagram.com/_farhan_xcode7\n⟩➢ *Special Thanks To* :\n⟩➢ Allah SWT \n⟩➢ MahankBarBar`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: teks, contextInfo:{mentionedJid: [me.jid]}})
+					break 
+				case 'totaluser':
+					client.updatePresence(from, Presence.composing) 
+					if (!isUser) return reply(mess.only.userB)
+					if (!isOwner) return reply(mess.only.ownerB)    
+					teks = `╭────「 *TOTAL USER ${name}* 」\n`
+					no = 0
+					for (let hehehe of user) {
+						no += 1
+						teks += `[${no.toString()}] @${hehehe.split('@')[0]}\n`
+					}
+					teks += `│+ Total Pengguna : ${user.length}\n╰──────⎿ *${name}* ⏋────`
+					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": user}})
 					break
 				case 'blocklist':
 					teks = 'List Block :\n'
@@ -391,21 +394,76 @@ async function starts() {
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break 
 				case 'banlist':
-				ben = '```List Banned``` :\n'
-					for (let banned of ban) {
-						ben += `~> @${banned.split('@')[0]}\n`
+					client.updatePresence(from, Presence.composing) 
+					if (!isUser) return reply(mess.only.userB)
+					ben = `╭─「 *TOTAL BANNED ${name}* 」\n`
+					no = 0
+					for (let benned of ban) {
+						no += 1
+					ben += `[${no.toString()}] @${benned.split('@')[0]}\n`
 					}
-					ben += `Total : ${ban.length}`
-					client.sendMessage(from, ben.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": ban}})
-					break 
-				case 'premiumlist':
-				prem = '```List User Premium F X C 7 B O T``` :\n'
-					for (let userprem of userpremium) {
-						prem += `~> @${userprem.split('@')[0]}\n`
-					}
-					prem += `Total : ${userpremium.length}`
-					client.sendMessage(from, prem.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": userpremium}})
+					ben += `│+ Total User Kebanned : ${banned.length}\n╰──────⎿ *${name}* ⏋────`
+					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": banned}})
 					break
+				case 'premiumlist':
+					client.updatePresence(from, Presence.composing) 
+					if (!isUser) return reply(mess.only.userB)
+					teks = `╭─「 *TOTAL USER PREMIUM ${name}* 」\n`
+					no = 0
+					for (let prem of userpremium) {
+						no += 1
+						teks += `[${no.toString()}] @${prem.split('@')[0]}\n`
+					}
+					teks += `│+ Total User Premium : ${userpremium.length}\n╰──────⎿ *${name}* ⏋────`
+					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": userpremium}})
+					break
+				case 'ban':
+					client.updatePresence(from, Presence.composing) 
+					if (args.length < 1) return
+					if (!isOwner) return reply(mess.only.ownerB)
+					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+			        banned = mentioned
+					reply(`berhasil banned : ${banned}`)
+					break
+				case 'addprem':
+					client.updatePresence(from, Presence.composing)
+					if (args.length < 1) return
+					if (!isOwner) return reply(mess.only.ownerB)
+					addpremium = `${body.slice(9)}@.whatsapp.net`
+					userpremium.push(addpremium)
+					fs.writeFileSync('./database/json/premium.json', JSON.stringify(userpremium))
+					reply(`*Berhasil Menambahkan ${addpremium} Ke database User Premium*`)
+					break
+				case 'removeprem':
+					if (!isOwner) return reply(mess.only.ownerB)
+					rprem = body.slice(13)
+					userpremium.splice(`${rprem}@s.whatsapp.net`, 1)
+					fs.writeFileSync('./database/json/premium.json', JSON.stringify(userpremium))
+					reply(`Berhasil Remove wa.me/${rprem} Dari User Premium`)
+					break
+				case 'unban':
+					if (!isOwner)return reply(mess.only.ownerB)
+					bnnd = body.slice(8)
+					banned.splice(`${bnnd}@s.whatsapp.net`, 1)
+					fs.writeFileSync('./database/json/banned.json', JSON.stringify(banned))
+					reply(`Nomor wa.me/${bnnd} telah di unban!`)
+					break
+				case 'block':
+				 client.updatePresence(from, Presence.composing) 
+					if (!isGroup) return reply(mess.only.group)
+					if (!isOwner) return reply(mess.only.ownerB)
+					client.blockUser (`${body.slice(7)}@c.us`, "add")
+					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
+					break
+				case 'unblock':
+                    if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+					if (!isGroup) return reply(mess.only.group)
+					if (!isOwner) return reply(mess.only.ownerB)
+				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
+					client.sendMessage(from, `perintah Diterima, membuka blokir ${body.slice(9)}@c.us`, text)
+				    break
+				    
 				case 'ocr':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -696,53 +754,6 @@ async function starts() {
 					const tik = can[Math.floor(Math.random() * can.length)]
 					client.sendMessage(from, 'Pertanyaan : Cantik Cek Kakak *'+cantik+'*\n\nPersen Kecantikan : '+ tik +'', text, { quoted: mek })
 					break
-				case 'ban':
-					client.updatePresence(from, Presence.composing) 
-					if (args.length < 1) return
-					if (!isOwner) return reply(mess.only.ownerB)
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-			        ban = mentioned
-					reply(`berhasil banned : ${ban}`)
-					break
-				case 'addprem':
-					client.updatePresence(from, Presence.composing)
-					if (args.length < 1) return
-					if (!isOwner) return reply(mess.only.ownerB)
-					userpremium = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					addpremium = userpremium
-					reply(`*ʙᴇʀʜᴀꜱɪʟ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ${addpremium} ᴋᴇ ᴜꜱᴇʀ ᴩʀᴇᴍɪᴜᴍ*\n\nꜱᴇʟᴀᴍᴀᴛ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ꜰɪᴛᴜʀ ᴩʀᴇᴍɪᴜᴍ:)`)
-					break
-				case 'removeprem':
-					if (!isOwner) return reply(mess.only.ownerB)
-					rprem = body.slice(13)
-					addpremium.splice(`${rprem}@s.whatsapp.net`, 1)
-					fs.writeFileSync('./database/json/premium.json', JSON.stringify(addpremium))
-					reply(`Berhasil Remove wa.me/${rprem} Dari User Premium`)
-					break
-				case 'unban':
-					if (!isOwner)return reply(mess.only.ownerB)
-					bnnd = body.slice(8)
-					ban.splice(`${bnnd}@s.whatsapp.net`, 1)
-					fs.writeFileSync('./database/json/banned.json', JSON.stringify(ban))
-					reply(`Nomor wa.me/${bnnd} telah di unban!`)
-					break
-				case 'block':
-				 client.updatePresence(from, Presence.composing) 
-				 client.chatRead (from)
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.ownerB)
-					client.blockUser (`${body.slice(7)}@c.us`, "add")
-					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
-					break
-				case 'unblock':
-                    if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply(mess.only.ownerB)
-				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
-					client.sendMessage(from, `perintah Diterima, membuka blokir ${body.slice(9)}@c.us`, text)
-				    break
-				    
 				  case 'ownergrup':
 				  case 'ownergroup':
                client.updatePresence(from, Presence.composing) 
@@ -757,11 +768,6 @@ async function starts() {
 					if (!isOwner) return reply(mess.only.ownerB)
 			    	anu = await client.groupLeave(from, `Bye All Member *${groupMetadata.subject}*`, groupId)
 	                break
-	            case 'getses':
-                    if (!isOwner) return client.reply(from, 'Perintah ini hanya untuk Owner bot', id)
-                    const sesPic = await client.getSnapshot()
-                    client.sendFile(from, sesPic, 'session.png', 'Neh...', id)
-                    break
 				case 'setname':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
@@ -999,8 +1005,8 @@ async function starts() {
 				    if (!isUser) return reply(mess.only.userB)
 				    if (isLimit(sender)) return reply(limits.limitend(pushname2))
 						if (!isNsfw) return reply(' *FALSE* ')
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/randomloli?apikey=${TobzApi}`, {method: 'get'})
-						buffer = await getBuffer(res.result)
+						res = await fetchJson(`https://api.vhtear.com/randomloli&apikey=${VthearApi}`, {method: 'get'})
+						buffer = await getBuffer(res.result.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
@@ -1105,12 +1111,9 @@ async function starts() {
                 if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
                 if (isLimit(sender)) return reply(limitend(pushname2))
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
+					anu = await fetchJson(`https://api.vhtear.com/randomcat?apikey=${VthearApi}`, {method: 'get'})
 					reply(mess.wait)
-					n = JSON.parse(JSON.stringify(anu));
-					nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek , caption: 'meong🐈'})
+					client.sendMessage(from, `${anu.result.url}`, image, { quoted: mek , caption: 'meong🐈'})
 					await limitAdd(sender) 
 					break 
 
@@ -1358,6 +1361,13 @@ async function starts() {
                    cerpen = `• *Title:* ${anu.result.title}\n• *Pengarang:* ${anu.result.pengarang}\n• *Kategori:* ${anu.result.kategori}\n\n${anu.result.cerpen}`
                    client.sendMessage(from, cerpen, text, {quoted: mek})
                    break 
+               case 'puisiimg':
+                   if (isBanned) return reply(mess.only.benned)    
+                if (!isUser) return reply(mess.only.userB)
+                if (isLimit(sender)) return reply(limitend(pushname2))
+                   pus = await getBuffer(`https://api.vhtear.com/puisi_image&apikey=${VthearApi}`, {method: 'get'})
+                   client.sendMessage(from, pus, image, {quoted: mek})
+                   break 
                   case 'playstore':
                   if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
@@ -1385,18 +1395,31 @@ async function starts() {
                     reply(teks.trim())
 			     	await limitAdd(sender) 
 			     	break  
-			     	
-			     case 'xxx':
+			     case 'nekopoi':
 			   if (isBanned) return reply(mess.only.benned)    
 			   if (!isUser) return reply(mess.only.userB)
 			   if (isLimit(sender)) return reply(limitend(pushname2))
 			   reply(mess.wait)
               	    if (args.length < 1) return reply('teksnya mana gan?')
-                    teks = body.slice(5)
-                    anu = await fetchJson(`https://api.vhtear.com/xxxsearch?query=${teks}&apikey=${VthearApi}`, {method: 'get'})
+                    teks = body.slice(9)
+                    anu = await fetchJson(`https://api.vhtear.com/nekosearch?query=${teks}&apikey=${VthearApi}`, {method: 'get'})
                     teks = `===============\n`
-                    for (let bokep of anu.result) {
-                    teks += `• Title: ${bokep.data.title}\n• Durasi: ${bokep.data.durasi}\n• Link: ${bokep.data.url}\n===============\n`
+                    for (let neko of anu.result) {
+                    teks += `Title: ${neko.title}\nDeskripsi: ${neko.detail}\n===============\n`
+                    }
+                    reply(teks.trim())
+			     	await limitAdd(sender) 
+			     	break  
+			     case 'xvideos':
+			   if (isBanned) return reply(mess.only.benned)    
+			   if (!isUser) return reply(mess.only.userB)
+			   if (isLimit(sender)) return reply(limitend(pushname2))
+			   reply(mess.wait)
+              	    if (args.length < 1) return reply('teksnya mana gan?')
+                    anu = await fetchJson(`https://api.arugaz.my.id/api/media/xvideo/search?query=${body.slice(9)}`, {method: 'get'})
+                    teks = `===============\n`
+                    for (let b of anu.result) {
+                    teks += `• Title: ${b.title}\n• Info: ${b.info}\n• Link: ${b.link}\n===============\n`
                     }
                     reply(teks.trim())
 			     	await limitAdd(sender) 
@@ -1581,9 +1604,40 @@ async function starts() {
 				cpaper = `${body.slice(8)}`
 				buff = await getBuffer(`https://api.arugaz.my.id/api/photooxy/text-on-burn-paper?text=${cpaper}`, {method: 'get'})
 				client.sendMessage(from, buff, image, {quoted: mek})
-				break
+				break 
+				case 'cbwall':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2)) 
+				anu = await fetchJson(`https://api.zeks.xyz/api/breakwall?apikey=${ZeksApi}&text=${body.slice(8)}`, {method: 'get'})
+				buff = await getBuffer(anu.result)
+				client.sendMessage(from, buff, image, {quoted: mek})
+				break 
+				case 'cbpink':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2)) 
+				anu = await fetchJson(`https://api.zeks.xyz/api/logobp?text=${body.slice(8)}&apikey=${ZeksApi}`, {method: 'get'})
+				buff = await getBuffer(anu.result)
+				client.sendMessage(from, buff, image, {quoted: mek})
+				break 
+				case 'cthunder':
+				if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2)) 
+				buff = await getBuffer(`https://api.vhtear.com/thundertext?text=${body.slice(10)}&apikey=${VthearApi}`, {method: 'get'})
+				client.sendMessage(from, buff, image, {quoted: mek})
+				break 
+				case 'cgame':
+					if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2))
+					reply(mess.wait)
+					buff = await getBuffer(`https://api.vhtear.com/gamelogo?text=${body.slice(7)}&apikey=${VthearApi}`, {method: 'get'})
+					client.sendMessage(from, buff, image, {caption: 'Nih kak', quoted: mek})
+					await limitAdd(sender) 
+					break 
 				case 'cparty':
-					
 					if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				if (isLimit(sender)) return reply(limitend(pushname2))
@@ -1593,7 +1647,26 @@ async function starts() {
 					client.sendMessage(from, bufferu, image, {caption: 'Nih kak', quoted: mek})
 					await limitAdd(sender) 
 					break 
-				case 'cglitch':
+				case 'cstyle':
+					if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2))
+					reply(mess.wait)
+					buff = await getBuffer(`https://api.vhtear.com/stylelogo?text=${body.slice(8)}&apikey=${VthearApi}`, {method: 'get'})
+					client.sendMessage(from, buff, image, {caption: 'Nih kak', quoted: mek})
+					await limitAdd(sender) 
+					break 
+				case 'cglass':
+					if (isBanned) return reply(mess.only.benned)    
+				if (!isUser) return reply(mess.only.userB)
+				if (isLimit(sender)) return reply(limitend(pushname2))
+					glass = `${body.slice(8)}`
+					reply(mess.wait)
+					bufferu = await getBuffer(`https://api.vhtear.com/wetglass?text=${glass}&apikey=${VthearApi}`, {method: 'get'})
+					client.sendMessage(from, bufferu, image, {caption: 'Nih kak', quoted: mek})
+					await limitAdd(sender) 
+					break 
+				case 'cawolf':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				if (isLimit(sender)) return reply(limits.limitend(pushname2))
@@ -1601,8 +1674,8 @@ async function starts() {
                     hm = `${body.slice(8)}`
                     text1 = hm.split("/")[0];
                     text2 = hm.split("/")[1];                    
-                    glitch = await getBuffer(`https://api.vhtear.com/glitchtext?text1=${text1}&text2=${text2}&apikey=${VthearApi}`, {method: 'get'})
-                    client.sendMessage(from, glitch, image, {quoted: mek, caption: 'nih gan'})
+                    awolf = await getBuffer(`https://api.vhtear.com/avatarwolf?text1=${text1}&text2=${text2}&apikey=${VthearApi}`, {method: 'get'})
+                    client.sendMessage(from, awolf, image, {quoted: mek, caption: 'nih gan'})
 			     	await limitAdd(sender) 
 			     	break 
 					case 'croman':
@@ -1635,7 +1708,7 @@ async function starts() {
                      if (args.length < 1) return reply('Teksnya mana gan??')
                      if (args.length > 10) return reply('karakter minimal 10')
                      buff = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${tahta}&apikey=${ZeksApi}`, {method: 'get'})
-                     client.sendMessage(from, buff, image, {quoted: mek})
+                     client.sendMessage(from, buff, image, {quoted: mek, caption: `Harta Tahta ${tahta}`})
                   await limitAdd(sender) 
                   break  
 			    case 'quotemaker':
@@ -1711,10 +1784,10 @@ async function starts() {
                     if (isBanned) return reply(mess.only.benned)    
    					if (!isUser) return reply(mess.only.userB)
    					if (isLimit(sender)) return reply(limitend(pushname2))
-                        anu = await fetchJson(`https://mhankbarbar.tech/api/stalk?username=${body.slice(9)}&apiKey=${BarBarApi}`, {method: 'get'})
-                     buffer = await getBuffer(anu.Profile_pic)
+                        anu = await fetchJson(`https://api.vhtear.com/igprofile?query=${body.slice(9)}&apikey=${VthearApi}`, {method: 'get'})
+                     buffer = await getBuffer(anu.result.picture)
                      reply(mess.wait)
-                     hasil = `「 *INSTAGRAM STALKER* 」\n\n• Link: https://www.instagram.com/${anu.Username}\n• Fullname : ${anu.Name}\n• Following : ${anu.Jumlah_Followers}\n• Followers : ${anu.Jumlah_Following}\n• Jumlah Postingan: ${anu.Jumlah_Post}\n• Bio : ${anu.Biodata}`
+                     hasil = `「 *INSTAGRAM STALKER* 」\n\n• Link: https://www.instagram.com/${anu.result.username}\n• Fullname : ${anu.result.name}\n• Followers : ${anu.result.follower}\n• Following : ${anu.result.follow}\n• Jumlah Postingan: ${anu.result.post_count}\n• Bio : ${anu.result.biography}`
                     client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
                     await limitAdd(sender) 
                     break 
@@ -2461,14 +2534,14 @@ async function starts() {
     				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.title}*\n• *Size:* ${anu.size}\n• *Durasi:* ${anu.duration}\n• *Deskripsi:* ${anu.desc}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
-					buff = await getBuffer(anu.thumbnail)
+					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.result.title}*\n• *Size:* ${anu.result.size}\n• *Link:* https://www.youtu.be/${anu.result.id}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buff = await getBuffer(anu.result.imgUrl)
 					reply(mess.wait)
-					buffer = await getBuffer(anu.url_video)
+					buffer = await getBuffer(anu.result.UrlVideo)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
 					await limitAdd(sender) 
 					break 
 
@@ -2478,14 +2551,14 @@ async function starts() {
 					if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://alfians-api.herokuapp.com/api/yta?url=${args[0]}`)
+					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					yta = `「 *YOUTUBE MP3 DOWNLOADER* 」\n\n• Title : *${anu.title}*\n• *Size:* ${anu.filesize}\n• *Resolusi:* ${anu.resolution}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
-					buff = await getBuffer(anu.thumb)
+					yta = `「 *YOUTUBE MP3 DOWNLOADER* 」\n\n• Title : *${anu.result.title}*\n• *Size:* ${anu.result.size}\n• *Link:* https://www.youtu.be/${anu.result.id}n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buff = await getBuffer(anu.result.imgUrl)
 					reply(mess.wait)
-					buffer = await getBuffer(anu.result)
+					buffer = await getBuffer(anu.result.UrlMp3)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: yta})
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek, caption: 'Nih Gan'})
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek, caption: 'Nih Gan'})
 					await limitAdd(sender) 
 					break 
 
@@ -2610,6 +2683,17 @@ case 'asupan':
 			reply(quran.trim())
 			await limitAdd(sender) 
 			break 
+			case 'quranlist':
+			if (isBanned) return reply(mess.only.benned)
+			if (!isUser) return reply(mess.only.userB)
+			if (isLimit(sender)) return reply(limitend(pushname2))
+			anu = await fetchJson(`https://api.vhtear.com/quranlist?&apikey=${VthearApi}`, {method: 'get'})
+			list = ''
+			for (let sur of anu){
+			list = `Nomer: ${sur.list}\n`
+			}
+			reply(list.trim())
+			break
 		case 'bitly':
 			if (isBanned) return reply(mess.only.benned)
 			if (!isUser) return reply(mess.only.userB)
