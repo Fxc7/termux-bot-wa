@@ -37,11 +37,11 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}report lapor bug*
 │➻ *${prefix}info*
 │➻ *${prefix}donasi*
+│➻ *${prefix}limit*
 │➻ *${prefix}owner*
 │➻ *${prefix}speed*
 │➻ *${prefix}daftar*
 │➻ *${prefix}totaluser*
-│➻ *${prefix}grouplist*
 │➻ *${prefix}blocklist*
 │➻ *${prefix}banlist*
 │➻ *${prefix}premiumlist*
@@ -74,18 +74,24 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 │➻ *${prefix}quotemaker tx/wtrmk/tema*
 │➻ *${prefix}nulis nama/kelas/text*
-│➻ *${prefix}nulis Fxc7/Bot*
+│➻ *${prefix}croman FXC7 dan BOT*
+│➻ *${prefix}slide Fxc7 BOT WA*
+│➻ *${prefix}cawolf FXC7/BOT*
 │
 │➻ *${prefix}tahta FXC7*
-│➻ *${prefix}croman FXC7 dan BOT*
+│➻ *${prefix}cbpink FXC7*
+│➻ *${prefix}cthunder FXC7*
+│➻ *${prefix}cglass FXC7*
+│➻ *${prefix}cstyle FXC7*
+│➻ *${prefix}cgame FXC7*
+│➻ *${prefix}cbwall FXC7*
 │➻ *${prefix}clove FXC7*
 │➻ *${prefix}cparty FXC7*
 │➻ *${prefix}csky FXC7*
 │➻ *${prefix}tts id Haii*
-│➻ *${prefix}ttp Fxc7 [ERROR]*
+│➻ *${prefix}ttp Fxc7*
 │➻ *${prefix}cballon Fxc7*
 │➻ *${prefix}cpaper Fxc7*
-│➻ *${prefix}slide Fxc7 BOT WA*
 │
 │➻ *${prefix}stiker*
 │➻ *${prefix}gifstiker*
@@ -123,7 +129,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 │➻ *${prefix}welcome On/Off*
 │➻ *${prefix}grup buka/tutup*
-│➻ *${prefix}antilink on/off*
 │➻ *${prefix}ownergrup*
 │➻ *${prefix}setpp*
 │➻ *${prefix}infogc*
@@ -218,6 +223,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
+│➻ *${prefix}puisiimg*
 │➻ *${prefix}asupan*
 │➻ *${prefix}tebakgambar*
 │➻ *${prefix}caklontong*
@@ -234,6 +240,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}cersex*
 │➻ *${prefix}randombokep*
 │➻ *${prefix}pornhub stepMoms*
+│➻ *${prefix}xvideos japan*
+│➻ *${prefix}nekopoi oni chichi*
 ┬
 ╰────────────────────────
 
@@ -241,6 +249,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 │➻ *${prefix}jadwalsholat Banyuwangi*
 │➻ *${prefix}quran*
+│➻ *${prefix}quranlist*
 │➻ *${prefix}quransurah 1*
 ┬
 ╰────────────────────────
@@ -302,8 +311,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}playmp3 menepi*
 │➻ *${prefix}fb link video*
 │➻ *${prefix}snack link snack video*
-│➻ *${prefix}ytmp3 link yt [ERROR]*
-│➻ *${prefix}ytmp4 link yt [ERROR]*
+│➻ *${prefix}ytmp3 link yt*
+│➻ *${prefix}ytmp4 link yt*
 │➻ *${prefix}joox Monolog Pamungkas*
 │➻ *${prefix}smule Link Video Smule*
 ┬
@@ -416,7 +425,7 @@ const limitend = (pushname2) => {
 
 const limitcount = (limitCounts) => {
         return`
-${limitCounts}
+Limit Kamu: ${limitCounts}
 `
 }
 
