@@ -55,10 +55,9 @@ Follow The Steps Below!
 
 <p align="center">
 <a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TAMPILAN--MENU-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
-
-<br>
-<img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/Screenshot_2021-01-29-18-18-32-18.jpg" width="400px" height="650px">
 </p>
+
+<img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/Screenshot_2021-01-29-18-18-32-18.jpg" width="100px" height="150px">
 
 ## Features
 
@@ -223,8 +222,9 @@ Follow The Steps Below!
 
 ## Special Thanks
 
-* [Baileys](https://github.com/baileys)
+* [Baileys](https://github.com/adiwajshing/baileys)
 * Created Bot => [MhankBarBar](https://github.com/MhankBarBar)
+* [NURUTOMO](https://github.com/nurutomo)
 
 
 
