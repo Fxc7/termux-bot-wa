@@ -9,7 +9,7 @@ CFonts.say('Welcome In\nTermux Bot Wa', {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`'${package.name}' By FarhanXCode7`, {
+CFonts.say(`${package.name} By FarhanXCo`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
