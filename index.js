@@ -1,4 +1,4 @@
-console.log('Starting...')
+console.log('Starting Bot...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
@@ -14,9 +14,8 @@ CFonts.say(`${package.name} By FarhanXCo`, {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-
 function start(file) {
-  let args = [path.join(__dirname, file), ...process.argv.slice(2)]
+  let args = [path.join(file), ...process.argv.slice(2)]
   CFonts.say([process.argv[0], ...args].join(' '), {
     font: 'console',
     align: 'center',
@@ -46,5 +45,4 @@ function start(file) {
   })
   // console.log(p)
 }
-
 start('Fxc7.js')
