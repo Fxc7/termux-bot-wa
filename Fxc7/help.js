@@ -37,10 +37,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}report lapor bug*
 │➻ *${prefix}info*
 │➻ *${prefix}donasi*
-│➻ *${prefix}limit*
 │➻ *${prefix}owner*
 │➻ *${prefix}speed*
 │➻ *${prefix}daftar*
+│➻ *${prefix}limit*
 │➻ *${prefix}totaluser*
 │➻ *${prefix}blocklist*
 │➻ *${prefix}banlist*
@@ -61,7 +61,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}url2img Url*
 │➻ *${prefix}tiktok*
 │➻ *${prefix}fototiktok*
-│➻ *${prefix}memeindo*
 │➻ *${prefix}kbbi*
 │➻ *${prefix}wait*
 │➻ *${prefix}trendtwit*
@@ -74,9 +73,9 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 │➻ *${prefix}quotemaker tx/wtrmk/tema*
 │➻ *${prefix}nulis nama/kelas/text*
-│➻ *${prefix}croman FXC7 dan BOT*
+│➻ *${prefix}croman FXC7 dan Friend*
 │➻ *${prefix}slide Fxc7 BOT WA*
-│
+├───────────────────
 │➻ *${prefix}tahta FXC7*
 │➻ *${prefix}cglass FXC7*
 │➻ *${prefix}cstyle FXC7*
@@ -86,9 +85,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}csky FXC7*
 │➻ *${prefix}tts id Haii*
 │➻ *${prefix}ttp Fxc7*
-│➻ *${prefix}cballon Fxc7*
 │➻ *${prefix}cpaper Fxc7*
-│
+├───────────────────
 │➻ *${prefix}stiker*
 │➻ *${prefix}gifstiker*
 │➻ *${prefix}toimg*
@@ -102,6 +100,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╭───────「 *GROUP ONLY* 」
 ┴
 │➻ *${prefix}modeanime On/Off*
+│➻ *${prefix}neonime naruto*
 │➻ *${prefix}naruto*
 │➻ *${prefix}minato*
 │➻ *${prefix}boruto*
@@ -116,10 +115,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}miku*
 │➻ *${prefix}anime*
 │➻ *${prefix}animecry*
-│➻ *${prefix}neonime*
 │➻ *${prefix}animekiss*
 ┬
 ╰───────────────────────
+
 
 ╭───────「 *GROUP ONLY* 」
 ┴
@@ -140,10 +139,11 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}hidetag*
 │➻ *${prefix}tagall*
 │➻ *${prefix}mentionall*
-│➻ *${prefix}fitnah*
+│➻ *${prefix}fitnah @mentioned/isi/balasan*
 │➻ *${prefix}listadmin*
 ┬
 ╰────────────────────────
+
 
 ╭───────「 *GROUP ONLY* 」
 ┴
@@ -154,6 +154,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}nsfwtrap*
 │➻ *${prefix}hentai*
 │➻ *${prefix}simih On/Off*
+│➻ *${prefix}public enable/disable*
 ┬
 ╰────────────────────────
 
@@ -187,6 +188,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┬
 ╰────────────────────────
 
+
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
 │➻ *${prefix}jarak Banyuwangi/Surabaya*
@@ -219,20 +221,23 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
+│➻ *${prefix}readmore*
 │➻ *${prefix}puisiimg*
 │➻ *${prefix}asupan*
 │➻ *${prefix}tebakgambar*
 │➻ *${prefix}caklontong*
 │➻ *${prefix}family100*
+│➻ *${prefix}memeindo*
 │➻ *${prefix}kalkulator 13*12*
 │➻ *${prefix}moddroid lightroom*
 │➻ *${prefix}happymod lightroom*
 ┬
 ╰────────────────────────
 
+
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
-│➻ *${prefix}cerpen*
+│➻ *${prefix}randomKPOP*
 │➻ *${prefix}cersex*
 │➻ *${prefix}randombokep*
 │➻ *${prefix}pornhub stepMoms*
@@ -240,6 +245,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}nekopoi oni chichi*
 ┬
 ╰────────────────────────
+
 
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
@@ -250,7 +256,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┬
 ╰────────────────────────
 
-╭──────「 *OTHERS FUN & GAME* 」
+
+╭──────「 *FIND ME SIR* 」
 ┴
 │➻ *${prefix}becrypt string*
 │➻ *${prefix}encode64 string*
@@ -269,10 +276,10 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┬
 ╰────────────────────────
 
+
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
 │➻ *${prefix}spamcall 083xxxxxxxxx*
-│➻ *${prefix}spamsms 083xxxxxxxx/jumlah*
 │➻ *${prefix}spamgmail contoh@gmail.com*
 ┬
 ╰────────────────────────
@@ -283,6 +290,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}addprem mentioned*
 │➻ *${prefix}removeprem mention*
 │➻ *${prefix}setmemlimit*
+│➻ *${prefix}setlimit*
 │➻ *${prefix}setreply*
 │➻ *${prefix}setprefix*
 │➻ *${prefix}setnamebot*
@@ -340,6 +348,16 @@ function kyun(seconds){
   return `*${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik*`
 }
 
+// info bot 
+const bottt = (prefix) => {
+return `
+\`\`\`Untuk Sekarang Bot Hanya Bisa Digunakan Di Group Karna\`\`\` *KUOTA MAHAL*\n\n *Mohon Pengertiannya*
+Sekali Lagi Maaf
+
+Jika Bot Ini Ada Di Grup Anda Admin Grup Suruh Aktifkan Bot Dengan Cara ${prefix}bott aktif
+`
+}
+exports.bottt = bottt
 // donasi menu
 const donasi = (name) => { 
 	return `       
@@ -347,6 +365,12 @@ const donasi = (name) => {
 ┴
 │√ *PULSA: 08311800241*
 │√ *OVO : 08311800241*
+│
+│\`\`\`Pulsa\`\`\`
+│*15k Invite Bot Ke Grup selama 1 bulan*
+│
+│\`\`\`OVO\`\`\`
+│*10k Invite Bot Ke Group Selama 1 Bulan*
 ┬
 ╰──────「 *BY ${name}* 」
 
