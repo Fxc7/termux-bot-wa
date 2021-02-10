@@ -23,9 +23,11 @@
 <details>
 
 
+* Donasi Yaa:)
 
-* [Ovo](08311800241)
-* [Pulsa](08311800241)
+* [Saweria](https://saweria.co/FarhanXCo)
+* [Trakteer](https://trakteer.id/FarhanXCo)
+
 </details>
 
 ## Tools
@@ -63,7 +65,7 @@ Follow The Steps Below!
 
 | NEW USER | YES
 | :---------------------------------------------: | :-----------: |
-|  Register Name And Age origin|✅|
+|  Daftar|✅|
 
 |  CREATOR  |                                           YES |
 | :---------------------------------------------: | :-----------: |
@@ -73,6 +75,7 @@ Follow The Steps Below!
 | Convert Video To MP3|✅|
 | Black Pink Logo Maker|✅|
 | 3D Text Maker|✅|
+| Glitch|✅|
 | Quote Maker|✅|
 | Water Maker|✅|
 | Fire Text Maker
@@ -94,12 +97,6 @@ Follow The Steps Below!
 | Text To Sticker|✅|
 | Nulis Name/class/text|✅|
 | Quotes|✅|
-
-| ASK | YES |
-| :-----------------: | :-------: |
-| Apakah|✅|
-| Kapankah|✅|
-| Bisakah|✅|
 
 | DOWNLOADER | YES |
 | :-----------------: | :-------: |
@@ -152,6 +149,9 @@ Follow The Steps Below!
 | Neonime|✅|
 | Pokemon|✅|
 | Nekonime|✅|
+| Shota|✅|
+| Kaneki|✅|
+| Touka chan|✅|
 | Naruto|✅|
 | Loli|✅|
 | Random Shota|✅|
@@ -164,12 +164,21 @@ Follow The Steps Below!
 | Kucing|✅|
 | Anjing|✅|
 | Alay|✅|
-| Glitch|✅|
 | hilih|✅|
 | Cek Ganteng|✅|
+| Cantik cek|✅|
 | Watak|✅|
+| Quotes bucin|✅|
+| Kata Cinta|✅|
 | Random Hobby|✅|
+| Search Image [optional]|✅|
 | Pinterest [Optional] |✅|
+| Truth Or Dare |✅|
+| Dark Jokes|✅|
+| Apakah|✅|
+| Kapankah|✅|
+| Bisakah|✅|
+| Rate|✅|
 
 | INFORMATION | YES |
 | :-----------------: | :-------: |
@@ -184,22 +193,35 @@ Follow The Steps Below!
 | :-----------------: | :-------: |
 | Random Hentai|✅|
 | NSFW Neko|✅|
+| NSFW Blowjob |✅|
+| NSFW Loli|✅|
+| NSFW Anime|✅|
+| Asupan|✅|
 
 | OWNER | YES |
 | :-----------------: | :-------: |
+| Add bucin|✅|
 | Set pp bot|✅|
+| Set Limit Harian|✅|
+| Set Limit Member Group|✅|
 | Set Reply Chat|✅|
 | add premium |✅|
+| Banned Member|✅|
+| Unbanned Member|✅|
+| Block Member|✅|
+| Unblock Member|✅|
 | remove premium |✅|
 | Set Prefix|✅|
 | Block Member|✅|
 | Broadcast|✅|
 | Group Broadcast|✅|
 | Clear All Chat|✅|
+| Bott aktif/nonaktif|✅|
 
 | PREMIUM MENU | YES |
 | :-----------------: | :-------: |
 | Youtube mp3 Download|✅|
+| Tiktok Downloader|✅|
 | Youtube mp4 Download|✅|
 | Joox|✅|
 | Facebook Video Download|✅|
@@ -209,7 +231,10 @@ Follow The Steps Below!
  TENTANG BOT | YES |
 | :-----------------: | :-------: |
 | info|✅|
-| ChatList|❌|
+| Premium List|✅|
+| User list|✅|
+| Banned list|✅|
+| Block list|✅|
 
 
 ## Note
@@ -222,9 +247,10 @@ Follow The Steps Below!
 
 ## Special Thanks
 
-* [Baileys](https://github.com/adiwajshing/baileys)
+* [Adiwajshing Baileys](https://github.com/adiwajshing/baileys)
 * Created Bot => [MhankBarBar](https://github.com/MhankBarBar)
 * [NURUTOMO](https://github.com/nurutomo)
+* [FXC7 OFFICIAL TEAM]
 
 
 
