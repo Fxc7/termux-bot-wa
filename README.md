@@ -105,6 +105,7 @@ Follow The Steps Below!
 
 | GROUP | YES |
 | :-----------------: | :-------: |
+| Anti link|✅|
 | Open Group|✅|
 | Link Group|✅|
 | info Group|✅|
