@@ -240,7 +240,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭──────「 *OTHERS FUN & GAME* 」
 ┴
-│➻ *${prefix}randomKPOP*
+│➻ *${prefix}randomkpop*
 │➻ *${prefix}cersex*
 │➻ *${prefix}randombokep*
 │➻ *${prefix}pornhub stepMoms*
