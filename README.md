@@ -247,6 +247,7 @@ Follow The Steps Below!
 * [Adiwajshing Baileys](https://github.com/adiwajshing/baileys)
 * Created Bot => [MhankBarBar](https://github.com/MhankBarBar)
 * [NURUTOMO](https://github.com/nurutomo)
+* [NazwaS](https://github.com/nazwaS)
 * [FXC7 OFFICIAL TEAM]
 
 
