@@ -76,6 +76,8 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}croman FXC7 dan Friend*
 │➻ *${prefix}slide Fxc7 BOT WA*
 ├───────────────────
+│➻ *${prefix}tp 1 - 162*
+│➻ *${prefix}ep 1 - 216*
 │➻ *${prefix}tahta FXC7*
 │➻ *${prefix}cglass FXC7*
 │➻ *${prefix}cstyle FXC7*
@@ -122,6 +124,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭───────「 *GROUP ONLY* 」
 ┴
+│➻ *${prefix}antilink On/Off*
 │➻ *${prefix}welcome On/Off*
 │➻ *${prefix}grup buka/tutup*
 │➻ *${prefix}ownergrup*
@@ -145,7 +148,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-╭───────「 *GROUP ONLY* 」
+╭───────「 *GROUP ONLY ADMIN* 」
 ┴
 │➻ *${prefix}nsfw On/Off*
 │➻ *${prefix}nsfwloli*
@@ -154,7 +157,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}nsfwtrap*
 │➻ *${prefix}hentai*
 │➻ *${prefix}simih On/Off*
-│➻ *${prefix}public enable/disable*
+│➻ *${prefix}bott on/off*
 ┬
 ╰────────────────────────
 
@@ -367,10 +370,10 @@ const donasi = (name) => {
 │√ *OVO : 08311800241*
 │
 │\`\`\`Pulsa\`\`\`
-│*15k Invite Bot Ke Grup selama 1 bulan*
+│ *15k Invite Bot Ke Grup selama 1 bulan*
 │
 │\`\`\`OVO\`\`\`
-│*10k Invite Bot Ke Group Selama 1 Bulan*
+│ *10k Invite Bot Ke Group Selama 1 Bulan*
 ┬
 ╰──────「 *BY ${name}* 」
 
