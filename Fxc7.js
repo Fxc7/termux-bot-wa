@@ -16,7 +16,6 @@ const {
     Mimetype,
     GroupSettingChange
 } = require('@adiwajshing/baileys')
-const kagApi = require('@kagchi/kag-api')
 
 const fs = require("fs")
 const axios = require('axios')
@@ -309,12 +308,19 @@ async function starts() {
        if (messagesLink.includes("://chat.whatsapp.com/")){
 		if (!isGroup) return
 		if (!isAntiLink) return
-		if (isGroupAdmins) return reply('Admin Group Tidak Akan Terkick')
+		if (isGroupAdmins) return reply(`${pushname2} Adalah Admin Group Kamu Tidak Akan Di kick`)
 		frhan.updatePresence(from, Presence.composing)
 		var Kick = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`Link Group Terdeteksi maaf ${sender.split("@")[0]} anda akan di kick`)
-			frhan.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
-			reply('byee👋') }
+		setTimeout( () => {
+		reply('byee👋')
+		}, 1100)
+		setTimeout( () => {
+		frhan.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					}, 1000)
+		setTimeout( () => {
+		reply(`Link Group Terdeteksi maaf *${pushname2}* anda akan di kick`)
+		}, 0)
+		}
 
      		if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
 			if (!isGroup && !isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'args :', color(args.length))
@@ -1511,10 +1517,12 @@ async function starts() {
                 if (!isPublic) return reply(mess.only.publikG)
                 if (isLimit(sender)) return reply(limitend(pushname2))
                 reply(mess.wait)
-                   anu = await fetchJson(`https://api.vhtear.com/resepmasakan?query=${body.slice(12)}&apikey=${VthearApi}`, {method: 'get'})
-                   buff = await getBuffer(anu.result.image)
-                   resep = `*${anu.result.title}*\n${anu.result.desc}\n\n*BAHAN² YG DIPERLUKAN*\n${anu.result.bahan}\n\n*CARA MASAKNYA*\n${anu.result.cara}`
-                   frhan.sendMessage(from, buff, image, {quoted: mek, caption: resep})
+                   anu = await fetchJson(`https://masak-apa.tomorisakura.vercel.app/api/search?q=${body.slice(14)}`, {method: 'get'})
+                   masak = '==============================\n'
+                   for (let msk of anu.results){
+                   masak += `• *Title:* ${msk.title}\n• *• *Durasi Masak Sekitar:* ${msk.times}\n• *Porsi:* ${msk.serving}\n• *Tingkat Kesulitan:* ${msk.difficulty}\n• *Link:* https://www.masakapahariini.com/?s=${msk.key}\n==============================\n`
+                   }
+                   reply(masak.trim())
                    await limitAdd(sender) 
                    break 
                case 'cersex':
@@ -1629,7 +1637,7 @@ async function starts() {
 					await limitAdd(sender) 
 					break 
 			
-			case 'instaimg':
+			/*case 'instaimg':
 				if (isBanned) return reply(mess.only.benned)
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
@@ -1652,7 +1660,7 @@ async function starts() {
 				    reply(mess.wait)
 				    frhan.sendMessage(from, insta, video, {mimtype: 'video/mp4', filename: 'instagram'.mp3, quoted: mek})
 				    await limitAdd(sender) 
-				    break  
+				    break  */
 				    
 				case 'instastory':
 				if (isBanned) return reply(mess.only.benned)
@@ -1663,8 +1671,8 @@ async function starts() {
 				instor = `${body.slice(12)}`
 				anu = await fetchJson(`https://api.vhtear.com/igstory?query=${instor}&apikey=${VthearApi}`, {method: 'get'})
 				insta = '=========================\n'
-				for (let i of anu.result) {
-				insta += `• *User:* ${anu.result.owner_username}\n• *Type:* ${i.story.itemlist.type}\n• *Link:* ${i.story.itemlist.urlDownload}\n=========================\n`
+				for (let i of anu.result.story.itemlist) {
+				insta += `• *User:* ${anu.result.owner_username}\n• *Type:* ${i.type}\n• *Link:* ${i.urlDownload}\n=========================\n`
 				}
 				reply(insta.trim())
 				await limitAdd(sender)
@@ -1688,7 +1696,7 @@ async function starts() {
 					if (anu.error) return reply(anu.error)
 					teks = '=================\n'
 					for (let i of anu.result) {
-						teks += `*Title* : ${i.title}\n*Id* : ${i.id}\n*Published* : ${i.publishTime}\n*Duration* : ${i.duration}\n*Views* : ${h2k(i.views)}\n=================\n`
+						teks += `*Title* : ${i.title}\n*Id* : https://youtu.be/${i.id}\n*Published* : ${i.publishTime}\n*Duration* : ${i.duration}\n*Views* : ${h2k(i.views)}\n=================\n`
 					}
 					reply(teks.trim())
 					break
@@ -1712,10 +1720,12 @@ async function starts() {
 				if (isLimit(sender)) return reply(limitend(pushname2))
 				if (args.length < 1) return reply('Mau Cari Film Apa?')
 				reply(mess.wait)
-				anu = await fetchJson(`https://api.vhtear.com/downloadfilm?judul=${body.slice(6)}&apikey=${VthearApi}`, {method: 'get'})
-				if (anu.error) return reply(anu.error)
-				film = `• Judul: *${anu.result.judul}*\n• Resolusi: *${anu.result.data.resolusi}*\n• Link Download: *${anu.result.data.urlDownload}*\n`
-				frhan.sendMessage(from, film, text, {quoted: mek})
+				anu = await fetchJson(`http://www.omdbapi.com/?s=${body.slice(6)}&plot=full&apikey=56b1b6f0&r=json`, {method: 'get'})
+				hasil = '=========================\n'
+				for(let film of anu.Search) {
+				hasil += `• *Title:* ${film.Title}\n• *Rilis Tahun:* ${film.Year}\n• *Type:* ${film.Type}\n• *Link:* https://m.imdb.com/title/${film.imdbID}\n=========================\n`
+				}
+				reply(hasil.trim())
 				await limitAdd(sender) 
 					break 
 				case 'tiktokstalk':
@@ -1986,14 +1996,18 @@ async function starts() {
 			        await limitAdd(sender) 
 			       	break 
 				case 'quotes':
-				if (isBanned) return reply(mess.only.benned)    
+				frhan.updatePresence(from, Presence.composing) 
+				 if (isBanned) return reply(mess.only.benned)    
+				 if (isLimit(sender)) return reply(limitend(pushname2))
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
-				if (isLimit(sender)) return reply(limitend(pushname2))
-					anu = await fetchJson(`https://api.arugaz.my.id/api/random/text/quotes`, {method: 'get'})
-					quotes = `Quotes Dari: *${anu.result.by}*\n\n\n*${anu.result.quote}*`
-					frhan.sendMessage(from, quotes, text, {quoted: mek})
-					await limitAdd(sender) 
+				 data = fs.readFileSync('./Fxc7/quotes.js');
+                 jsonData = JSON.parse(data);
+                 randIndex = Math.floor(Math.random() * jsonData.length);
+                 randKey = jsonData[randIndex];
+                 randQuote = 'Author: *'+randKey.author+'*\n\n*'+randKey.quotes+'*'
+                 frhan.sendMessage(from, randQuote, text, {quoted: mek})
+				await limitAdd(sender) 
 					break 
 				case 'fakta':
 				if (isBanned) return reply(mess.only.benned)   
@@ -2754,12 +2768,12 @@ async function starts() {
 				if (!isPrem) return reply(mess.only.premium)
                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(6)}&apikey=${TobzApi}`, {method: 'get'})
                if (anu.error) return reply(anu.error)
-                 infomp3 = `╭─「 *JOOX DOWNLOADER* 」\n│\n│*• Judul* : ${anu.result.judul}\n│*• Album* : ${anu.result.album}\n│*• Dipublikasi* : ${anu.result.dipublikasi}\n│\n│*TUNGGU SEBENTAR LAGI DIKIRIM\n│ MOHON JANGAN SPAM*\n╰─────────────────────`
+                 infomp3 = `╭─「 *JOOX DOWNLOADER* 」\n│\n│ *• Judul* : ${anu.result.judul}\n│ *• Album* : ${anu.result.album}\n│ *• Dipublikasi* : ${anu.result.dipublikasi}\n│\n│ *TUNGGU SEBENTAR LAGI DIKIRIM*\n│ *MOHON JANGAN SPAM*\n╰─────────────────────`
                 bufferddd = await getBuffer(anu.result.thumb)
                  reply(mess.wait)
                 buff = await getBuffer(anu.result.mp3)
                 frhan.sendMessage(from, bufferddd, image, {quoted: mek, caption: infomp3})
-                frhan.sendMessage(from, buff, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
+                frhan.sendMessage(from, buff, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek})
                 await limitAdd(sender) 
                 break  
                 
@@ -2788,7 +2802,7 @@ async function starts() {
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `╭─「 *YOUTUBE MP4 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.title}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama │ Karna Mendownload Video\n╰─────────────────────`
+					ytt = `╭─「 *YOUTUBE MP4 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.title}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama \n│ Karna Mendownload Video\n╰─────────────────────`
 					buff = await getBuffer(anu.result.imgUrl)
 					reply(mess.wait)
 					buffer = await getBuffer(anu.result.UrlVideo)
@@ -2805,7 +2819,7 @@ async function starts() {
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					yta = `╭─「 *YOUTUBE MP3 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.title}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama │ Karna Mendownload Video\n╰─────────────────────`
+					yta = `╭─「 *YOUTUBE MP3 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.title}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama \n│ Karna Mendownload Video\n╰─────────────────────`
 					buff = await getBuffer(anu.result.imgUrl)
 					reply(mess.wait)
 					buffer = await getBuffer(anu.result.UrlMp3)
