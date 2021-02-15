@@ -1,5 +1,5 @@
 // menu fitur bot
-const help = (prefix, instagram, yt, name, pushname2, user, limitt, uptime, jam, tanggal) => { 
+const help = (prefix, instagram, yt, name, pushname2, user, uptime, jam, tanggal) => { 
 	return `
 	
 \`\`\`Follow My Instagram\`\`\`
@@ -19,7 +19,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ┴
 ┣⊱  \`\`\`NAMA USER:\`\`\` *${pushname2}*
 ┣⊱  \`\`\`VERIVICATION:\`\`\` ✅
-┣⊱  \`\`\`LIMIT:\`\`\` *${limitt} perhari*
 ┣⊱  \`\`\`AKTIF:\`\`\` ${kyun(uptime)}
 ┣⊱  \`\`\`JAM:\`\`\` *${jam} WIB*
 ┣⊱  \`\`\`TANGGAL:\`\`\` *${tanggal}*
@@ -40,11 +39,9 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➻ *${prefix}owner*
 │➻ *${prefix}speed*
 │➻ *${prefix}daftar*
-│➻ *${prefix}limit*
 │➻ *${prefix}totaluser*
 │➻ *${prefix}blocklist*
 │➻ *${prefix}banlist*
-│➻ *${prefix}premiumlist*
 │➻ *${prefix}bahasa*
 ┬
 ╰────────────────────────
@@ -290,7 +287,6 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 
 ╭─────────「 *OWNER ONLY* 」
 ┴
-│➻ *${prefix}addprem mentioned*
 │➻ *${prefix}removeprem mention*
 │➻ *${prefix}setmemlimit*
 │➻ *${prefix}setlimit*
@@ -313,7 +309,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 ╰────────────────────────
 
 
-╭────────「 *PREMIUM ONLY* 」
+╭────────「 *MEDIA DOWNLOADER* 」
 ┴
 │➻ *${prefix}playmp3 menepi*
 │➻ *${prefix}fb link video*
@@ -334,6 +330,7 @@ https://chat.whatsapp.com/GHC5djoQJrcGBJFwYQuQoB
 │➲ *KEVIN DAVID*
 │➲ *MY TEAM FXC7 BOT*
 │➲ *CONTENT CREATOR BOT WHATSAPP*
+│➲ *./P4LUV1-G4Nz
 ┬
 ╰────────────────────────`
 }
@@ -441,17 +438,3 @@ List Bahasa Untuk Command *${prefix}tts*
 `
 }
 exports.bahasa = bahasa
-
-// Limit
-const limitend = (pushname2) => {
-        return`*maaf ${pushname2} limit hari ini habis*\n*limit di reset setiap jam 12:00 WIB TENGAH MALAM*`
-}
-
-const limitcount = (limitCounts) => {
-        return`
-Limit Kamu: ${limitCounts}
-`
-}
-
-exports.limitend = limitend
-exports.limitcount = limitcount
