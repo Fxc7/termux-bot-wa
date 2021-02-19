@@ -63,19 +63,19 @@ const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRando
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
             + 'FN:Farhan\n'
-            + 'ORG:Owner FXC7;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
+            + 'ORG:Owner ✞⃟🥀𝐊𝐀𝐋𝐀𝐒𝐇𝐍𝐈𝐊𝐎𝐕;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=557381044096:+55 7381-0440-96\n'
             + 'END:VCARD'
 
-prefix = "!"
-name = "~ IRIENE BOT"
-rdaftar = "TERIMA KASIH TELAH DAFTAR MENJADI TEMEN IRIENEBOT😁"
-rmenu = "HAI TEMEN IRIENEBOT👋 JANGAN LUPA DONASI YAA:)"
-botinfo = "UNTUK INVITE BOT SILAHKAN DONASI DULU YAA:)"
+prefix = "."
+name = "~ ✞⃟🥀𝐊𝐀𝐋𝐀𝐒𝐇𝐍𝐈𝐊𝐎𝐕 BOT"
+rdaftar = "OBRIGADO POR SE REGISTRAR SEU LINDOR😐"
+rmenu = "Olá amigo esquizofrênico👋 NÃO SE ESQUEÇA DE DOAR YAA :)"
+botinfo = "PARA INVITE BOTS, POR FAVOR DOAR PRIMEIRO :)"
 limitt = 10
 memberLimit = 2
 ban = []
-premium = ["628311800241@s.whatsapp.net"]
+premium = ["557381044096@s.whatsapp.net"]
 
 function kyun(seconds){
   function pad(s){
@@ -181,7 +181,7 @@ async function starts() {
 			
 
 			mess = {
-				wait: '*⏳ ᴡᴀɪᴛ ꜱᴇᴅᴀɴɢ ᴅɪ ᴩʀᴏꜱᴇꜱ...*',
+				wait: '*⏳ Espere ...*',
 				success: '*ꜱᴜᴋꜱᴇꜱ...*',
 				error: {
 					stick: ' *ɢᴀɢᴀʟ, ᴛᴇʀᴊᴀᴅɪ ᴋᴇꜱᴀʟᴀʜᴀɴ ꜱᴀᴀᴛ ᴍᴇɴɢᴋᴏɴᴠᴇʀꜱɪ ɢᴀᴍʙᴀʀ ᴋᴇ ꜱᴛɪᴄᴋᴇʀ*',
@@ -3233,4 +3233,4 @@ case 'asupan':
 		}
 	})
 }
-starts()
+starts(
