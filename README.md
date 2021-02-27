@@ -42,20 +42,13 @@ Follow The Steps Below!
 (after that tap on permission)
 > pkg update -y
 > pkg upgrade -y
+> pkg install python -y
 > pkg install git -y
 > git clone https://github.com/Fxc7/termux-bot-wa
 > cd termux-bot-wa
-> npm cache clear
 > bash install.sh
-> npm audit fix
-> npm start / node index.js
+> npm start / node Fxc7.js
 ```
-
-<p align="center">
-<a href="#"><img title="termux-bot-wa" src="https://img.shields.io/badge/-TAMPILAN--MENU-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
-</p>
-
-<img src="https://raw.githubusercontent.com/Fxc7/termux-bot-wa/main/src/Screenshot_2021-01-29-18-18-32-18.jpg" width="450px" height="650px">
 
 ## Features
 
