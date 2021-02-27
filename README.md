@@ -21,8 +21,9 @@
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/MAINTENED-YES-blue.svg"</a>
 </p>
 
-
-## Donasi yaa:)
+<hr color="black">
+## I am Hungry Your Donate
+<hr color="black">
 
 * [Saweria](https://saweria.co/FarhanXCo)
 * [Trakteer](https://trakteer.id/FarhanXCo)
