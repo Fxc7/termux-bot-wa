@@ -1,21 +1,30 @@
-console.log('Starting Bot...')
+const lolcatjs = require('lolcatjs')
+const figlet = require('figlet')
 let { spawn } = require('child_process')
 let path = require('path')
-let fs = require('fs')
-let package = require('./package.json')
 const CFonts  = require('cfonts')
+
+lolcatjs.options.seed = Math.round(Math.random() * 1000);
+lolcatjs.options.colors = true;
+
+CFonts.say('[ROOT] STARTING BOT...', {
+font: 'console',
+align: 'left',
+gradient: ['magenta', 'red']
+})
+
+CFonts.say('----------------- FARHANXCODE7 -----------------', {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'yellow']
+})
 CFonts.say('Welcome In\nTermux Bot Wa', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`${package.name} By FarhanXCo`, {
-  font: 'console',
-  align: 'center',
-  gradient: ['red', 'magenta']
-})
-function start(file) {
-  let args = [path.join(file), ...process.argv.slice(2)]
+function start() {
+  let args = [path.join('Fxc7.js'), ...process.argv.slice(2)]
   CFonts.say([process.argv[0], ...args].join(' '), {
     font: 'console',
     align: 'center',
@@ -25,24 +34,12 @@ function start(file) {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc']
   })
   .on('message', data => {
-    console.log('[RECEIVED]', data)
-    switch (data) {
-      case 'reset':
-        p.kill()
-        start.apply(this, arguments)
-        break
-      case 'uptime':
-        p.send(process.uptime())
-        break
+    if (data == 'reset') {
+      console.log('RESET')
+      p.kill()
+      start()
+      delete p
     }
   })
-  .on('error', e => {
-    console.error(e)
-    fs.watchFile(args[0], () => {
-      start()
-      fs.unwatchFile(args[0])
-    })
-  })
-  // console.log(p)
 }
 start('Fxc7.js')
