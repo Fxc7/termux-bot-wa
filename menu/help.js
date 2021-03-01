@@ -6,8 +6,8 @@ const help = (prefix, instagram, yt, name, pushname2, user, limitt, uptime, jam,
 ${a}Follow My Instagram${a}
 ${instagram}
 
-${a}Free RestAPIs${a}
-https://rb.gy/vzcpnn
+
+
 
 ${a}My Youtube${a}
 ${yt}
