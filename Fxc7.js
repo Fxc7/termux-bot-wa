@@ -1,5 +1,5 @@
 /*
-* Tambahin nama author lah
+* Tambahin nama author 
 * Author MhankBarBar, Farhan
 * Tambahin ya Cape Gan ngefix² Yg Ga work
 * Jan numpang nama doank
