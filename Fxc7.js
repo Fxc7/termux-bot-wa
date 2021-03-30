@@ -107,9 +107,9 @@ const { wait, simih, getBuffer, h2k, banner, generateMessageID, getGroupAdmins, 
 
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
-            + 'FN:Farhan\n'
-            + 'ORG:Owner FXC7;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=628311800241:+62 831-1800-241\n'
+            + 'FN:Aditya\n'
+            + 'ORG:Owner MowGuazu;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=6288232731883:+62 882-3273-1883\n'
             + 'END:VCARD'
 
 function kyun(seconds){
@@ -347,8 +347,8 @@ async function starts() {
 			}
 
 			const botNumber = frhan.user.jid
-			const ownerNumber = [`${OwnerNumber}@s.whatsapp.net`] // owner number ubah aja 
-			const ownerInfo = `${OwnerNumber}`
+			const ownerNumber = [6288232731883@s.whatsapp.net`] // owner number ubah aja 
+			const ownerInfo = `6288232731883`
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await frhan.groupMetadata(from) : ''
@@ -370,7 +370,7 @@ async function starts() {
 			const isUser = user.includes(sender)
 			const isBanned = ban.includes(sender)
 			const isPrem = premium.includes(sender) || isOwner 
-			const FarhanGans = ["0@s.whatsapp.net"]
+			const FarhanGans = ["6288232731883@s.whatsapp.net"]
 			const FarhanGans2 = " ~ 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 𝐅𝐚𝐫𝐡𝐚𝐧𝐗𝐂𝐨𝐝𝐞𝟳"
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
