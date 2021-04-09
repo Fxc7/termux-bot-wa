@@ -13,7 +13,7 @@ align: 'left',
 gradient: ['magenta', 'red']
 })
 
-CFonts.say('----------------- FARHANXCODE7 -----------------', {
+CFonts.say('----------------- DIONXCODE7 -----------------', {
     font: 'console',
     align: 'center',
     gradient: ['red', 'yellow']
