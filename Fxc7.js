@@ -327,22 +327,22 @@ async function starts() {
 			frhan.chatRead(from)
 
 			mess = {
-				wait: '*⏳ ᴡᴀɪᴛ ꜱᴇᴅᴀɴɢ ᴅɪ ᴩʀᴏꜱᴇꜱ...*',
-				success: '*ꜱᴜᴋꜱᴇꜱ...*',
+				wait: '*⏳ em processo...*',
+				success: 'sucesso...',
 				error: {
-				 bug: '*Terjadi Kesalahan Coba Hubungi Owner Untuk Melaporkan Kesalahan*',
-				stick: ' *ɢᴀɢᴀʟ, ᴛᴇʀᴊᴀᴅɪ ᴋᴇꜱᴀʟᴀʜᴀɴ ꜱᴀᴀᴛ ᴍᴇɴɢᴋᴏɴᴠᴇʀꜱɪ ɢᴀᴍʙᴀʀ ᴋᴇ ꜱᴛɪᴄᴋᴇʀ*\n*ᴄᴏʙᴀ ᴜʟᴀɴɢɪ ᴅᴇɴɢᴀɴ ʀᴇᴩʟy ꜰᴏᴛᴏ yɢ ꜱᴜᴅᴀʜ ᴛᴇʀᴋɪʀɪᴍ*',
-				Iv: '*ᴍᴀᴀꜰ ʟɪɴᴋ ᴛɪᴅᴀᴋ ᴠᴀʟɪᴅ!!*'
+				 bug: 'Ocorreu um erro! Tente entrar em contato com o proprietário para relatar um erro',
+				stick: ' falhou, ocorreu um erro ao converter a imagem em sticker\ntente repeti-lo com a foto de resposta que foi enviada',
+				Iv: 'Desculpe, link inválido!'
 				},
 			only: {
-				group: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴅᴀʟᴀᴍ ɢʀᴏᴜᴩ!*',
-				benned: '*ᴍᴀᴀꜰ ɴᴏᴍᴇʀ ᴋᴀᴍᴜ ᴋᴇ ʙᴀɴɴᴇᴅ ꜱɪʟᴀʜᴋᴀɴ ʜᴜʙᴜɴɢɪ ᴏᴡɴᴇʀ ᴀɢᴀʀ ᴍᴇᴍʙᴜᴋᴀ ʙᴀɴɴᴇᴅ ᴀɴᴅᴀ*',
-				ownerG: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ɢʀᴏᴜᴩ!*',
-				ownerB: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴏᴡɴᴇʀ ʙᴏᴛ!* ',
-				premium: '*ᴍᴀᴀꜰ ꜰɪᴛᴜʀ ɪɴɪ ᴋʜᴜꜱᴜꜱ ᴜꜱᴇʀ ᴩʀᴇᴍɪᴜᴍ!!*',
-				userB: `Hai Kak ${pushname2} Kamu Belom Terdaftar Didatabase Silahkan Ketik \n${prefix}daftar`,
-				admin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴏʟᴇʜ ᴀᴅᴍɪɴ ɢʀᴏᴜᴩ!*',
-				Badmin: '*ᴍᴀᴀꜰ ᴩᴇʀɪɴᴛᴀʜ ɪɴɪ ʜᴀɴyᴀ ʙɪꜱᴀ ᴅɪ ɢᴜɴᴀᴋᴀɴ ᴋᴇᴛɪᴋᴀ ʙᴏᴛ ᴍᴇɴᴊᴀᴅɪ ᴀᴅᴍɪɴ!*',
+				group: 'Desculpe, este comando só pode ser usado em grupos!',
+				benned: 'Desculpe, seu número foi banido, por favor contate o dono para rever seu ban',
+				ownerG: 'Desculpe, este comando só pode ser usado pelo grupo proprietário!',
+				ownerB: 'Desculpe, este comando só pode ser usado pelo proprietário do bot! ',
+				premium: 'Desculpe, este recurso é especificamente para usuários premium!',
+				userB: `Oi ${pushname2} você não está registrado no banco de dados, digite \n${prefix}registrar`,
+				admin: 'Desculpe, este comando só pode ser usado por um adm do grupo!',
+				Badmin: 'Desculpe, este comando só pode ser usado quando o bot é adm!',
 				}
 			}
 
@@ -371,7 +371,7 @@ async function starts() {
 			const isBanned = ban.includes(sender)
 			const isPrem = premium.includes(sender) || isOwner 
 			const FarhanGans = ["0@s.whatsapp.net"]
-			const FarhanGans2 = " ~ 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 𝐅𝐚𝐫𝐡𝐚𝐧𝐗𝐂𝐨𝐝𝐞𝟳"
+			const FarhanGans2 = " ~ 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐁𝐲 nokia"
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 		}
@@ -902,7 +902,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									await costum(fs.readFileSync(ran), sticker, FarhanGans, ` ~ Nihh Udah Jadi Stikernya`)
 									fs.unlinkSync(media)	
@@ -930,7 +930,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${ran} -o ${ran}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									await costum(fs.readFileSync(ran), sticker, FarhanGans, `~ Nih Dah Jadi Gif Stikernya`)
 									fs.unlinkSync(media)
@@ -956,7 +956,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
 								fs.unlinkSync(ranp)
 								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('FarhanXCode7', authorname)} ${ranw} -o ${ranw}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('nokia', 9672-4995)} ${ranw} -o ${ranw}`, async (error) => {
 									if (error) return reply(mess.error.stick)
 									frhan.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
@@ -985,7 +985,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1014,7 +1014,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu2} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1044,7 +1044,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu3} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1073,7 +1073,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu4} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1102,7 +1102,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu5} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1131,7 +1131,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu6} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1160,7 +1160,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu7} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
@@ -1189,7 +1189,7 @@ return new Promise(resolve => setTimeout(resolve, ms));
 					exec(`wget ${anu8} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 					fs.unlinkSync(ranp)
 					if (err) return reply(mess.error.stick)
-					exec(`webpmux -set exif ${addMetadata('FarhanXCode7', 'Jangan Lupa Donasi')} ${rano} -o ${rano}`, async (error) => {
+					exec(`webpmux -set exif ${addMetadata('nokia', '9672-4995')} ${rano} -o ${rano}`, async (error) => {
 					if (error) return reply(mess.error.stick)
 					frhan.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
 					fs.unlinkSync(rano)
